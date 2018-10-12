@@ -1,0 +1,20 @@
+target/
+.idea/**
+.idea
+you-obligate-web.iml
+src/main/web/node_modules
+src/main/web/node_modules/*.js
+src/main/web/node_modules/*.ts
+
+# Angular compilation files
+src/main/web/node_modules/**/*.js
+src/main/web/node_modules/**/*.ts
+src/main/web/node_modules/*.js
+
+src/main/web/node_modules/**/*.js
+src/main/web/node_modules/**/*.ts
+src/main/web/node_modules/**/js.map
+
+src/main/web/dist/**/*.js.map
+src/main/web/dist/**/.js
+src/main/web/dist/*.js
