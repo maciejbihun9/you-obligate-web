@@ -1,9 +1,5 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {catchError, groupBy, mergeMap, tap, toArray} from 'rxjs/operators';
-import {from} from 'rxjs/observable/from';
-import {ForecastMetrics} from '../models/forecast-metrics.model';
-import {Observable} from 'rxjs/Observable';
 import {UserRegisteredService} from '../models/user-registered-service.model';
 
 @Injectable()
@@ -41,7 +37,7 @@ export class UserRegisteredServiceService {
 
     public saveUserRegisteredService(userRegisteredService: UserRegisteredService){
       const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
-      return this.http.post<UserRegisteredService>('/register-service',
+      return this.http.post<UserRegisteredService>('http://localhost:8080/register-service',
         JSON.stringify(userRegisteredService), {headers: headers});
     }
 

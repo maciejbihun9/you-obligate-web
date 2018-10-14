@@ -7,6 +7,7 @@ import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule} from 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {UserRegisteredServiceService} from './services/user-registered-service.service';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'user-registered-services', component: UserRegisteredServicesComponent },
@@ -21,6 +22,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
