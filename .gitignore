@@ -1,6 +1,7 @@
 target/
 .idea/**
 .idea
+src/main/web/dist
 you-obligate-web.iml
 src/main/web/node_modules
 src/main/web/node_modules/*.js
