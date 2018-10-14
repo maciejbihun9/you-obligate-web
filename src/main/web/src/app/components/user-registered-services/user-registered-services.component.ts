@@ -30,8 +30,9 @@ export class UserRegisteredServicesComponent implements OnInit {
     userRegisteredService.serviceDescription = this.pickedServiceDescription;
     userRegisteredService.serviceName = this.pickedServiceName;
     userRegisteredService.userRegisteredServiceCategory = UserRegisteredServiceCategory[this.pickedServiceCategory];
-    debugger;
-    this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService);
+    this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe(() => {
+      console.log('User registered service succesfully sended!');
+    });
   }
 
 }
