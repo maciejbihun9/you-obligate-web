@@ -17,7 +17,7 @@ export class UserRegisteredServicesComponent implements OnInit {
   pickedServiceExperience: string;
 
   constructor(private userRegisteredServiceService: UserRegisteredServiceService) {
-    this.userRegisteredServiceCategories = Object.keys(UserRegisteredServiceCategory);
+    this.userRegisteredServiceCategories = Object.keys(UserRegisteredServiceCategory).filter(key => !isNaN(Number(UserRegisteredServiceCategory[key])));
   }
 
   ngOnInit() {
@@ -32,6 +32,7 @@ export class UserRegisteredServicesComponent implements OnInit {
     userRegisteredService.userRegisteredServiceCategory = UserRegisteredServiceCategory[this.pickedServiceCategory];
     this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe(() => {
       console.log('User registered service succesfully sended!');
+      console.log('Just for hot swaping purposes!');
     });
   }
 
