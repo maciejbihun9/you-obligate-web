@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {UserRegisteredService} from '../models/user-registered-service.model';
+import {Observable} from 'rxjs/index';
 
 @Injectable()
 export class UserRegisteredServiceService {
@@ -29,11 +30,11 @@ export class UserRegisteredServiceService {
         forecastModel.revenueMeasureId = 2; // this is just default value without any effect
         return this.http.post<Array<ForecastMetrics>>('/api/Forecast/GetForecastMetrics',
             JSON.stringify(forecastModel), {headers: headers});
-    }
-
-    public saveUserRegisteredService(){
-
     }*/
+
+    public getUserRegisteredServices(): Observable<Array<UserRegisteredService>> {
+      return this.http.get<Array<UserRegisteredService>>('/user-registered-services');
+    }
 
     public saveUserRegisteredService(userRegisteredService: UserRegisteredService){
       const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');

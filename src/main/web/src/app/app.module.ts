@@ -2,20 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { UserRegisteredServicesComponent } from './components/user-registered-services/user-registered-services.component';
+import { UserRegisteredServiceComponent } from './components/user-registered-service/user-registered-service.component';
 import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {UserRegisteredServiceService} from './services/user-registered-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import {UserRegisteredServicesComponent} from './components/user-registered-services/user-registered-services.component';
 
 const appRoutes: Routes = [
-  { path: 'user-registered-services', component: UserRegisteredServicesComponent },
+  { path: 'user-registered-services', component: UserRegisteredServiceComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    UserRegisteredServiceComponent,
     UserRegisteredServicesComponent
   ],
   imports: [
