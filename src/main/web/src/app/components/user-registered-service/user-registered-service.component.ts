@@ -31,7 +31,6 @@ export class UserRegisteredServiceComponent implements OnInit {
     userRegisteredService.serviceDescription = this.pickedServiceDescription;
     userRegisteredService.serviceName = this.pickedServiceName;
     userRegisteredService.userRegisteredServiceCategory = UserRegisteredServiceCategory[this.pickedServiceCategory];
-    UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);
     this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe(() => {
       console.log('Response came successfully!');
       UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);
