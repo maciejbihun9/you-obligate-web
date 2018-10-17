@@ -8,10 +8,10 @@
     <input #serviceName matInput placeholder="Service Name" [(ngModel)]="pickedServiceName" name="first" [disabled]="fieldDisabled">
   </mat-form-field>
   <mat-form-field class="full-width">
-    <textarea #serviceDescription matInput placeholder="Service Description" [(ngModel)]="pickedServiceDescription" name="second" [disabled]="fieldDisabled"></textarea>
+    <textarea #serviceDescription matInput placeholder="Service Description" [(ngModel)]="pickedServiceDescription" name="second" [disabled]="fieldDisabled">{{pickedServiceDescription}}</textarea>
   </mat-form-field>
   <mat-form-field class="full-width">
-    <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third" [disabled]="fieldDisabled"></textarea>
+    <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third" [disabled]="fieldDisabled">{{pickedServiceExperience}}</textarea>
   </mat-form-field>
   <button *ngIf="showSaveButton" mat-button type='button' (click)="saveUserRegisteredService()">Save</button>
 </form>

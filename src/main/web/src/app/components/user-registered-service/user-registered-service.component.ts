@@ -13,9 +13,10 @@ export class UserRegisteredServiceComponent implements OnInit {
 
   @Input() fieldDisabled = false;
   @Input() showSaveButton = true;
+  @Input() registeredService: UserRegisteredService = new UserRegisteredService();
 
   userRegisteredServiceCategories: string[];
-  pickedServiceCategory: string;
+  pickedServiceCategory;
   pickedServiceName: string;
   pickedServiceDescription: string;
   pickedServiceExperience: string;
@@ -25,7 +26,10 @@ export class UserRegisteredServiceComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.pickedServiceCategory = UserRegisteredServiceCategory[this.registeredService.userRegisteredServiceCategory];
+    this.pickedServiceName = this.registeredService.serviceName;
+    this.pickedServiceDescription = this.registeredService.serviceDescription;
+    this.pickedServiceExperience = this.registeredService.experienceDescription;
   }
 
   public saveUserRegisteredService() {
