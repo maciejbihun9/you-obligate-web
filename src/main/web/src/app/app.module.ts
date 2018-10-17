@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { UserRegisteredServiceComponent } from './components/user-registered-service/user-registered-service.component';
 import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule} from '@angular/material';
+import {MatExpansionModule} from '@angular/material/expansion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {UserRegisteredServiceService} from './services/user-registered-service.service';
 import {HttpClientModule} from '@angular/common/http';
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
       { enableTracing: true } // <-- debugging purposes only
     ),
     // Angular material
+    MatExpansionModule,
     MatInputModule,
     MatOptionModule,
     MatSelectModule,

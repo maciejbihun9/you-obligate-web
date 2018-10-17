@@ -8,6 +8,7 @@ export class UserRegisteredServiceService {
 
     private readonly USER_REGISTERED_SERVICES_URL: string = '/user-registered-services';
 
+
     constructor(private http: HttpClient) {}
 
     public getUserRegisteredService(userRegisteredServiceId: number): Observable<UserRegisteredService> {

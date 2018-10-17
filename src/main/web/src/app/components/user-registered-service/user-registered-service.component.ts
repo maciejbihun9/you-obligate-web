@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {UserRegisteredServiceCategory} from '../../models/user-registered-service-category.model';
 import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
@@ -10,6 +10,9 @@ import {UserRegisteredServicesComponent} from '../user-registered-services/user-
   styleUrls: ['./user-registered-service.component.css']
 })
 export class UserRegisteredServiceComponent implements OnInit {
+
+  @Input() fieldDisabled = false;
+  @Input() showSaveButton = true;
 
   userRegisteredServiceCategories: string[];
   pickedServiceCategory: string;
@@ -31,6 +34,7 @@ export class UserRegisteredServiceComponent implements OnInit {
     userRegisteredService.serviceDescription = this.pickedServiceDescription;
     userRegisteredService.serviceName = this.pickedServiceName;
     userRegisteredService.userRegisteredServiceCategory = UserRegisteredServiceCategory[this.pickedServiceCategory];
+    UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);
     this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe(() => {
       console.log('Response came successfully!');
       UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);

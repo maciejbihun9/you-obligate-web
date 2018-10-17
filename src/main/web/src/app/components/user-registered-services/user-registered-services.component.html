@@ -1,5 +1,12 @@
 <ul>
   <ol *ngFor="let registeredService of userRegisteredServices">{{registeredService.userRegisteredServiceCategory}} - {{registeredService.serviceName}}</ol>
 </ul>
-
+<mat-accordion multi="true">
+  <mat-expansion-panel *ngFor="let registeredService of userRegisteredServices">
+    <mat-expansion-panel-header>
+      <span>{{registeredService.serviceName}}</span>
+    </mat-expansion-panel-header>
+    <app-user-registered-service [fieldDisabled]="true" [showSaveButton]="false"></app-user-registered-service>
+  </mat-expansion-panel>
+</mat-accordion>
 

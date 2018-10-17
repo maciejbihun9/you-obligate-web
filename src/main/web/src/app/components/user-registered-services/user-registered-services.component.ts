@@ -22,15 +22,11 @@ export class UserRegisteredServicesComponent implements OnInit{
   constructor(private userRegisteredServiceService: UserRegisteredServiceService){}
 
   ngOnInit(): void {
-    this.userRegisteredServiceService.getUserRegisteredServices().subscribe((registeredServices) => {
+    /*this.userRegisteredServiceService.getUserRegisteredServices().subscribe((registeredServices) => {
       this.userRegisteredServices = registeredServices;
-    });
+    });*/
     UserRegisteredServicesComponent.newUserServiceRegistered$.subscribe((newUserRegisteredService) => {
         this.userRegisteredServices.push(newUserRegisteredService);
-    });
-    this.userRegisteredServiceService.getUserRegisteredService(3).subscribe((userRegisteredService) => {
-      console.log('Print a user');
-      console.log(userRegisteredService);
     });
   }
 }
