@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { UserRegisteredServiceComponent } from './components/user-registered-service/user-registered-service.component';
 import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -10,6 +9,8 @@ import {UserRegisteredServiceService} from './services/user-registered-service.s
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {UserRegisteredServicesComponent} from './components/user-registered-services/user-registered-services.component';
+import {UserRegisteredServiceComponent} from './components/user-registered-service/user-registered-service.component';
+import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 
 const appRoutes: Routes = [
   { path: 'user-registered-services', component: UserRegisteredServiceComponent },
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    ManageUserRegisteredServiceComponent,
     UserRegisteredServiceComponent,
     UserRegisteredServicesComponent
   ],

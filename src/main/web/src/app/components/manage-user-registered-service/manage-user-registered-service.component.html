@@ -13,8 +13,7 @@
   <mat-form-field class="full-width">
     <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third" [disabled]="fieldDisabled">{{pickedServiceExperience}}</textarea>
   </mat-form-field>
-  <p *ngIf="showRequestUnitsButton" (click)="saveUserRegisteredService()">Save</p>
-  <button *ngIf="showSaveButton" mat-button type='button' (click)="saveUserRegisteredService()">Save</button>
+  <p (click)="saveUserRegisteredService()">Request Units</p>
 </form>
 
 
