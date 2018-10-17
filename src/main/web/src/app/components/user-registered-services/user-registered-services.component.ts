@@ -28,5 +28,9 @@ export class UserRegisteredServicesComponent implements OnInit{
     UserRegisteredServicesComponent.newUserServiceRegistered$.subscribe((newUserRegisteredService) => {
         this.userRegisteredServices.push(newUserRegisteredService);
     });
+    this.userRegisteredServiceService.getUserRegisteredService(3).subscribe((userRegisteredService) => {
+      console.log('Print a user');
+      console.log(userRegisteredService);
+    });
   }
 }
