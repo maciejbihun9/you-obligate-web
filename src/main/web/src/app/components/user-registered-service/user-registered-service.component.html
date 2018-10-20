@@ -1,20 +1,19 @@
 <form class="registration-service-form" action="#">
   <mat-form-field>
     <mat-select placeholder="Service Category" [(value)]="pickedServiceCategory">
-      <mat-option #serviceCategory *ngFor="let category of userRegisteredServiceCategories" value="{{category}}" [disabled]="fieldDisabled">{{category}}</mat-option>
+      <mat-option #serviceCategory *ngFor="let category of userRegisteredServiceCategories" value="{{category}}">{{category}}</mat-option>
     </mat-select>
   </mat-form-field>
   <mat-form-field class="full-width">
-    <input #serviceName matInput placeholder="Service Name" [(ngModel)]="pickedServiceName" name="first" [disabled]="fieldDisabled">
+    <input #serviceName matInput placeholder="Service Name" [(ngModel)]="pickedServiceName" name="first">
   </mat-form-field>
   <mat-form-field class="full-width">
-    <textarea #serviceDescription matInput placeholder="Service Description" [(ngModel)]="pickedServiceDescription" name="second" [disabled]="fieldDisabled">{{pickedServiceDescription}}</textarea>
+    <textarea #serviceDescription matInput placeholder="Service Description" [(ngModel)]="pickedServiceDescription" name="second"></textarea>
   </mat-form-field>
   <mat-form-field class="full-width">
-    <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third" [disabled]="fieldDisabled">{{pickedServiceExperience}}</textarea>
+    <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third"></textarea>
   </mat-form-field>
-  <p *ngIf="showRequestUnitsButton" (click)="saveUserRegisteredService()">Save</p>
-  <button *ngIf="showSaveButton" mat-button type='button' (click)="saveUserRegisteredService()">Save</button>
+  <button mat-button type='button' (click)="saveUserRegisteredService()">Save</button>
 </form>
 
 

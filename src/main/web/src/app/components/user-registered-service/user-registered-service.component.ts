@@ -9,11 +9,7 @@ import {UserRegisteredServicesComponent} from '../user-registered-services/user-
   templateUrl: './user-registered-service.component.html',
   styleUrls: ['./user-registered-service.component.css']
 })
-export class UserRegisteredServiceComponent implements OnInit {
-
-  @Input() fieldDisabled = false;
-  @Input() showSaveButton = true;
-  @Input() registeredService: UserRegisteredService = new UserRegisteredService();
+export class UserRegisteredServiceComponent {
 
   userRegisteredServiceCategories: string[];
   pickedServiceCategory;
@@ -23,13 +19,6 @@ export class UserRegisteredServiceComponent implements OnInit {
 
   constructor(private userRegisteredServiceService: UserRegisteredServiceService) {
     this.userRegisteredServiceCategories = Object.keys(UserRegisteredServiceCategory).filter(key => !isNaN(Number(UserRegisteredServiceCategory[key])));
-  }
-
-  ngOnInit() {
-    this.pickedServiceCategory = UserRegisteredServiceCategory[this.registeredService.userRegisteredServiceCategory];
-    this.pickedServiceName = this.registeredService.serviceName;
-    this.pickedServiceDescription = this.registeredService.serviceDescription;
-    this.pickedServiceExperience = this.registeredService.experienceDescription;
   }
 
   public saveUserRegisteredService() {
