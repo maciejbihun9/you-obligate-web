@@ -8,12 +8,13 @@
     <input #serviceName matInput placeholder="Service Name" [(ngModel)]="pickedServiceName" name="first">
   </mat-form-field>
   <mat-form-field class="full-width">
-    <textarea #serviceDescription matInput placeholder="Service Description" [(ngModel)]="pickedServiceDescription" name="second"></textarea>
+    <textarea #serviceDescription matInput placeholder="Service Description" [(ngModel)]="pickedServiceDescription" name="second" value=""></textarea>
   </mat-form-field>
   <mat-form-field class="full-width">
-    <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third"></textarea>
+    <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third" value=""></textarea>
   </mat-form-field>
   <button mat-button type='button' (click)="saveUserRegisteredService()">Save</button>
+  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>
 
 

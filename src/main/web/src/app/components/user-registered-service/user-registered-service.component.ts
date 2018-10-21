@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {AfterViewChecked, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {UserRegisteredServiceCategory} from '../../models/user-registered-service-category.model';
 import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
@@ -9,7 +9,7 @@ import {UserRegisteredServicesComponent} from '../user-registered-services/user-
   templateUrl: './user-registered-service.component.html',
   styleUrls: ['./user-registered-service.component.css']
 })
-export class UserRegisteredServiceComponent {
+export class UserRegisteredServiceComponent implements AfterViewChecked {
 
   userRegisteredServiceCategories: string[];
   pickedServiceCategory;
@@ -17,8 +17,14 @@ export class UserRegisteredServiceComponent {
   pickedServiceDescription: string;
   pickedServiceExperience: string;
 
-  constructor(private userRegisteredServiceService: UserRegisteredServiceService) {
-    this.userRegisteredServiceCategories = Object.keys(UserRegisteredServiceCategory).filter(key => !isNaN(Number(UserRegisteredServiceCategory[key])));
+  constructor(private userRegisteredServiceService: UserRegisteredServiceService, private cdRef: ChangeDetectorRef) {
+    this.userRegisteredServiceCategories =
+      Object.keys(UserRegisteredServiceCategory).filter(key => !isNaN(Number(UserRegisteredServiceCategory[key])));
+  }
+
+  ngAfterViewChecked()
+  {
+    this.cdRef.detectChanges();
   }
 
   public saveUserRegisteredService() {
