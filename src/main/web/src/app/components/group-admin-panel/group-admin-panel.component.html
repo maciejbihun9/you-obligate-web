@@ -1,0 +1,8 @@
+<mat-accordion multi="true">
+  <mat-expansion-panel *ngFor="let userObligationProposition of userObligationPropositions">
+    <mat-expansion-panel-header>
+      <span>{{registeredService.serviceName}}</span>
+    </mat-expansion-panel-header>
+    <app-manage-user-registered-service [registeredService]="registeredService" [fieldDisabled]="true"></app-manage-user-registered-service>
+  </mat-expansion-panel>
+</mat-accordion>

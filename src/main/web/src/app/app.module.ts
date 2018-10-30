@@ -11,9 +11,12 @@ import { FormsModule } from '@angular/forms';
 import {UserRegisteredServicesComponent} from './components/user-registered-services/user-registered-services.component';
 import {UserRegisteredServiceComponent} from './components/user-registered-service/user-registered-service.component';
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
+import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
+import { GroupAdminPanelComponent } from './components/group-admin-panel/group-admin-panel.component';
 
 const appRoutes: Routes = [
   { path: 'user-registered-services', component: UserRegisteredServiceComponent },
+  { path: 'group-admin-panel', component: GroupAdminPanelComponent },
 ];
 
 @NgModule({
@@ -21,7 +24,8 @@ const appRoutes: Routes = [
     AppComponent,
     ManageUserRegisteredServiceComponent,
     UserRegisteredServiceComponent,
-    UserRegisteredServicesComponent
+    UserRegisteredServicesComponent,
+    GroupAdminPanelComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatButtonModule
   ],
-  providers: [UserRegisteredServiceService],
+  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

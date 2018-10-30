@@ -13,7 +13,7 @@
   <mat-form-field class="full-width">
     <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third" value=""></textarea>
   </mat-form-field>
-  <button mat-button type='button' (click)="saveUserRegisteredService()">Save</button>
+  <button mat-button type='button' [class.submit-button]="true" (click)="saveUserRegisteredService()">Save</button>
   <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 </form>
 

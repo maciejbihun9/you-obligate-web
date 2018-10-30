@@ -13,7 +13,7 @@
   <mat-form-field class="full-width">
     <textarea #experienceDescription matInput placeholder="Experience Description" [(ngModel)]="pickedServiceExperience" name="third" [disabled]="fieldDisabled"></textarea>
   </mat-form-field>
-  <p>Request Units</p>
+  <p (click)="saveUserUnitsRequest()">Request Units</p>
 </form>
 
 

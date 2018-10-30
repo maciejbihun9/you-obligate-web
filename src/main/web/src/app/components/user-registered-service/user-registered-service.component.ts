@@ -11,6 +11,8 @@ import {UserRegisteredServicesComponent} from '../user-registered-services/user-
 })
 export class UserRegisteredServiceComponent implements AfterViewChecked {
 
+  private readonly USER_REGISTERED_SERVICE_SAVED_SUCCESFULLY = 'User registered service saved successfully!';
+
   userRegisteredServiceCategories: string[];
   pickedServiceCategory;
   pickedServiceName: string;
@@ -34,8 +36,9 @@ export class UserRegisteredServiceComponent implements AfterViewChecked {
     userRegisteredService.serviceName = this.pickedServiceName;
     userRegisteredService.userRegisteredServiceCategory = UserRegisteredServiceCategory[this.pickedServiceCategory];
     UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);
-    this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe(() => {
-      console.log('Response came successfully!');
+    this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe((userRegisteredServiceResponse: UserRegisteredService) => {
+      console.log(this.USER_REGISTERED_SERVICE_SAVED_SUCCESFULLY);
+      userRegisteredService.id = userRegisteredServiceResponse.id;
       UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);
     }, (error) => {console.log(error); });
   }
