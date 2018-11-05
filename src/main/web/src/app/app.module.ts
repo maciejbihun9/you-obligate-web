@@ -12,11 +12,11 @@ import {UserRegisteredServicesComponent} from './components/user-registered-serv
 import {UserRegisteredServiceComponent} from './components/user-registered-service/user-registered-service.component';
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
-import { GroupAdminPanelComponent } from './components/group-admin-panel/group-admin-panel.component';
+import { ObligationGroupsPanelComponent } from './components/obligation-groups-panel/obligation-groups-panel.component';
 
 const appRoutes: Routes = [
-  { path: 'user-registered-services', component: UserRegisteredServiceComponent },
-  { path: 'group-admin-panel', component: GroupAdminPanelComponent },
+  { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
+  { path: 'user-account/obligation-groups-panel', component: ObligationGroupsPanelComponent },
 ];
 
 @NgModule({
@@ -25,7 +25,7 @@ const appRoutes: Routes = [
     ManageUserRegisteredServiceComponent,
     UserRegisteredServiceComponent,
     UserRegisteredServicesComponent,
-    GroupAdminPanelComponent
+    ObligationGroupsPanelComponent
   ],
   imports: [
     BrowserModule,
