@@ -12,16 +12,16 @@ import {UserRegisteredServicesComponent} from './components/user-registered-serv
 import {UserRegisteredServiceComponent} from './components/user-registered-service/user-registered-service.component';
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
-import { ObligationGroupsPanelComponent } from './components/obligation-groups-panel/obligation-groups-panel.component';
 import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
 import { UserObligationStrategyForRegisteredServiceComponent }
 from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
 import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
+import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
-  { path: 'user-account/obligation-groups-panel', component: ObligationGroupsPanelComponent },
-  { path: 'user-account/create-obligation-group-panel', component: CreateObligationPanelComponent },
+  { path: 'user-account/user-obligation-groups-panel', component: UserObligationGroupsPanelComponent },
+  { path: 'create-obligation-group-panel', component: CreateObligationPanelComponent },
 ];
 
 @NgModule({
@@ -30,7 +30,7 @@ const appRoutes: Routes = [
     ManageUserRegisteredServiceComponent,
     UserRegisteredServiceComponent,
     UserRegisteredServicesComponent,
-    ObligationGroupsPanelComponent,
+    UserObligationGroupsPanelComponent,
     UserObligationStrategyForRegisteredServiceComponent,
     CreateObligationPanelComponent
   ],
