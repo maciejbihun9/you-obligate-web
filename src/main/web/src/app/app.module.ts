@@ -17,11 +17,13 @@ import { UserObligationStrategyForRegisteredServiceComponent }
 from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
 import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
 import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
+import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
   { path: 'user-account/user-obligation-groups-panel', component: UserObligationGroupsPanelComponent },
   { path: 'create-obligation-group-panel', component: CreateObligationPanelComponent },
+  { path: 'obligation-groups', component: ObligationGroupsViewComponent },
 ];
 
 @NgModule({
@@ -32,7 +34,8 @@ const appRoutes: Routes = [
     UserRegisteredServicesComponent,
     UserObligationGroupsPanelComponent,
     UserObligationStrategyForRegisteredServiceComponent,
-    CreateObligationPanelComponent
+    CreateObligationPanelComponent,
+    ObligationGroupsViewComponent
   ],
   imports: [
     BrowserModule,
