@@ -2,7 +2,8 @@
 export interface ObligationGroup {
 
   name: String;
-  moneyName: String;
-  moneyShortcutName: String;
+  groupCurrencyName: String;
+  groupCurrencyShortcutName: String;
+  description: string;
 
 }
