@@ -1,3 +1,17 @@
-<p>
-  obligation-groups-view works!
-</p>
+<div>
+  <h1>{{viewTitle}}</h1>
+  <hr>
+  <form action="#">
+    <mat-form-field class="filter-section-element">
+      <input matInput placeholder="Dominant category" name="dominantCategory">
+    </mat-form-field>
+    <mat-form-field class="filter-section-element">
+      <input matInput placeholder="Amount of people" name="amountOfPeople">
+    </mat-form-field>
+    <mat-form-field class="filter-section-element">
+      <input matInput placeholder="Group duration" name="groupDuration">
+    </mat-form-field>
+    <button mat-button color="primary">Search</button>
+  </form>
+  <hr>
+</div>

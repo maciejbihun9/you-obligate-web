@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ObligationGroupsViewComponent implements OnInit {
 
+  public viewTitle = 'Obligation groups';
+
   constructor() { }
 
   ngOnInit() {
