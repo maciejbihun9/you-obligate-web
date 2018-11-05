@@ -14,6 +14,7 @@ import {ManageUserRegisteredServiceComponent} from './components/manage-user-reg
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import { ObligationGroupsPanelComponent } from './components/obligation-groups-panel/obligation-groups-panel.component';
 import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
+import { UserObligationStrategyForRegisteredServiceComponent } from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -26,7 +27,8 @@ const appRoutes: Routes = [
     ManageUserRegisteredServiceComponent,
     UserRegisteredServiceComponent,
     UserRegisteredServicesComponent,
-    ObligationGroupsPanelComponent
+    ObligationGroupsPanelComponent,
+    UserObligationStrategyForRegisteredServiceComponent
   ],
   imports: [
     BrowserModule,

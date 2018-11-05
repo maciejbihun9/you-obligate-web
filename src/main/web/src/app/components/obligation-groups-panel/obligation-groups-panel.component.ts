@@ -18,7 +18,6 @@ export class ObligationGroupsPanelComponent implements OnInit {
   ngOnInit() {
     this.userObligationGroupAccountService.getUserObligationGroupAccounts().subscribe(
       userObligationGroupAccounts => {
-        debugger;
         this.userObligationGroupAccounts = userObligationGroupAccounts;
       }
     );
