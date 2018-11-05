@@ -18,6 +18,9 @@ from './components/user-obligation-strategy-for-registered-service/user-obligati
 import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
 import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
+import { ObligationGroupComponent } from './components/obligation-group/obligation-group.component';
+import {ObligationGroupsService} from './services/obligation-groups.service';
+import { ObligationGroupImageComponent } from './components/obligation-group-image/obligation-group-image.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -35,7 +38,9 @@ const appRoutes: Routes = [
     UserObligationGroupsPanelComponent,
     UserObligationStrategyForRegisteredServiceComponent,
     CreateObligationPanelComponent,
-    ObligationGroupsViewComponent
+    ObligationGroupsViewComponent,
+    ObligationGroupComponent,
+    ObligationGroupImageComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatButtonModule
   ],
-  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService],
+  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService, ObligationGroupsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

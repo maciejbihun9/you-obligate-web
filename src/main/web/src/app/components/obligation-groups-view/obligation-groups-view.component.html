@@ -14,4 +14,7 @@
     <button mat-button color="primary">Search</button>
   </form>
   <hr>
+  <div>
+    <app-obligation-group *ngFor="let obligationGroup of obligationGroups" [obligationGroup]="obligationGroup"></app-obligation-group>
+  </div>
 </div>
