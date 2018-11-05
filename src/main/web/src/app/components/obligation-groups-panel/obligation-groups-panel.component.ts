@@ -9,7 +9,7 @@ import {UserObligationGroupAccountService} from '../../services/user-obligation-
 })
 export class ObligationGroupsPanelComponent implements OnInit {
 
-  public panelTitle = 'Obligation groups';
+  public panelTitle = 'Your obligation groups';
 
   userObligationGroupAccounts: Array<UserObligationGroupAccount> = [];
 
