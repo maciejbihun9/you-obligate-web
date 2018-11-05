@@ -13,6 +13,7 @@ import {UserRegisteredServiceComponent} from './components/user-registered-servi
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import { ObligationGroupsPanelComponent } from './components/obligation-groups-panel/obligation-groups-panel.component';
+import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -43,7 +44,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatButtonModule
   ],
-  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService],
+  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
