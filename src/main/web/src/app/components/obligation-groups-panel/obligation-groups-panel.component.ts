@@ -9,7 +9,6 @@ export class ObligationGroupsPanelComponent implements OnInit {
 
   public panelTitle = 'Obligation groups';
 
-
   constructor() { }
 
   ngOnInit() {
