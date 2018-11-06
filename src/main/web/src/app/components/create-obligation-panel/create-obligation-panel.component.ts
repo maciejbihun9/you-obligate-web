@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateObligationPanelComponent implements OnInit {
 
-  public panelTitle = 'Create obligation group';
-
   constructor() { }
 
   ngOnInit() {
