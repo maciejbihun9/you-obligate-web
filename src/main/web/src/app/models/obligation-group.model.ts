@@ -4,6 +4,7 @@ export interface ObligationGroup {
   groupCurrencyName: String;
   groupCurrencyShortcutName: String;
   amountOfCreatedMoney: number;
+  amountOfUsers: number;
   description: string;
-  logo;
+  logo: string;
 }

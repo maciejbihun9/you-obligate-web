@@ -5,6 +5,8 @@ import {ObligationGroup} from '../models/obligation-group.model';
 @Injectable()
 export class ObligationGroupsService {
 
+  private imagesUrls = ['../'];
+
   constructor() { }
 
   public getObligationGroups(): Observable<Array<ObligationGroup>> {
@@ -15,7 +17,9 @@ export class ObligationGroupsService {
         name: 'SPARTANS',
         groupCurrencyName: 'BIHUNS',
         groupCurrencyShortcutName: 'BHN',
-        description: 'We are looking  for true profesionalists with passion'
+        amountOfCreatedMoney: i * 23,
+        amountOfUsers: (i + 123) * 12,
+        description: 'We are looking  for true profesionalists with passion',
       };
       obligationGroups.push(obligationGroup);
       i++;
