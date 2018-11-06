@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-create-obligation-panel',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateObligationPanelComponent implements OnInit {
 
+  @Input() groupName: string;
+
+  availableFunds: number;
+  shortcutCurrencyName: string;
+  howManyUnitsToObligate: string;
+
+  public panelTitle;
+
   constructor() { }
 
   ngOnInit() {
+    this.panelTitle = `Obligate in ${this.groupName}`;
   }
 
 }
