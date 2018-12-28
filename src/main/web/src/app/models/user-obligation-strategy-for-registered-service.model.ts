@@ -6,7 +6,7 @@ export interface UserObligationStrategyForRegisteredService {
   unitOfWorkCost: number;
   interestRate: number;
   tooBigDebtFine: number;
-  debtUnitsLimit: number;
-  obligationGroup: ObligationGroup;
-  alreadyObligatedUnitsOfWork: number;
+  debtUnitsLimit?: number;
+  obligationGroup?: ObligationGroup;
+  alreadyObligatedUnitsOfWork?: number;
 }

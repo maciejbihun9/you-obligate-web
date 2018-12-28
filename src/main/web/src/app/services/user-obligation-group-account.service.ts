@@ -19,7 +19,7 @@ export class UserObligationGroupAccountService {
       moneyName: 'BIHUN',
       moneyShortcutName: 'BHN'
     };
-    for (let i = 0; i < 4; i++){
+    for (let i = 0; i < 4; i++) {
       const userObligationStrategyForRegisteredService: UserObligationStrategyForRegisteredService = {
         unitOfWork: UnitOfWork.HOUR,
         unitOfWorkCost: 100,
