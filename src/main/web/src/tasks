@@ -13,9 +13,9 @@
  - user comes and he wants to see all
  issued bonds in the given obligation group,
 
+ *
+
  questions:
- + should I display all list of bonds?:
- - yes, but I can filter it
 
  + Do I need to search offered services by tags?:
  - a user will be searching by tags,

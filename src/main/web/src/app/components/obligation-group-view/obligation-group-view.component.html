@@ -1,6 +1,4 @@
 <div>
-  <>
-  <div *ngFor="let bond of obligationGroupBonds">
-    {{ bond.id }} {{ bond.bondStatus }} {{ bond.numberOfUnitsToServe }} {{ bond.unitOfWorkCost }}
-  </div>
+  <app-bond-list-item *ngFor="let bond of obligationGroupBonds" [bond]="bond">
+  </app-bond-list-item>
 </div>
