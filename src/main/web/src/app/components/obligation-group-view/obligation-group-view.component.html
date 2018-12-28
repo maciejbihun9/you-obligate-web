@@ -1,4 +1,4 @@
 <div>
-  <app-bond-list-item *ngFor="let bond of obligationGroupBonds" [bond]="bond">
+  <app-bond-list-item *ngFor="let bond of obligationGroupBonds" [bond]="bond" [routerLink]="['/obligation-group/bond', bond.id]">
   </app-bond-list-item>
 </div>

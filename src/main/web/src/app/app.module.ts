@@ -23,12 +23,14 @@ import { ObligationGroupImageComponent } from './components/obligation-group-ima
 import { ObligationGroupViewComponent } from './components/obligation-group-view/obligation-group-view.component';
 import {ObligationGroupListItemComponent} from './components/obligation-group-list-item/obligation-group-list-item.component';
 import { BondListItemComponent } from './components/bond-list-item/bond-list-item.component';
+import { BondViewComponent } from './components/bond-view/bond-view.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
   { path: 'user-account/user-obligation-groups-panel', component: UserObligationGroupsPanelComponent },
   { path: 'create-obligation-group-panel', component: CreateObligationPanelComponent },
   { path: 'obligation-groups', component: ObligationGroupsViewComponent },
+  { path: 'obligation-group/bond/:bondId', component: BondViewComponent },
   { path: 'obligation-group/:obligationGroupId', component: ObligationGroupViewComponent },
 
 ];
@@ -46,7 +48,8 @@ const appRoutes: Routes = [
     ObligationGroupListItemComponent,
     ObligationGroupImageComponent,
     ObligationGroupViewComponent,
-    BondListItemComponent
+    BondListItemComponent,
+    BondViewComponent
   ],
   imports: [
     BrowserModule,

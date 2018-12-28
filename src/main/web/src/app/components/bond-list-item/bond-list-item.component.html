@@ -1,3 +1,8 @@
 <div>
-  {{ bond.id }} {{ bond.bondStatus }} {{ bond.numberOfUnitsToServe }} {{ bond.unitOfWorkCost }}
+  Id: {{ bond.id }}
+  Bond status: {{ bond.bondStatus }}
+  Number of units to serve: {{ bond.numberOfUnitsToServe }}
+  Unit of work cost: {{ bond.unitOfWorkCost }}
+  Registered service category: {{ bond.registeredServiceObligationStrategy.userRegisteredService.userRegisteredServiceCategory }}
+  Service name: {{ bond.registeredServiceObligationStrategy.userRegisteredService.serviceName }}
 </div>

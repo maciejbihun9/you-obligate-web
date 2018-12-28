@@ -13,25 +13,27 @@
  - user comes and he wants to see all
  issued bonds in the given obligation group,
 
- *
+ * make a draft of a bond view:
+ - do not care about styles, just much needed content,
+ - if everything will be ok, then I will style it
 
  questions:
+ + should I create all models in between?,
 
- + Do I need to search offered services by tags?:
- - a user will be searching by tags,
+ * create bond view - done:
+ - place there all info about bond itself,
+ - place there a photo of an bond issuer,
+ - place there an info about registered service,
+ - do not think about styling just yet,
+ - I have seen in previous projects that they were sending a lot of data and objects
+ at once,
+ - I will poll for bond data
 
- + why a user might enter group view?:
- - he is looking for a service units, i want someones service for me,
- - when I go one the page i do not want to see all services
+ questions:
+ + what should be on the bond item list to attract the user?:
+ - a user will have possibility to see what is under the bond straight away,
+ - he has to see on this bond list item at least category and service name,
+ so i need to have registered service associated with bond
+ - do not care about efficiency
 
- + should I display bonds?:
- - I will have bond issuer photo,
- - I have bond issuer,
- - I have available units of work,
- - I have active coupons,
-
- + should I display registered services?:
-
- + how I will be polling for obligation groups?:
- - with ids?, yeah I belive so
-
+ + user feelings after viewing this bond?
