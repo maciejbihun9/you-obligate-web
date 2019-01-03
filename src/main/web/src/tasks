@@ -20,9 +20,13 @@
  - cache obligation groups in the application
 
  implementation:
- - poll for all obligation groups,
- - receive the data and store it in a map
- - create a map {obligation_group_id, obligation group + bonds and all the data},
+ - poll for all obligation groups - done,
+ - receive the data and store it in a map - done,
+ - make a real http call under real url - done,
+ - find good url for your http call - done,
+ - poll for bonds associated with given obligation group,
+ - recall how to create good url in the application,
+ - create a map {obligation_group_id, obligation group + bonds and all the data} - done,
  - if the id already exists then i will get it from this map instead of getting it from the server,
 
  questions:

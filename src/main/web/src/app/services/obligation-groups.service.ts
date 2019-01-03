@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/internal/Observable';
 import {ObligationGroup} from '../models/obligation-group.model';
 import {Bond} from '../models/bond.model';
-import {UserRegisteredService} from '../models/user-registered-service.model';
-import {UserAccountInObligationGroup} from '../models/user-account-in-obligation-group';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class ObligationGroupsService {
@@ -12,9 +11,11 @@ export class ObligationGroupsService {
 
   private imagesUrls = ['../'];
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   public getObligationGroups(): Observable<Array<ObligationGroup>> {
+    const getObligationGroupsUrl = '/obligation-groups';
+    // return this.httpClient.get(getObligationGroupsUrl);
     const obligationGroups = [];
     let i = 0;
     while (i < 15) {
@@ -36,8 +37,11 @@ export class ObligationGroupsService {
     });
   }
 
-  public getBondsForObligationGroup(obligationGroupId): Observable<Array<Bond>>{
+  public getBondsForObligationGroup(obligationGroupId): Observable<Array<Bond>> {
     // create mocked data for this list
+    const getObligationGroupBondsUrl = `/obligation-groups/${obligationGroupId}/bonds`;
+    // return this.httpClient.get(getObligationGroupBondsUrl);
+
     const obligationGroupBonds = [];
     const registeredServiceObligationStrategy = {
       id: 5,
