@@ -18,9 +18,20 @@ export class ObligationGroupsViewComponent implements OnInit {
   constructor(private obligationGroupsService: ObligationGroupsService) { }
 
   ngOnInit() {
-    this.obligationGroupsService.getObligationGroups().subscribe(
-      obligationGroups => this.obligationGroups = obligationGroups
-    );
+    // fetch obligation groups data from cache is it was set before
+    if (ObligationGroupsService.obligationGroupsCache !== undefined) {
+      this.obligationGroups = ObligationGroupsService.obligationGroupsCache.values();
+    } else {
+      // if obligation groups cache is not set then make a http call to poll for it
+      this.obligationGroupsService.getObligationGroups().subscribe(
+        obligationGroups => {
+          ObligationGroupsService.obligationGroupsCache = new Map();
+          obligationGroups.forEach(obligationGroup => {
+            ObligationGroupsService.obligationGroupsCache.set(obligationGroup.id, obligationGroup);
+          });
+          this.obligationGroups = obligationGroups;
+        }
+      );
+    }
   }
-
 }

@@ -4,4 +4,7 @@
   <a routerLink="/user-account/registered-services-panel" routerLinkActive="active">Registered Services</a>
   <a routerLink="/user-account/user-obligation-groups-panel" routerLinkActive="active">Obligation groups</a>
 </nav>
+<div>
+  <div *ngFor="let item of items$ | async">{{item}}</div>
+</div>
 <router-outlet></router-outlet>

@@ -1,39 +1,32 @@
 
- * create all application flow on the UI side,
- - I will know what kind of call I will make to get the data for it,
- - btw., I haven't tried that yet, so let's try it, bro!,
+ * read about caching in Angular:
+ - read once, if I won't understand then I will try to read about those aspects i do not understand
 
- * make available for users to scroll down the list of groups - done
- - users are able to view all of them
+ * store obligation groups data:
+ solution #1 (read about caching in angular):
 
- * display obligation group home page - done,
- - obligation group name,
+ * display bond data in the bond view:
 
- * display list of bonds for given group - done:
- - user comes and he wants to see all
- issued bonds in the given obligation group,
+ * caching data:
+ strategy #1 (mapping obligation groups):
+ - user picks an obligation group,
+ - obligation group with all data is polled from
+ the database and that is stored on the client side,
+ - he goes to another group, another group data is polled,
+ - he goes back to previous group, but in this case the data is polled from the cache,
+ - each minute if changes were made the data is updated,
+ the server pushes new data and the UI is updated,
+ - we can make a feature when there is not many service units left to update UI more frequently,
+ - cache obligation groups in the application
 
- * make a draft of a bond view:
- - do not care about styles, just much needed content,
- - if everything will be ok, then I will style it
-
- questions:
- + should I create all models in between?,
-
- * create bond view - done:
- - place there all info about bond itself,
- - place there a photo of an bond issuer,
- - place there an info about registered service,
- - do not think about styling just yet,
- - I have seen in previous projects that they were sending a lot of data and objects
- at once,
- - I will poll for bond data
+ implementation:
+ - poll for all obligation groups,
+ - receive the data and store it in a map
+ - create a map {obligation_group_id, obligation group + bonds and all the data},
+ - if the id already exists then i will get it from this map instead of getting it from the server,
 
  questions:
- + what should be on the bond item list to attract the user?:
- - a user will have possibility to see what is under the bond straight away,
- - he has to see on this bond list item at least category and service name,
- so i need to have registered service associated with bond
- - do not care about efficiency
+ + I need the data about the obligation group at the very beginning?
+ - poll for obligation
 
- + user feelings after viewing this bond?
+

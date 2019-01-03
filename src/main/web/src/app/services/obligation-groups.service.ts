@@ -8,6 +8,8 @@ import {UserAccountInObligationGroup} from '../models/user-account-in-obligation
 @Injectable()
 export class ObligationGroupsService {
 
+  public static obligationGroupsCache;
+
   private imagesUrls = ['../'];
 
   constructor() { }
