@@ -7,16 +7,6 @@ import {Observable} from 'rxjs/internal/Observable';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-
-  public items$: Observable<Array<number>>;
-
-  constructor(private testService: TestService) {
-
-  }
-
-  ngOnInit(): void {
-    this.items$ = this.testService.getItems();
-  }
+export class AppComponent {
 
 }
