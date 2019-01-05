@@ -24,13 +24,23 @@
  - receive the data and store it in a map - done,
  - make a real http call under real url - done,
  - find good url for your http call - done,
- - poll for bonds associated with given obligation group,
- - recall how to create good url in the application,
+ - create a controller for obligation groups - done,
+ - poll for bonds associated with given obligation group - done,
+ - recall how to create good url in the application - done,
  - create a map {obligation_group_id, obligation group + bonds and all the data} - done,
  - if the id already exists then i will get it from this map instead of getting it from the server,
+ - when user clicks specific obligation group then poll for all bonds associated with it and associate
+ it with given object
+ - I am gonna fetch only bond, because i am gonna need that
 
  questions:
- + I need the data about the obligation group at the very beginning?
- - poll for obligation
+
+ * updating application data:
+ - count time from entering the
+ - after each 10min poll for
+
+ * learn how to test angular application
+
+
 
 

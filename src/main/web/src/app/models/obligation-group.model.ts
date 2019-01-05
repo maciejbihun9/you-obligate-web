@@ -1,3 +1,4 @@
+import {Bond} from './bond.model';
 
 export interface ObligationGroup {
   id?: number;
@@ -8,4 +9,5 @@ export interface ObligationGroup {
   amountOfUsers: number;
   description: string;
   logo: string;
+  issuedBonds: Array<Bond>;
 }
