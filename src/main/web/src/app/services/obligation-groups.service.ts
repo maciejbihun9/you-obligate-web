@@ -74,7 +74,7 @@ export class ObligationGroupsService {
   }
 
   public getObligationGroupsWithBonds(obligationGroupsIds: Array<number>): Observable<Array<ObligationGroup>>{
-    const getObligationGroupsWithBondsUrl = '/obligation-groups?obligationGroupsIds=';
+    const getObligationGroupsWithBondsUrl = '/obligation-groups-with-bonds?obligationGroupsIds=';
     // build full url
     for (let i = 0; i < obligationGroupsIds.length; i++) {
       getObligationGroupsWithBondsUrl.concat(obligationGroupsIds[i].toString());

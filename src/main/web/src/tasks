@@ -30,8 +30,8 @@
  - create a map {obligation_group_id, obligation group + bonds and all the data} - done,
  - if the id already exists then i will get it from this map instead of getting it from the server,
  - when user clicks specific obligation group then poll for all bonds associated with it and associate
- it with given object
- - I am gonna fetch only bond, because i am gonna need that
+ it with given object - done
+ - I am gonna fetch only bond, because i am gonna need that - done
 
  questions:
 
