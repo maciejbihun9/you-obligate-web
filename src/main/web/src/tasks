@@ -36,8 +36,16 @@
  questions:
 
  * updating application data:
- - count time from entering the
- - after each 10min poll for
+ - count time from entering the page
+ - after each 10min poll for the data for all obligation groups that exists in cache,
+ - one obligation group might be longer in cache than others but it does not matter,
+ - for now I will just set new array, later if this will be slow i will change it,
+ - I will poll for obligation groups with bonds, because this is the only way to fetch
+ the data,
+ - set the new cache,
+ - I have a reference to all cached obligation groups,
+ - if reference changes then all items in a list will change also,
+ - if not then i will create a subject and i will send it over observable,
 
  * learn how to test angular application
 

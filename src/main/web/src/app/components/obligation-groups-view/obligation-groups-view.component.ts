@@ -15,6 +15,10 @@ export class ObligationGroupsViewComponent implements OnInit {
 
   public obligationGroups: Array<ObligationGroup>;
 
+  private obligationGroupsCacheInterval;
+
+  private updateCacheTimeLeft = 600;
+
   constructor(private obligationGroupsService: ObligationGroupsService) { }
 
   ngOnInit() {
@@ -33,5 +37,26 @@ export class ObligationGroupsViewComponent implements OnInit {
         }
       );
     }
+    // start cache timer
+    this.updateCache();
+  }
+
+  public updateCache() {
+    this.obligationGroupsCacheInterval = setInterval(() => {
+      if (this.updateCacheTimeLeft > 0) {
+        this.updateCacheTimeLeft--;
+      } else {
+        this.updateCacheTimeLeft = 600;
+        // update cache
+        // get all cache keys
+        this.obligationGroupsService.getObligationGroupsWithBonds(ObligationGroupsService.obligationGroupsCache.keys()).subscribe(
+          obligationGroupsWithBonds => {
+            obligationGroupsWithBonds.forEach(obligationGroupWithBonds => {
+              ObligationGroupsService.obligationGroupsCache.set(obligationGroupWithBonds.id, obligationGroupWithBonds);
+            });
+          }
+        );
+      }
+    }, 1000);
   }
 }

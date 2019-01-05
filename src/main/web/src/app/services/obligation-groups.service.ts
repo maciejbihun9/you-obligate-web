@@ -11,7 +11,9 @@ export class ObligationGroupsService {
 
   private imagesUrls = ['../'];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+
+  }
 
   public getObligationGroups(): Observable<Array<ObligationGroup>> {
     const getObligationGroupsUrl = '/obligation-groups';
@@ -69,6 +71,20 @@ export class ObligationGroupsService {
     return new Observable<Array<Bond>>((observer) => {
       observer.next(obligationGroupBonds);
     });
+  }
+
+  public getObligationGroupsWithBonds(obligationGroupsIds: Array<number>): Observable<Array<ObligationGroup>>{
+    const getObligationGroupsWithBondsUrl = '/obligation-groups?obligationGroupsIds=';
+    // build full url
+    for (let i = 0; i < obligationGroupsIds.length; i++) {
+      getObligationGroupsWithBondsUrl.concat(obligationGroupsIds[i].toString());
+      if (i === obligationGroupsIds.length - 1) {
+        getObligationGroupsWithBondsUrl.concat('/bonds');
+        break;
+      }
+      getObligationGroupsWithBondsUrl.concat(',');
+    }
+    return this.httpClient.get<Array<ObligationGroup>>(getObligationGroupsWithBondsUrl);
   }
 
 }
