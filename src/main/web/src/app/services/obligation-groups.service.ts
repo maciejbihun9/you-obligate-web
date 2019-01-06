@@ -9,6 +9,8 @@ export class ObligationGroupsService {
 
   public static obligationGroupsCache;
 
+  public static readonly issuedBondsString = 'issuedBonds';
+
   private imagesUrls = ['../'];
 
   constructor(private httpClient: HttpClient) {

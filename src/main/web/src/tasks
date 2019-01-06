@@ -1,53 +1,5 @@
 
- * read about caching in Angular:
- - read once, if I won't understand then I will try to read about those aspects i do not understand
-
- * store obligation groups data:
- solution #1 (read about caching in angular):
-
- * display bond data in the bond view:
-
- * caching data:
- strategy #1 (mapping obligation groups):
- - user picks an obligation group,
- - obligation group with all data is polled from
- the database and that is stored on the client side,
- - he goes to another group, another group data is polled,
- - he goes back to previous group, but in this case the data is polled from the cache,
- - each minute if changes were made the data is updated,
- the server pushes new data and the UI is updated,
- - we can make a feature when there is not many service units left to update UI more frequently,
- - cache obligation groups in the application
-
- implementation:
- - poll for all obligation groups - done,
- - receive the data and store it in a map - done,
- - make a real http call under real url - done,
- - find good url for your http call - done,
- - create a controller for obligation groups - done,
- - poll for bonds associated with given obligation group - done,
- - recall how to create good url in the application - done,
- - create a map {obligation_group_id, obligation group + bonds and all the data} - done,
- - if the id already exists then i will get it from this map instead of getting it from the server,
- - when user clicks specific obligation group then poll for all bonds associated with it and associate
- it with given object - done
- - I am gonna fetch only bond, because i am gonna need that - done
-
- questions:
-
- * updating application data:
- - count time from entering the page
- - after each 10min poll for the data for all obligation groups that exists in cache,
- - one obligation group might be longer in cache than others but it does not matter,
- - for now I will just set new array, later if this will be slow i will change it,
- - I will poll for obligation groups with bonds, because this is the only way to fetch
- the data,
- - set the new cache,
- - I have a reference to all cached obligation groups,
- - if reference changes then all items in a list will change also,
- - if not then i will create a subject and i will send it over observable,
-
- * learn how to test angular application
+ *
 
 
 
