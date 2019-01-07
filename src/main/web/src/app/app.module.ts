@@ -24,6 +24,7 @@ import {ObligationGroupListItemComponent} from './components/obligation-group-li
 import { BondListItemComponent } from './components/bond-list-item/bond-list-item.component';
 import { BondViewComponent } from './components/bond-view/bond-view.component';
 import {TestService} from './services/test.service';
+import {CreateObligationGroupPanelComponent} from './components/create-obligation-group-panel/create-obligation-group-panel.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -44,6 +45,7 @@ const appRoutes: Routes = [
     UserObligationGroupsPanelComponent,
     UserObligationStrategyForRegisteredServiceComponent,
     CreateObligationPanelComponent,
+    CreateObligationGroupPanelComponent,
     ObligationGroupsViewComponent,
     ObligationGroupListItemComponent,
     ObligationGroupImageComponent,

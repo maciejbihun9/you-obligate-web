@@ -1,6 +1,25 @@
 
- *
+ * fix problem with removing cache after refresh:
+ - actually hitting f5 this is what a user expects after that, he wants totally fresh copy
+ of the data, right?,
+ so if this is an expected behaviour then I have to provide section for clear cache copy
+ - after refresh cache is lost,
+ - after refresh on particular site cache is lost also, data is polled from the server, but
+ it is not cached after all,
+
+ implementation:
+ - a user enters the page for the first time,
+ - obligation groups are polled in the cache,
+ - he gets bonds for it and displays,
+ - bonds are saved in the cache,
+ - bonds are not stored in cache just for now
+
+ questions:
+ +
 
 
+
+ wnioski:
+ - aplication effeciency ont at the end!!!
 
 

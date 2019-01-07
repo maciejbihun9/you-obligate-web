@@ -14,23 +14,16 @@ export class ObligationGroupViewComponent implements OnInit {
 
   public obligationGroupBonds = undefined;
 
+  public obligationGroupWithBonds: ObligationGroup = undefined;
+
   constructor(private route: ActivatedRoute, private obligationGroupsService: ObligationGroupsService) {}
 
   ngOnInit() {
-    // obligation group bonds were already set then get it from cache
     this.route.params.subscribe(params => {
       this.obligationGroupId = +params['obligationGroupId'];
-      const obligationGroup = ObligationGroupsService.obligationGroupsCache.get(this.obligationGroupId);
-      if (ObligationGroupsService.issuedBondsString in obligationGroup) {
-        this.obligationGroupBonds = ObligationGroupsService.obligationGroupsCache.get(this.obligationGroupId).issuedBonds;
-      } else {
-        // bonds were not set
-        this.obligationGroupsService.getBondsForObligationGroup(this.obligationGroupId).subscribe(obligationGroupBonds => {
-          this.obligationGroupBonds = obligationGroupBonds;
-          // set cache obligation group bonds
-          ObligationGroupsService.obligationGroupsCache.get(this.obligationGroupId).issuedBonds = obligationGroupBonds;
-        });
-      }
+      this.obligationGroupsService.getBondsForObligationGroup(this.obligationGroupId).subscribe(obligationGroupBonds => {
+        this.obligationGroupBonds = obligationGroupBonds;
+      });
     });
   }
 }

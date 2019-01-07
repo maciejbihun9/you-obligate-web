@@ -2,20 +2,5 @@
   <h1>{{ panelTitle }}</h1>
   <p>Available funds: {{availableFunds}} {{shortcutCurrencyName}}</p>
   <input matInput [(ngModel)]="howManyUnitsToObligate" placeholder="Number of units in obligation"/>
-  <div>
-    <p>Unit salary</p>
-    <p>{{unitSalary}}</p>
-  </div>
-  <div>
-    <p>Initial interest rate</p>
-    <p>{{initialInterestRate}} %</p>
-  </div>
-  <div>
-    <p>Too big debt fine</p>
-    <p>{{tooBigDebtFine}}</p>
-  </div>
-  <div>
-    {{howManyUnitsToObligate}} x {{unitSalary}} = {{howManyUnitsToObligate}}
-  </div>
 
 </div>

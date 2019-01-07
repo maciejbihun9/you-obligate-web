@@ -23,25 +23,21 @@ export class ObligationGroupsViewComponent implements OnInit {
 
   ngOnInit() {
     // fetch obligation groups data from cache is it was set before
-    if (ObligationGroupsService.obligationGroupsCache !== undefined) {
-      this.obligationGroups = ObligationGroupsService.obligationGroupsCache.values();
-    } else {
       // if obligation groups cache is not set then make a http call to poll for it
-      this.obligationGroupsService.getObligationGroups().subscribe(
-        obligationGroups => {
-          ObligationGroupsService.obligationGroupsCache = new Map();
-          obligationGroups.forEach(obligationGroup => {
-            ObligationGroupsService.obligationGroupsCache.set(obligationGroup.id, obligationGroup);
-          });
-          this.obligationGroups = obligationGroups;
-        }
-      );
-    }
+    this.obligationGroupsService.getObligationGroups().subscribe(
+      obligationGroups => {
+        /*ObligationGroupsService.obligationGroupsCache = new Map();
+        obligationGroups.forEach(obligationGroup => {
+          ObligationGroupsService.obligationGroupsCache.set(obligationGroup.id, obligationGroup);
+        });*/
+        this.obligationGroups = obligationGroups;
+      }
+    );
     // start cache timer
-    this.updateCache();
+    //this.updateCache();
   }
 
-  public updateCache() {
+  /*public updateCache() {
     this.obligationGroupsCacheInterval = setInterval(() => {
       if (this.updateCacheTimeLeft > 0) {
         this.updateCacheTimeLeft--;
@@ -58,5 +54,5 @@ export class ObligationGroupsViewComponent implements OnInit {
         );
       }
     }, 1000);
-  }
+  }*/
 }
