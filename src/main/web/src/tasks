@@ -14,10 +14,34 @@
  - bonds are saved in the cache,
  - bonds are not stored in cache just for now
 
+ * place bond data in the bond view:
+ - do not care about placement, only content
+ - purchase bond units
+ - this will open another window to specify the amount of items to purchase
+ - the data is already polled,
+ - pass bond data just as a simple item
+
  questions:
- +
+ + what should be in the bond view?;
+ - who issued it,
+ - the amount of units to serve,
+ - registered service data,
+ - created date time,
+ - unit of work cost
+ - registered service informations
 
+ * purchase coupons:
+ - place everything in the middle,
+ - create the same view as transfer wise,
+ - click purchase coupons,
+ - show another view,
 
+ questions:
+ + what to show on this view:
+ - user account balance,
+ - the amount of left units,
+ - price for one unit
+ - place where I can specify amount of units to buy
 
  wnioski:
  - aplication effeciency ont at the end!!!

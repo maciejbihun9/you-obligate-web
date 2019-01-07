@@ -1,3 +1,19 @@
-<p>
-  bond-view works!
-</p>
+<div>
+  <p>Bond status:</p>
+  {{ bond.bondStatus }}
+  <p>Unit of work cost:</p>
+  {{ bond.unitOfWorkCost }}
+  <p>Number of units to serve:</p>
+  {{ bond.numberOfUnitsToServe }}
+  <div>
+    <h2>Registered service details:</h2>
+    <p>Service name:</p>
+    <p>{{bond.registeredServiceObligationStrategy.userRegisteredService.serviceName}}</p>
+    <p>Registered service category:</p>
+    <p>{{bond.registeredServiceObligationStrategy.userRegisteredService.userRegisteredServiceCategory}}</p>
+    <p>Service description:</p>
+    <p>{{bond.registeredServiceObligationStrategy.userRegisteredService.serviceDescription}}</p>
+    <p>Experience description:</p>
+    <p>{{bond.registeredServiceObligationStrategy.userRegisteredService.experienceDescription}}</p>
+  </div>
+</div>
