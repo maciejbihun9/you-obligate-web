@@ -43,10 +43,12 @@
  - price for one unit
  - place where I can specify amount of units to buy
 
- + how to go to another page sending data and having list item
+ implementation:
+ - click purchase coupons button,
+ - open a new window
 
- wnioski:
- - aplication effeciency ont at the end!!!
+ aftermaths:
+ - application efficiency is not at the end!!!
 
  * pass data to angular component:
  - I can poll for the data using service because If I pass the data
@@ -58,4 +60,16 @@
  questions:
  + do I want to show purchase coupons in bond view?:
  - maybe for now I do not want to poll for purchase coupons, just simple registered service
+ + should I send the data to that view?
+ - a user might open a bond view, read stuff about register service
+ see the amount of units make decisions
+ - during his reading the data might be stale, so it must be refreshed,
+ - here we have very important and valnurable data, so it must be refreshed very frequently,
+ - so when i go to the view I must poll for it again and check the amount of items
+ + how to create url for this new view?:
+ - just navigate with id
+ + how to get user account status?:
+ - I am gonna poll for the data, because account status might change frequently, even during
+ doing stuff on the page,
+ - I have to have refreshed data
 

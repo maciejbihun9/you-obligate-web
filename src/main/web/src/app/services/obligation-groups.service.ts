@@ -17,6 +17,11 @@ export class ObligationGroupsService {
 
   }
 
+  public getObligationGroup(obligationGroupId: number): Observable<ObligationGroup> {
+    const getObligationGroupUrl = `/obligation-groups/${obligationGroupId}`;
+    return this.httpClient.get<ObligationGroup>(getObligationGroupUrl);
+  }
+
   public getObligationGroups(): Observable<Array<ObligationGroup>> {
     const getObligationGroupsUrl = '/obligation-groups';
     // return this.httpClient.get(getObligationGroupsUrl);

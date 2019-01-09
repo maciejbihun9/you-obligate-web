@@ -13,6 +13,8 @@ export class BondViewComponent implements OnInit {
 
   public bondId = undefined;
 
+  public obligationGroupId = undefined;
+
   public bond: Bond;
 
   constructor(private route: ActivatedRoute, private bondService: BondService) {}
@@ -20,9 +22,10 @@ export class BondViewComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.bondId = +params['bondId'];
-      this.bondService.getBond(this.bondId).subscribe(bond => {
+      this.obligationGroupId = +params['obligationGroupId'];
+      /*this.bondService.getBond(this.bondId).subscribe(bond => {
         this.bond = bond;
-      });
+      });*/
     });
   }
 

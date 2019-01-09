@@ -25,15 +25,17 @@ import { BondListItemComponent } from './components/bond-list-item/bond-list-ite
 import { BondViewComponent } from './components/bond-view/bond-view.component';
 import {TestService} from './services/test.service';
 import {CreateObligationGroupPanelComponent} from './components/create-obligation-group-panel/create-obligation-group-panel.component';
+import { PurchaseCouponsViewComponent } from './components/purchase-coupons-view/purchase-coupons-view.component';
+import {BondService} from './services/bond.service';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
   { path: 'user-account/user-obligation-groups-panel', component: UserObligationGroupsPanelComponent },
   { path: 'create-obligation-group-panel', component: CreateObligationPanelComponent },
   { path: 'obligation-groups', component: ObligationGroupsViewComponent },
-  { path: 'obligation-group/bond/:bondId', component: BondViewComponent },
-  { path: 'obligation-group/:obligationGroupId', component: ObligationGroupViewComponent },
-
+  { path: 'obligation-groups/:obligationGroupId/bonds/:bondId', component: BondViewComponent },
+  { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
+  { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
 ];
 
 @NgModule({
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     ObligationGroupImageComponent,
     ObligationGroupViewComponent,
     BondListItemComponent,
-    BondViewComponent
+    BondViewComponent,
+    PurchaseCouponsViewComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +72,7 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatButtonModule
   ],
-  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService, ObligationGroupsService, TestService],
+  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService, ObligationGroupsService, TestService, BondService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

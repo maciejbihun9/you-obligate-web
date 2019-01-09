@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="bond">
   <p>Bond status:</p>
   {{ bond.bondStatus }}
   <p>Unit of work cost:</p>
@@ -16,7 +16,9 @@
     <p>Experience description:</p>
     <p>{{bond.registeredServiceObligationStrategy.userRegisteredService.experienceDescription}}</p>
   </div>
-  <div>
+</div>
+<div>
+  <a [routerLink]="['/obligation-groups', obligationGroupId, 'bonds', bondId, 'purchase-coupons']">
     <button mat-raised-button color="primary">Purchase service units</button>
-  </div>
+  </a>
 </div>
