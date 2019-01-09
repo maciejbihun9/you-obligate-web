@@ -44,9 +44,18 @@
  - place where I can specify amount of units to buy
 
  + how to go to another page sending data and having list item
- -
 
  wnioski:
  - aplication effeciency ont at the end!!!
 
+ * pass data to angular component:
+ - I can poll for the data using service because If I pass the data
+ from a list
+ - I am gonna poll for list item data every single time, because
+ I want to have fresh copy of each item, i do not want to have stale data,
+ I do not want to cache anything for now
+
+ questions:
+ + do I want to show purchase coupons in bond view?:
+ - maybe for now I do not want to poll for purchase coupons, just simple registered service
 
