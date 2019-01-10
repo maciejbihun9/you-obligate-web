@@ -1,9 +1,20 @@
 
  * poll for user account balance in given group:
  - get login user Id,
- - poll for logged in user,
+ - poll for logged-in user,
+ - poll for logged-in user account data
  - get user account in given obligation group,
  - get available user balance in given obligation group,
+
+ + how to implement getting user account balance?:
+ - the user account balance in given group,
+ - user contains all accounts, should i poll for all accounts?
+ - get all accounts in given obligation group and for given user,
+ a user might have couple accounts, so specifying also an obligation group I will have
+ the exact user account
+ - a user can have only one account in given group,
+ - get user account that exists in given obligation group,
+ - get obligationGroup id
 
  * create a purchase coupons view:
  - provide test data for this view,

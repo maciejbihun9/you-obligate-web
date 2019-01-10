@@ -7,6 +7,7 @@ import {ObligationGroup} from '../../models/obligation-group.model';
 import {UserRegisteredServiceEntity} from '../../models/user-registered-service-entity.model';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user.model';
+import {UserObligationGroupAccountService} from '../../services/user-obligation-group-account.service';
 
 @Component({
   selector: 'app-purchase-coupons-view',
@@ -28,11 +29,13 @@ export class PurchaseCouponsViewComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private bondService: BondService,
               private userService: UserService,
+              private userObligationGroupAccountService: UserObligationGroupAccountService,
               private obligationGroupService: ObligationGroupsService) {
   }
 
   ngOnInit() {
     // poll for logged in user
+
     this.userService.getLoggedInUser().subscribe(user => {
       this.loggedInUser = user;
     });
@@ -40,6 +43,10 @@ export class PurchaseCouponsViewComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.obligationGroupId = +params['obligationGroupId'];
       this.bondId = +params['bondId'];
+
+      this.userObligationGroupAccountService.getUserAccountBalanceInGivenObligationGroup(this.obligationGroupId).subscribe(accountBalance => {
+
+      });
 
       this.obligationGroupService.getObligationGroup(this.obligationGroupId).subscribe(obligationGroup => {
         this.obligationGroup = obligationGroup;

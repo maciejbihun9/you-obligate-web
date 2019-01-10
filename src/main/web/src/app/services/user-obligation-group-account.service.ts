@@ -10,7 +10,15 @@ import {UnitOfWork} from '../models/unit-of-work.model';
 @Injectable()
 export class UserObligationGroupAccountService {
 
-  constructor(http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
+
+  public getUserAccountBalanceInGivenObligationGroup(obligationGroupId: number): Observable<number> {
+    /*const url = `/user-account-in-obligation-group/${obligationGroupId}/user-account-balance/`;
+    return this.httpClient.get<number>(url);*/
+    return new Observable((observer) => {
+      observer.next(100.00);
+    });
+  }
 
   public getUserObligationGroupAccounts(): Observable<Array<UserObligationGroupAccount>> {
     const userObligationGroupAccounts = [];
