@@ -1,10 +1,7 @@
 
  * poll for user account balance in given group:
- - get login user Id,
- - poll for logged-in user,
- - poll for logged-in user account data
- - get user account in given obligation group,
- - get available user balance in given obligation group,
+ - poll for logged-in user account data - done,
+ - place available amount of units to serve in the view
 
  + how to implement getting user account balance?:
  - the user account balance in given group,
