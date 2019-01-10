@@ -55,8 +55,7 @@ const appRoutes: Routes = [
     ObligationGroupViewComponent,
     BondListItemComponent,
     BondViewComponent,
-    PurchaseCouponsViewComponent,
-    UserServiceComponent
+    PurchaseCouponsViewComponent
   ],
   imports: [
     BrowserModule,
