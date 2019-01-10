@@ -26,6 +26,8 @@ export class PurchaseCouponsViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    // poll for logged in user
+
     this.route.params.subscribe(params => {
       this.obligationGroupId = +params['obligationGroupId'];
       this.bondId = +params['bondId'];

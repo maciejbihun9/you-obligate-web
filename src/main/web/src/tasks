@@ -1,75 +1,10 @@
 
- * fix problem with removing cache after refresh:
- - actually hitting f5 this is what a user expects after that, he wants totally fresh copy
- of the data, right?,
- so if this is an expected behaviour then I have to provide section for clear cache copy
- - after refresh cache is lost,
- - after refresh on particular site cache is lost also, data is polled from the server, but
- it is not cached after all,
+ * poll for user account balance in given group:
+ - get login user Id,
+ - poll for logged in user,
+ - get user account in given obligation group,
+ - get available user balance in given obligation group,
 
- implementation:
- - a user enters the page for the first time,
- - obligation groups are polled in the cache,
- - he gets bonds for it and displays,
- - bonds are saved in the cache,
- - bonds are not stored in cache just for now
-
- * place bond data in the bond view:
- - do not care about placement, only content
- - purchase bond units
- - this will open another window to specify the amount of items to purchase
- - the data is already polled,
- - pass bond data just as a simple item
-
- questions:
- + what should be in the bond view?;
- - who issued it,
- - the amount of units to serve,
- - registered service data,
- - created date time,
- - unit of work cost
- - registered service informations
-
- * purchase coupons:
- - place everything in the middle,
- - create the same view as transfer wise,
- - click purchase coupons,
- - show another view,
-
- questions:
- + what to show on this view:
- - user account balance,
- - the amount of left units,
- - price for one unit
- - place where I can specify amount of units to buy
-
- implementation:
- - click purchase coupons button,
- - open a new window
-
- aftermaths:
- - application efficiency is not at the end!!!
-
- * pass data to angular component:
- - I can poll for the data using service because If I pass the data
- from a list
- - I am gonna poll for list item data every single time, because
- I want to have fresh copy of each item, i do not want to have stale data,
- I do not want to cache anything for now
-
- questions:
- + do I want to show purchase coupons in bond view?:
- - maybe for now I do not want to poll for purchase coupons, just simple registered service
- + should I send the data to that view?
- - a user might open a bond view, read stuff about register service
- see the amount of units make decisions
- - during his reading the data might be stale, so it must be refreshed,
- - here we have very important and valnurable data, so it must be refreshed very frequently,
- - so when i go to the view I must poll for it again and check the amount of items
- + how to create url for this new view?:
- - just navigate with id
- + how to get user account status?:
- - I am gonna poll for the data, because account status might change frequently, even during
- doing stuff on the page,
- - I have to have refreshed data
-
+ * create a purchase coupons view:
+ - provide test data for this view,
+ - create a section for protecting against bad data case

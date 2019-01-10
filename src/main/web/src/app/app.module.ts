@@ -27,6 +27,7 @@ import {TestService} from './services/test.service';
 import {CreateObligationGroupPanelComponent} from './components/create-obligation-group-panel/create-obligation-group-panel.component';
 import { PurchaseCouponsViewComponent } from './components/purchase-coupons-view/purchase-coupons-view.component';
 import {BondService} from './services/bond.service';
+import {UserService} from './services/user.service';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
     ObligationGroupViewComponent,
     BondListItemComponent,
     BondViewComponent,
-    PurchaseCouponsViewComponent
+    PurchaseCouponsViewComponent,
+    UserServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +74,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatButtonModule
   ],
-  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService, ObligationGroupsService, TestService, BondService],
+  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService,
+    ObligationGroupsService, TestService, BondService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
