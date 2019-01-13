@@ -6,11 +6,10 @@ export class MarketTransactionsService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public makePurchase(amountOfUnitsToBuy: number) {
+  public makePurchase(purchaseObject: Object) {
     // send user data to the server
-    const url = '/market-transactions';
-    const amountOfUnitsToBuyObject = {amountOfUnitsToBuy: amountOfUnitsToBuy};
-    this.httpClient.post(url, amountOfUnitsToBuyObject);
+    const url = '/market-transactions/make-purchase';
+    this.httpClient.post(url, purchaseObject);
   }
 
 }

@@ -91,7 +91,8 @@ export class PurchaseCouponsViewComponent implements OnInit {
   }
 
   public makePurchase() {
-    this.marketTransactionsService.makePurchase(this.amountOfUnitsToBuy);
+    const purchaseObject = {bond: this.bond, amountOfUnitsToBuy: this.amountOfUnitsToBuy};
+    this.marketTransactionsService.makePurchase(purchaseObject);
   }
 
 }
