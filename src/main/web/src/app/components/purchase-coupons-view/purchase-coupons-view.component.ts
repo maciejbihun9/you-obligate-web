@@ -9,6 +9,7 @@ import {UserService} from '../../services/user.service';
 import {User} from '../../models/user.model';
 import {UserObligationGroupAccountService} from '../../services/user-obligation-group-account.service';
 import {MarketTransactionsService} from '../../services/market-transactions.service';
+import {PurchaseDataObjectModel} from '../../models/purchase-data-object.model';
 
 @Component({
   selector: 'app-purchase-coupons-view',
@@ -91,7 +92,7 @@ export class PurchaseCouponsViewComponent implements OnInit {
   }
 
   public makePurchase() {
-    const purchaseObject = {bond: this.bond, amountOfUnitsToBuy: this.amountOfUnitsToBuy};
+    const purchaseObject: PurchaseDataObjectModel = {bond: this.bond, amountOfUnitsToBuy: this.amountOfUnitsToBuy};
     this.marketTransactionsService.makePurchase(purchaseObject);
   }
 
