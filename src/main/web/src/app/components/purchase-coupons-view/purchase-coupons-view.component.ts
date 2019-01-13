@@ -8,6 +8,7 @@ import {UserRegisteredServiceEntity} from '../../models/user-registered-service-
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user.model';
 import {UserObligationGroupAccountService} from '../../services/user-obligation-group-account.service';
+import {MarketTransactionsService} from '../../services/market-transactions.service';
 
 @Component({
   selector: 'app-purchase-coupons-view',
@@ -32,11 +33,14 @@ export class PurchaseCouponsViewComponent implements OnInit {
 
   public userAccountBalanceInObligationGroup: number = undefined;
 
+  makePurchaseButtonEnabled = false;
+
   constructor(private route: ActivatedRoute,
               private bondService: BondService,
               private userService: UserService,
               private userObligationGroupAccountService: UserObligationGroupAccountService,
-              private obligationGroupService: ObligationGroupsService) {
+              private obligationGroupService: ObligationGroupsService,
+              private marketTransactionsService: MarketTransactionsService) {
   }
 
   ngOnInit() {
@@ -61,10 +65,12 @@ export class PurchaseCouponsViewComponent implements OnInit {
         this.bond = bond;
       });
     });
+    this.computeTotalCost();
   }
 
   public computeTotalCost() {
     // check if this is a number
+    this.makePurchaseButtonEnabled = true;
     if (isNaN(this.amountOfUnitsToBuy)) {
       console.log('This is not a number');
       return;
@@ -77,7 +83,15 @@ export class PurchaseCouponsViewComponent implements OnInit {
     const totalCost = this.bond.unitOfWorkCost * this.amountOfUnitsToBuy;
     if (totalCost > this.userAccountBalanceInObligationGroup) {
       console.log('You can not make a purchase');
+      return;
     }
+    // enable make purchase button if numbers are ok
+    this.makePurchaseButtonEnabled = false;
     this.totalCost = totalCost;
   }
+
+  public makePurchase() {
+    this.marketTransactionsService.makePurchase(this.amountOfUnitsToBuy);
+  }
+
 }

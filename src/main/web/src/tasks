@@ -22,3 +22,18 @@
  - provide test data for this view,
  - create a section for protecting against bad data case
 
+ * add a feature that will be able to make a purchase:
+ - click make a purchase button,
+ - send the data to the server and check if the numbers are ok,
+ and there,
+ - send purchase object to the server
+ - if numbers changed and are not updated then resent that
+ to the user and update the UI,
+ - if are ok then make a purchase,
+ - withdraw the correct amount of units from the user account,
+ - cut off the correct amount of update accounts,
+ - provide an info about success full purchase,
+
+ questions:
+ + how to create a purchase object
+
