@@ -18,17 +18,18 @@ export class ObligationGroupsService {
   }
 
   public getObligationGroup(obligationGroupId: number): Observable<ObligationGroup> {
-    const getObligationGroupUrl = `/obligation-groups/${obligationGroupId}`;
-    return this.httpClient.get<ObligationGroup>(getObligationGroupUrl);
-    /*const obligationGroup = {
+    /*const getObligationGroupUrl = `/obligation-groups/${obligationGroupId}`;
+    return this.httpClient.get<ObligationGroup>(getObligationGroupUrl);*/
+    const obligationGroup = {
       id: obligationGroupId,
-    name: 'BHN group',
-    groupCurrencyName: 'Bihun',
-    groupCurrencyShortcutName: 'BHN'
+      accountBalance: 1000,
+      name: 'BHN group',
+      groupCurrencyName: 'Bihun',
+      groupCurrencyShortcutName: 'BHN'
     };
     return new Observable<ObligationGroup>((observer) => {
       observer.next(obligationGroup);
-    });*/
+    });
   }
 
   public getObligationGroups(): Observable<Array<ObligationGroup>> {

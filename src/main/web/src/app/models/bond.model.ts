@@ -5,5 +5,5 @@ export interface Bond {
   bondStatus: string;
   numberOfUnitsToServe: number;
   unitOfWorkCost: number;
-  registeredServiceObligationStrategy: RegisteredServiceObligationStrategy;
+  registeredServiceObligationStrategy?: RegisteredServiceObligationStrategy;
 }

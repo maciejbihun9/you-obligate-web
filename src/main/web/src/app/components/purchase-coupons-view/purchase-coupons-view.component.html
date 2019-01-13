@@ -1,13 +1,13 @@
 <div>
   <p>Your actual balance in this group:</p>
-  <p>{{ obligationGroup.accountBalance }}</p>
+  <p>{{ userAccountBalanceInObligationGroup }}</p>
   <p>Amount of units left to serve in this bond: </p>
   <p>{{ bond.numberOfUnitsToServe }}</p>
   <p>One unit price: </p>
   <p>{{ bond.unitOfWorkCost }} {{ obligationGroup.groupCurrencyShortcutName }}</p>
   <hr>
   <p>Purchase of:</p>
-  <input #amountOfUnitsToBuy matInput placeholder="Purchase of" value="1">
-  <p>Total price: {{ bond.unitOfWorkCost * amountOfUnitsToBuy.value}}</p>
+  <input [(ngModel)]="amountOfUnitsToBuy" (ngModelChange)="computeTotalCost()" matInput placeholder="Purchase of" value="1">
+  <p>Total price: {{ bond.unitOfWorkCost * amountOfUnitsToBuy}}</p>
   <button mat-raised-button color="primary">Make a purchase</button>
 </div>

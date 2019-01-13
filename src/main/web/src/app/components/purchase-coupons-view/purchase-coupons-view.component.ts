@@ -26,6 +26,12 @@ export class PurchaseCouponsViewComponent implements OnInit {
 
   public loggedInUser: User;
 
+  public amountOfUnitsToBuy = 1;
+
+  public totalCost;
+
+  public userAccountBalanceInObligationGroup: number = undefined;
+
   constructor(private route: ActivatedRoute,
               private bondService: BondService,
               private userService: UserService,
@@ -35,7 +41,6 @@ export class PurchaseCouponsViewComponent implements OnInit {
 
   ngOnInit() {
     // poll for logged in user
-
     this.userService.getLoggedInUser().subscribe(user => {
       this.loggedInUser = user;
     });
@@ -44,8 +49,8 @@ export class PurchaseCouponsViewComponent implements OnInit {
       this.obligationGroupId = +params['obligationGroupId'];
       this.bondId = +params['bondId'];
 
-      this.userObligationGroupAccountService.getUserAccountBalanceInGivenObligationGroup(this.obligationGroupId).subscribe(accountBalance => {
-
+      this.userObligationGroupAccountService.getUserAccountBalanceInGivenObligationGroup(this.obligationGroupId).subscribe(userAccountBalanceInObligationGroup => {
+        this.userAccountBalanceInObligationGroup = userAccountBalanceInObligationGroup;
       });
 
       this.obligationGroupService.getObligationGroup(this.obligationGroupId).subscribe(obligationGroup => {
@@ -56,5 +61,19 @@ export class PurchaseCouponsViewComponent implements OnInit {
         this.bond = bond;
       });
     });
+  }
+
+  public computeTotalCost(){
+    // check if this is a number
+    if (isNaN(this.amountOfUnitsToBuy)){
+      console.log("This is not a number");
+      return;
+    }
+    console.log('This is a number: ' + this.amountOfUnitsToBuy);
+    const totalCost = this.bond.unitOfWorkCost * this.amountOfUnitsToBuy;
+    if (totalCost > this.userAccountBalanceInObligationGroup){
+      console.log("You can not make a purchase");
+    }
+    this.totalCost = totalCost;
   }
 }

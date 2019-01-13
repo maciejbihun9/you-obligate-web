@@ -2,6 +2,11 @@
  * poll for user account balance in given group:
  - poll for logged-in user account data - done,
  - place available amount of units to serve in the view
+ - develop counting numbers
+
+ * develop counting the result:
+ - after receiving
+ - after each
 
  + how to implement getting user account balance?:
  - the user account balance in given group,
@@ -16,3 +21,9 @@
  * create a purchase coupons view:
  - provide test data for this view,
  - create a section for protecting against bad data case
+
+ * secure amount of units input item:
+ - get input variable
+ - try to parse it to a number,
+ - if can not be parsed, show a message that it supposed to be a number,
+ - call this function after each click

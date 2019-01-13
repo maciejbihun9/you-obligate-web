@@ -6,8 +6,8 @@ export interface ObligationGroup {
   groupCurrencyName: String;
   groupCurrencyShortcutName: String;
   accountBalance: number;
-  amountOfUsers: number;
-  description: string;
-  logo: string;
-  issuedBonds: Array<Bond>;
+  amountOfUsers?: number;
+  description?: string;
+  logo?: string;
+  issuedBonds?: Array<Bond>;
 }
