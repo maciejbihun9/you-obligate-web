@@ -63,16 +63,20 @@ export class PurchaseCouponsViewComponent implements OnInit {
     });
   }
 
-  public computeTotalCost(){
+  public computeTotalCost() {
     // check if this is a number
-    if (isNaN(this.amountOfUnitsToBuy)){
-      console.log("This is not a number");
+    if (isNaN(this.amountOfUnitsToBuy)) {
+      console.log('This is not a number');
+      return;
+    }
+    if (this.amountOfUnitsToBuy > this.bond.numberOfUnitsToServe) {
+      console.log('There is not enough number of units to serve');
       return;
     }
     console.log('This is a number: ' + this.amountOfUnitsToBuy);
     const totalCost = this.bond.unitOfWorkCost * this.amountOfUnitsToBuy;
-    if (totalCost > this.userAccountBalanceInObligationGroup){
-      console.log("You can not make a purchase");
+    if (totalCost > this.userAccountBalanceInObligationGroup) {
+      console.log('You can not make a purchase');
     }
     this.totalCost = totalCost;
   }

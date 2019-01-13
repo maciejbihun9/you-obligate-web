@@ -22,8 +22,3 @@
  - provide test data for this view,
  - create a section for protecting against bad data case
 
- * secure amount of units input item:
- - get input variable
- - try to parse it to a number,
- - if can not be parsed, show a message that it supposed to be a number,
- - call this function after each click
