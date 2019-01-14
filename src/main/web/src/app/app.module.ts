@@ -13,7 +13,8 @@ import {UserRegisteredServiceComponent} from './components/user-registered-servi
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
-import { UserObligationStrategyForRegisteredServiceComponent } from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
+import { UserObligationStrategyForRegisteredServiceComponent }
+from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
 import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
 import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
@@ -29,6 +30,7 @@ import { PurchaseCouponsViewComponent } from './components/purchase-coupons-view
 import {BondService} from './services/bond.service';
 import {UserService} from './services/user.service';
 import {MarketTransactionsService} from './services/market-transactions.service';
+import { CouponsPurchaseDetailsViewComponent } from './components/coupons-purchase-details-view/coupons-purchase-details-view.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId', component: BondViewComponent },
   { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
+  { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: PurchaseCouponsViewComponent },
 ];
 
 @NgModule({
@@ -56,7 +59,8 @@ const appRoutes: Routes = [
     ObligationGroupViewComponent,
     BondListItemComponent,
     BondViewComponent,
-    PurchaseCouponsViewComponent
+    PurchaseCouponsViewComponent,
+    CouponsPurchaseDetailsViewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BondService} from '../../services/bond.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Bond} from '../../models/bond.model';
 import {ObligationGroupsService} from '../../services/obligation-groups.service';
 import {ObligationGroup} from '../../models/obligation-group.model';
@@ -37,6 +37,7 @@ export class PurchaseCouponsViewComponent implements OnInit {
   makePurchaseButtonEnabled = false;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private bondService: BondService,
               private userService: UserService,
               private userObligationGroupAccountService: UserObligationGroupAccountService,
@@ -96,6 +97,9 @@ export class PurchaseCouponsViewComponent implements OnInit {
     this.marketTransactionsService.makeCouponsPurchase(purchaseObject).subscribe(response => {
       if (response.status === 200) {
         console.log('Purchase was made');
+        // show purchase details page
+        // redirect to a view with purchase details
+        this.router.navigate(['/obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', response]);
         return;
       }
       if (response.status === 409) {

@@ -39,8 +39,6 @@
  - if purchase was made success fully then just convenient status,
  depending on a status I will show info in the UI that everything was ok
 
- * show purchase details page
-
  questions:
  + what if object data is not ok?:
  - I should get bond with current data,
@@ -56,3 +54,17 @@
  - show page with purchase details
  + should I do that cosmetic details now?:
  - no, it is not needed,
+
+ * show purchase details page:
+ - for now make it really basic,
+ - show amount of purchased units,
+ - show shortcut currency name,
+ - show total cost
+ - show button continue shopping and redirect to obligation group
+ where user will be able to buy another product
+
+ questions:
+ + how to send the data to another view?
+ + how to show purchase details?:
+
+
