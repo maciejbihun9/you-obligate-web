@@ -34,6 +34,25 @@
  - cut off the correct amount of update accounts,
  - provide an info about success full purchase,
 
- questions:
- + how to create a purchase object
+ - save the data, but in the UI just show ui computations
 
+ - if purchase was made success fully then just convenient status,
+ depending on a status I will show info in the UI that everything was ok
+
+ * show purchase details page
+
+ questions:
+ + what if object data is not ok?:
+ - I should get bond with current data,
+ - get this updated data object and update UI view,
+ + what if purchase was made success fully?:
+ + what if a user is requesting for data that is not updated
+ he will receive an exception
+ + what could I return from make purchase method?
+ - I am not computing anything
+ + what kind of a message to show?:
+ - for now just show a message in logs
+ + what to do after purchase?:
+ - show page with purchase details
+ + should I do that cosmetic details now?:
+ - no, it is not needed,

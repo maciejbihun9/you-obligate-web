@@ -91,9 +91,22 @@ export class PurchaseCouponsViewComponent implements OnInit {
     this.totalCost = totalCost;
   }
 
-  public makePurchase() {
+  public makeCouponsPurchase() {
     const purchaseObject: PurchaseDataObjectModel = {bond: this.bond, amountOfUnitsToBuy: this.amountOfUnitsToBuy};
-    this.marketTransactionsService.makePurchase(purchaseObject);
+    this.marketTransactionsService.makeCouponsPurchase(purchaseObject).subscribe(response => {
+      if (response.status === 200) {
+        console.log('Purchase was made');
+        return;
+      }
+      if (response.status === 409) {
+        // show some kind of a message
+        console.log('The system could not make a purchase');
+        // there was a conflict
+        this.bond = response.body;
+        return;
+      }
+
+    });
   }
 
 }

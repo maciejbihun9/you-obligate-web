@@ -9,5 +9,5 @@
   <p>Purchase of:</p>
   <input [(ngModel)]="amountOfUnitsToBuy" (ngModelChange)="computeTotalCost()" matInput placeholder="Purchase of" value="1">
   <p>Total price: {{ bond.unitOfWorkCost * amountOfUnitsToBuy}}</p>
-  <button (click)="makePurchase()" [disabled]="makePurchaseButtonEnabled" mat-raised-button color="primary">Make a purchase</button>
+  <button (click)="makeCouponsPurchase()" [disabled]="makePurchaseButtonEnabled" mat-raised-button color="primary">Make a purchase</button>
 </div>
