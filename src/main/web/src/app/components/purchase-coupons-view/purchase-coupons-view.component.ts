@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BondService} from '../../services/bond.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import {Bond} from '../../models/bond.model';
 import {ObligationGroupsService} from '../../services/obligation-groups.service';
 import {ObligationGroup} from '../../models/obligation-group.model';
@@ -93,13 +93,21 @@ export class PurchaseCouponsViewComponent implements OnInit {
   }
 
   public makeCouponsPurchase() {
+    let createdPurchaseCoupon;
     const purchaseObject: PurchaseDataObjectModel = {bond: this.bond, amountOfUnitsToBuy: this.amountOfUnitsToBuy};
     this.marketTransactionsService.makeCouponsPurchase(purchaseObject).subscribe(response => {
       if (response.status === 200) {
         console.log('Purchase was made');
         // show purchase details page
         // redirect to a view with purchase details
-        this.router.navigate(['/obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', response]);
+        createdPurchaseCoupon = response.body;
+        // send only purchased coupon id
+        const navigationExtras: NavigationExtras = {
+          queryParams: {
+            'purchaseId': createdPurchaseCoupon.id
+          }
+        };
+        this.router.navigate(['/obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', navigationExtras]);
         return;
       }
       if (response.status === 409) {

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {PurchaseCouponService} from '../../services/purchase-coupon.service';
+import {PurchaseCoupon} from '../../models/purchase-coupon.model';
 
 @Component({
   selector: 'app-coupons-purchase-details-view',
@@ -7,19 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CouponsPurchaseDetailsViewComponent implements OnInit {
 
-  purchasedAmountOfUnits: number;
+  purchaseCoupon: PurchaseCoupon;
 
-  currencyShortcutName: string;
-
-  totalCost: number;
-
-  constructor() { }
+  public constructor(private route: ActivatedRoute,
+                     private purchaseCouponService: PurchaseCouponService) {}
 
   ngOnInit() {
-
-    // show how many units has been bought
-    // show currency shortcut
-
+    this.route.queryParams.subscribe(params => {
+      const purchaseId = params['purchaseId'];
+      this.purchaseCouponService.getPurchaseCouponById(purchaseId).subscribe(purchaseCoupon => {
+        this.purchaseCoupon = purchaseCoupon;
+      });
+    });
   }
 
 }
