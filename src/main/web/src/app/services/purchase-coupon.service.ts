@@ -10,8 +10,10 @@ export class PurchaseCouponService {
   constructor(private httpClient: HttpClient) { }
 
   public getPurchaseCouponById(purchaseCouponId: number): Observable<PurchaseCoupon> {
-    const url = `/purchase-coupons/${purchaseCouponId}`;
-    return this.httpClient.get<PurchaseCoupon>(url);
+    /*const url = `/purchase-coupons/${purchaseCouponId}`;
+    return this.httpClient.get<PurchaseCoupon>(url);*/
+    const purchaseCouponsUrl = `/api/purchaseCoupons/10`;
+    return this.httpClient.get<PurchaseCoupon>(purchaseCouponsUrl);
   }
 
 }

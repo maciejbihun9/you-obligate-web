@@ -31,6 +31,8 @@ import {BondService} from './services/bond.service';
 import {UserService} from './services/user.service';
 import {MarketTransactionsService} from './services/market-transactions.service';
 import { CouponsPurchaseDetailsViewComponent } from './components/coupons-purchase-details-view/coupons-purchase-details-view.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import {InMemoryDataService} from './services/in-memory-data.service';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -76,7 +78,9 @@ const appRoutes: Routes = [
     MatInputModule,
     MatOptionModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService,
     ObligationGroupsService, TestService, BondService, UserService, MarketTransactionsService],
