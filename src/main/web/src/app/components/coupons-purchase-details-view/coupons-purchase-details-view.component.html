@@ -1,6 +1,11 @@
 <div>
   <h2>Purchase was success full! Congratulations!</h2>
-  <p>You have purchased: {{ purchaseCoupon.serviceUnits }} {{ purchaseCoupon.bond.registeredServiceObligationStrategy.userAccountInObligationGroup.obligationGroup.groupCurrencyShortcutName }}</p>
+  <p>Bond owner name: {{ purchaseCoupon.bond.registeredServiceObligationStrategy.userAccountInObligationGroup.user.name }}</p>
+  <p>Bond owner surname: {{ purchaseCoupon.bond.registeredServiceObligationStrategy.userAccountInObligationGroup.user.surname }}</p>
+  <p>Bond service name: {{ purchaseCoupon.bond.registeredServiceObligationStrategy.userRegisteredService.serviceName }}</p>
+  <p>You have purchased: {{ purchaseCoupon.serviceUnits }}
+    {{ purchaseCoupon.bond.registeredServiceObligationStrategy.userAccountInObligationGroup.obligationGroup.groupCurrencyShortcutName }}</p>
+
   <p>Total cost of a purchase: {{ purchaseCoupon.totalCost }}</p>
   <button (click)="backToObligationGroupView()">Back to obligation group</button>
 </div>

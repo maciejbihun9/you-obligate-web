@@ -16,11 +16,11 @@ export class MarketTransactionsService {
     return this.httpClient.post<Bond>(url, purchaseObject, {observe: 'response'});*/
 
     const httpResponse = {
-
+      body: {}
     };
 
     return new Observable((observer) => {
-      observer.next(httpResponse);
+      observer.next();
     });
   }
 
