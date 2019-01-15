@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {PurchaseCouponService} from '../../services/purchase-coupon.service';
 import {PurchaseCoupon} from '../../models/purchase-coupon.model';
+import {ObligationGroupsService} from '../../services/obligation-groups.service';
 
 @Component({
   selector: 'app-coupons-purchase-details-view',
@@ -12,7 +13,8 @@ export class CouponsPurchaseDetailsViewComponent implements OnInit {
 
   purchaseCoupon: PurchaseCoupon;
 
-  public constructor(private route: ActivatedRoute,
+  constructor(private route: ActivatedRoute,
+                     private router: Router,
                      private purchaseCouponService: PurchaseCouponService) {}
 
   ngOnInit() {
@@ -22,6 +24,11 @@ export class CouponsPurchaseDetailsViewComponent implements OnInit {
         this.purchaseCoupon = purchaseCoupon;
       });
     });
+  }
+
+  public backToObligationGroupView() {
+    const obligationGroupId = this.purchaseCoupon.bond.registeredServiceObligationStrategy.userAccountInObligationGroup.obligationGroup.id;
+    this.router.navigate([`/obligation-groups/${obligationGroupId}`]);
   }
 
 }

@@ -2,5 +2,5 @@
   <h2>Purchase was success full! Congratulations!</h2>
   <p>You have purchased: {{ purchaseCoupon.serviceUnits }} {{ purchaseCoupon.bond.registeredServiceObligationStrategy.userAccountInObligationGroup.obligationGroup.groupCurrencyShortcutName }}</p>
   <p>Total cost of a purchase: {{ purchaseCoupon.totalCost }}</p>
-  <button>Back to obligation group</button>
+  <button (click)="backToObligationGroupView()">Back to obligation group</button>
 </div>

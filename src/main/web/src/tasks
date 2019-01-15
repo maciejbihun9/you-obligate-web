@@ -57,14 +57,30 @@
 
  * show purchase details page:
  - for now make it really basic,
+ - display just simple content, because I do not need any styling just yet,
  - show amount of purchased units,
- - show shortcut currency name,
- - show total cost
+ - show total cost + shortcut currency name,
  - show button continue shopping and redirect to obligation group
- where user will be able to buy another product
+ where user will be able to buy another product,
+ - display only details of your purchase, not everything else,
+ - show details of an obligation group in which a user made a purchase
 
  questions:
+ + should I think about transaction confirmation just now?:
+ - no, maybe I will leave it, because I have more important, I have to think about the core of a application
+ + Should I keep all transactions recipes?:
+ - a user will be able to see those recipes later,
+ - all transactions that he made,
+ - a user will be able to see all details associated with bond (owner, bond service name)
+ + Should I display user account status? - no:
+ - this is like a recipe, when you buy something, you got a recipe,
+ you do not see any details associated with your account,
+ - you see only details of a current purchase,
  + how to send the data to another view?
  + how to show purchase details?:
+
+ * navigate to obligation group view:
+ - I have obligation group stored in coupon,
+ - get this obligation id and
 
 
