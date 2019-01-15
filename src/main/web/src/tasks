@@ -81,4 +81,11 @@
  - I have obligation group stored in coupon,
  - get this obligation id and
 
+ * create test database:
+
+ questions:
+ - all test data will be in one place,
+ - there won't be any comments,
+ - it will be pure code implementation,
+
 

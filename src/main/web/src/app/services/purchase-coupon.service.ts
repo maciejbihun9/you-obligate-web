@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/internal/Observable';
 import {PurchaseCoupon} from '../models/purchase-coupon.model';
+import {Bond} from '../models/bond.model';
 
 @Injectable()
 export class PurchaseCouponService {
