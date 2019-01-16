@@ -19,7 +19,6 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const users = this.generateUsers(this.amountOfObjectsToCreate);
 
-    const bonds = this.generateBonds(this.amountOfObjectsToCreate);
 
     const userRegisteredServices = this.generateUserRegisteredServices(this.amountOfObjectsToCreate);
 
@@ -29,17 +28,20 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const registeredServiceObligationStrategies = this.generateRegisteredServiceObligationStrategies(userRegisteredServices, userAccountsInObligationGroup, this.amountOfObjectsToCreate);
 
+    const bonds = this.generateBonds(registeredServiceObligationStrategies, this.amountOfObjectsToCreate);
+
     const purchaseCoupons = this.generatePurchaseCoupons(bonds);
 
     return {users, bonds, userRegisteredServices, obligationGroups,
       userAccountsInObligationGroup, registeredServiceObligationStrategies, purchaseCoupons};
   }
 
-  generateBonds(amountOfObjectsToCreate: number): Array<Bond> {
+  generateBonds(registeredServiceObligationStrategies: Array<RegisteredServiceObligationStrategy>, amountOfObjectsToCreate: number): Array<Bond> {
     const bonds = [];
     let i = 0;
     while (true) {
-      const bond = { id: i, bondStatus: 'CREATED', numberOfUnitsToServe: i * 30, unitOfWorkCost: i * 12.10};
+      const bond = { id: i, bondStatus: 'CREATED', numberOfUnitsToServe: i * 30,
+        unitOfWorkCost: i * 12.10, registeredServiceObligationStrategy: registeredServiceObligationStrategies[i]};
       bonds.push(bond);
       if (i === amountOfObjectsToCreate) { break; }
       i++;

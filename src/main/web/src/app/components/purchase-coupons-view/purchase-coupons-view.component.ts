@@ -100,12 +100,6 @@ export class PurchaseCouponsViewComponent implements OnInit {
         console.log('Purchase was made');
         // redirect to a view with purchase details
         // send only purchased coupon id and poll for the data using this exact idresponse.body;
-        const navigationExtras: NavigationExtras = {
-          queryParams: {
-            'purchaseId': response.body['id']
-          }
-        };
-        debugger;
         this.router.navigate([`/obligation-groups/${this.obligationGroupId}/bonds/${this.bondId}/purchase-coupons/purchase-details`, {'purchaseId': response.body['id']}]);
         return;
       }
