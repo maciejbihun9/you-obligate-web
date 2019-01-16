@@ -1,24 +1,2 @@
 
  *
-
- * navigate to obligation group view:
- - I have obligation group stored in coupon,
- - get this obligation id and
-
- * display coupon data in the view:
-
- questions:
- + how to display coupon data?:
- - make a purchase for a coupon,
- - get this created coupon to the view
- - pass coupon data to the next view and
-
- + return different types in response entity
-
- + what to do when purchase was successfull?:
- - i am sending data that is already in the UI,
- - if server is ok with this data then i can display that data from the UI,
- - I do not need the same data coming from the server,
- I need just the right status from the server that everything went ok,
-
-

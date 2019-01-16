@@ -18,16 +18,8 @@ export class CouponsPurchaseDetailsViewComponent implements OnInit {
                      private purchaseCouponService: PurchaseCouponService) {}
 
   ngOnInit() {
-    const purchaseId = this.route.snapshot.paramMap.get('purchaseId');
-    /*this.route.queryParams.subscribe(params => {
-      const purchaseId = params['purchaseId'];
-      this.purchaseCouponService.getPurchaseCouponById(purchaseId).subscribe(purchaseCoupon => {
-        this.purchaseCoupon = purchaseCoupon;
-        debugger;
-      });
-    });*/
-    debugger;
-    this.purchaseCouponService.getPurchaseCouponById(+purchaseId).subscribe(purchaseCoupon => {
+    const purchaseId: number = +this.route.snapshot.paramMap.get('purchaseId');
+    this.purchaseCouponService.getPurchaseCouponById(purchaseId).subscribe(purchaseCoupon => {
       this.purchaseCoupon = purchaseCoupon;
     });
   }
