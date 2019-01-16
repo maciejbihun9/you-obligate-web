@@ -22,6 +22,7 @@ export class CouponsPurchaseDetailsViewComponent implements OnInit {
       const purchaseId = params['purchaseId'];
       this.purchaseCouponService.getPurchaseCouponById(purchaseId).subscribe(purchaseCoupon => {
         this.purchaseCoupon = purchaseCoupon;
+        debugger;
       });
     });
   }

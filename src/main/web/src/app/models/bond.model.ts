@@ -1,6 +1,6 @@
 import {RegisteredServiceObligationStrategy} from './registered-service-obligation-strategy.model';
 
-export interface Bond {
+export class Bond {
   id: number;
   bondStatus: string;
   numberOfUnitsToServe: number;

@@ -33,6 +33,7 @@ import {MarketTransactionsService} from './services/market-transactions.service'
 import { CouponsPurchaseDetailsViewComponent } from './components/coupons-purchase-details-view/coupons-purchase-details-view.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
+import {PurchaseCouponService} from './services/purchase-coupon.service';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -42,7 +43,7 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId', component: BondViewComponent },
   { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
-  { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: PurchaseCouponsViewComponent },
+  { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
 ];
 
 @NgModule({
@@ -83,7 +84,7 @@ const appRoutes: Routes = [
       InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService,
-    ObligationGroupsService, TestService, BondService, UserService, MarketTransactionsService],
+    ObligationGroupsService, TestService, BondService, UserService, MarketTransactionsService, PurchaseCouponService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

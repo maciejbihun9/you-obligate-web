@@ -1,91 +1,24 @@
 
- * poll for user account balance in given group:
- - poll for logged-in user account data - done,
- - place available amount of units to serve in the view
- - develop counting numbers
-
- * develop counting the result:
- - after receiving
- - after each
-
- + how to implement getting user account balance?:
- - the user account balance in given group,
- - user contains all accounts, should i poll for all accounts?
- - get all accounts in given obligation group and for given user,
- a user might have couple accounts, so specifying also an obligation group I will have
- the exact user account
- - a user can have only one account in given group,
- - get user account that exists in given obligation group,
- - get obligationGroup id
-
- * create a purchase coupons view:
- - provide test data for this view,
- - create a section for protecting against bad data case
-
- * add a feature that will be able to make a purchase:
- - click make a purchase button,
- - send the data to the server and check if the numbers are ok,
- and there,
- - send purchase object to the server
- - if numbers changed and are not updated then resent that
- to the user and update the UI,
- - if are ok then make a purchase,
- - withdraw the correct amount of units from the user account,
- - cut off the correct amount of update accounts,
- - provide an info about success full purchase,
-
- - save the data, but in the UI just show ui computations
-
- - if purchase was made success fully then just convenient status,
- depending on a status I will show info in the UI that everything was ok
-
- questions:
- + what if object data is not ok?:
- - I should get bond with current data,
- - get this updated data object and update UI view,
- + what if purchase was made success fully?:
- + what if a user is requesting for data that is not updated
- he will receive an exception
- + what could I return from make purchase method?
- - I am not computing anything
- + what kind of a message to show?:
- - for now just show a message in logs
- + what to do after purchase?:
- - show page with purchase details
- + should I do that cosmetic details now?:
- - no, it is not needed,
-
- * show purchase details page:
- - for now make it really basic,
- - display just simple content, because I do not need any styling just yet,
- - show amount of purchased units,
- - show total cost + shortcut currency name,
- - show button continue shopping and redirect to obligation group
- where user will be able to buy another product,
- - display only details of your purchase, not everything else,
- - show details of an obligation group in which a user made a purchase
-
- questions:
- + Should I keep all transactions recipes?:
- - a user will be able to see those recipes later,
- - all transactions that he made,
- - a user will be able to see all details associated with bond (owner, bond service name)
- + Should I display user account status? - no:
- - this is like a recipe, when you buy something, you got a recipe,
- you do not see any details associated with your account,
- - you see only details of a current purchase,
- + how to send the data to another view?
- + how to show purchase details?:
+ *
 
  * navigate to obligation group view:
  - I have obligation group stored in coupon,
  - get this obligation id and
 
- * create test database:
+ * display coupon data in the view:
 
  questions:
- - all test data will be in one place,
- - there won't be any comments,
- - it will be pure code implementation,
+ + how to display coupon data?:
+ - make a purchase for a coupon,
+ - get this created coupon to the view
+ - pass coupon data to the next view and
+
+ + return different types in response entity
+
+ + what to do when purchase was successfull?:
+ - i am sending data that is already in the UI,
+ - if server is ok with this data then i can display that data from the UI,
+ - I do not need the same data coming from the server,
+ I need just the right status from the server that everything went ok,
 
 

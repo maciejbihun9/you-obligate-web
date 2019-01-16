@@ -10,6 +10,7 @@ import {User} from '../../models/user.model';
 import {UserObligationGroupAccountService} from '../../services/user-obligation-group-account.service';
 import {MarketTransactionsService} from '../../services/market-transactions.service';
 import {PurchaseDataObjectModel} from '../../models/purchase-data-object.model';
+import {PurchaseCoupon} from '../../models/purchase-coupon.model';
 
 @Component({
   selector: 'app-purchase-coupons-view',
@@ -93,28 +94,26 @@ export class PurchaseCouponsViewComponent implements OnInit {
   }
 
   public makeCouponsPurchase() {
-    let createdPurchaseCoupon;
     const purchaseObject: PurchaseDataObjectModel = {bond: this.bond, amountOfUnitsToBuy: this.amountOfUnitsToBuy};
     this.marketTransactionsService.makeCouponsPurchase(purchaseObject).subscribe(response => {
       if (response.status === 200) {
         console.log('Purchase was made');
-        // show purchase details page
         // redirect to a view with purchase details
-        createdPurchaseCoupon = response.body;
-        // send only purchased coupon id
+        // send only purchased coupon id and poll for the data using this exact idresponse.body;
         const navigationExtras: NavigationExtras = {
           queryParams: {
-            'purchaseId': createdPurchaseCoupon.id
+            'purchaseId': response.body['id']
           }
         };
-        this.router.navigate(['/obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', navigationExtras]);
+        debugger;
+        this.router.navigate([`/obligation-groups/${this.obligationGroupId}/bonds/${this.bondId}/purchase-coupons/purchase-details`, {'purchaseId': response.body['id']}]);
         return;
       }
       if (response.status === 409) {
         // show some kind of a message
         console.log('The system could not make a purchase');
-        // there was a conflict
-        this.bond = response.body;
+        // there was a conflict\
+        this.bond = <Bond>response.body;
         return;
       }
 

@@ -12,7 +12,7 @@ export class PurchaseCouponService {
   public getPurchaseCouponById(purchaseCouponId: number): Observable<PurchaseCoupon> {
     /*const url = `/purchase-coupons/${purchaseCouponId}`;
     return this.httpClient.get<PurchaseCoupon>(url);*/
-    const purchaseCouponsUrl = `/api/purchaseCoupons/10`;
+    const purchaseCouponsUrl = `/api/purchaseCoupons/1`;
     return this.httpClient.get<PurchaseCoupon>(purchaseCouponsUrl);
   }
 
