@@ -1,2 +1,49 @@
+# i will have her if i can succeed with it,
+# każdej akcji towarzyszy taka sama rekacja, taka jest zasada tego świata
 
- *
+ * implement how new users might got along with a group owner:
+ - a new user finds a new group,
+ - he sees all obligation groups and their details,
+ - he sees all bonds and prices and service units,
+ - he sees all prices,
+ - this person will see all bonds issued by users and will
+ see obligation strategies,
+ - they will see amount of bonds issued,
+ and prices and all the amount of money created
+ by this group, the amount of wealth,
+ - he will send a request to the group participia
+
+ * design a protocol for accepting new users - strategy #1 - weak and very basic:
+ - a group user receives a request,
+ - he will receive all details about a user,
+ - a user might provide a lot of info, CV, docs, desc,
+ - a user reads all of it and makes a decision and sets his numbers,
+ - all users sets those numbers, then we will get an average of that,
+ - then we will wait for a response
+
+ * design a protocol for accepting new users - strategy #2:
+
+ concerns:
+ - people are damn lazy,
+ - it looks like fucking HR department,
+
+ questions:
+ + should he see all debt?:
+ - I can brake all rules,
+ - People want to show their impact, they want to show how they
+ interact with env
+ + how a user might ask for a group join?:
+ - he might make a simple request to a group owner,
+ - an owner will receive a request, he will show all request details to his
+ group friends
+ - there might be a lot of this kind of requests, so people will be demolished by stream of requests,
+ but if you want to maintain an alternative load market, credit market then
+ - a user will send a request with his proposition
+ - there might be a situation where a user won't send anything, because
+ he sees that there are bad proportions,
+ - it will be hard to investigate all user, all people that want to join specific group
+ - maybe at the beginning,
+ - this is going to be an another fun system for other people,
+ + a user wants to join a group, is sanding a request to all people in the group,
+ but people in the group they do not know the real prices of a particular service
+
