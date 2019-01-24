@@ -6,7 +6,7 @@ import {UserRegisteredServiceEntity} from '../models/user-registered-service-ent
 import {catchError, tap} from 'rxjs/operators';
 
 @Injectable()
-export class UserRegisteredServiceService {
+export class UserRegisteredService {
 
     private USER_REGISTERED_SERVICES_URL: string = '/user-registered-services';
 
@@ -14,6 +14,12 @@ export class UserRegisteredServiceService {
 
     public getUserRegisteredService(userRegisteredServiceId: number): Observable<UserRegisteredService> {
       return this.http.get<UserRegisteredService>(this.USER_REGISTERED_SERVICES_URL + '/${userRegisteredServiceId}');
+    }
+
+    public getUserRegisteredServices(userId: number): Observable<Array<UserRegisteredService>>{
+        userId = +userId;
+        const url = this.USER_REGISTERED_SERVICES_URL + '/' + userId;
+        return this.http.get<Array<UserRegisteredService>>(url);
     }
 
     public getUserRegisteredServices(): Observable<Array<UserRegisteredService>> {

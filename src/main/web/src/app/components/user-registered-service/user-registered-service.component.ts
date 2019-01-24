@@ -1,6 +1,6 @@
 import {AfterViewChecked, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {UserRegisteredServiceCategory} from '../../models/user-registered-service-category.model';
-import {UserRegisteredServiceService} from '../../services/user-registered.service.ts';
+import {UserRegisteredService} from '../../services/user-registered.service.ts';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
 import {UserRegisteredServicesComponent} from '../user-registered-services/user-registered-services.component';
 
@@ -19,7 +19,7 @@ export class UserRegisteredServiceComponent implements AfterViewChecked {
   pickedServiceDescription: string;
   pickedServiceExperience: string;
 
-  constructor(private userRegisteredServiceService: UserRegisteredServiceService, private cdRef: ChangeDetectorRef) {
+  constructor(private userRegisteredServiceService: UserRegisteredService, private cdRef: ChangeDetectorRef) {
     this.userRegisteredServiceCategories =
       Object.keys(UserRegisteredServiceCategory).filter(key => !isNaN(Number(UserRegisteredServiceCategory[key])));
   }
