@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ObligationGroupsService} from '../../services/obligation-groups.service';
 import {ObligationGroup} from '../../models/obligation-group.model';
 
@@ -16,7 +16,9 @@ export class ObligationGroupViewComponent implements OnInit {
 
   public obligationGroupWithBonds: ObligationGroup = undefined;
 
-  constructor(private route: ActivatedRoute, private obligationGroupsService: ObligationGroupsService) {}
+  constructor(private route: ActivatedRoute,
+              private obligationGroupsService: ObligationGroupsService,
+              private router: Router) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -25,5 +27,10 @@ export class ObligationGroupViewComponent implements OnInit {
         this.obligationGroupBonds = obligationGroupBonds;
       });
     });
+  }
+
+  joinGroup(){
+    // redirect to another view where a user will be able to fill much needed fields
+    this.router.navigate([`/obligation-groups/${this.obligationGroupId}/bonds/${this.bondId}/purchase-coupons/purchase-details`, {'purchaseId': response.body['id']}]);
   }
 }

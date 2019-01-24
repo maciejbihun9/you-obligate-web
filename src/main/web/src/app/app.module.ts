@@ -34,6 +34,7 @@ import { CouponsPurchaseDetailsViewComponent } from './components/coupons-purcha
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
 import {PurchaseCouponService} from './services/purchase-coupon.service';
+import { JoinGroupProposalViewComponent } from './components/join-group-proposal-view/join-group-proposal-view.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -63,7 +64,8 @@ const appRoutes: Routes = [
     BondListItemComponent,
     BondViewComponent,
     PurchaseCouponsViewComponent,
-    CouponsPurchaseDetailsViewComponent
+    CouponsPurchaseDetailsViewComponent,
+    JoinGroupProposalViewComponent
   ],
   imports: [
     BrowserModule,

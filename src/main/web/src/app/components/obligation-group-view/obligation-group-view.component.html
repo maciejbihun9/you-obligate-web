@@ -1,4 +1,9 @@
 <div>
+  <hr>
+    <button (click)="joinGroup()" mat-raised-button color="primary">Join group</button>
+  <hr>
+</div>
+<div>
   <app-bond-list-item *ngFor="let bond of obligationGroupBonds" [bond]="bond" [routerLink]="['/obligation-groups', obligationGroupId, 'bonds', bond.id]">
   </app-bond-list-item>
 </div>
