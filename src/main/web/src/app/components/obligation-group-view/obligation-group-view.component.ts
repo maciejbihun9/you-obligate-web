@@ -31,6 +31,6 @@ export class ObligationGroupViewComponent implements OnInit {
 
   joinGroup(){
     // redirect to another view where a user will be able to fill much needed fields
-    this.router.navigate([`/obligation-groups/${this.obligationGroupId}/bonds/${this.bondId}/purchase-coupons/purchase-details`, {'purchaseId': response.body['id']}]);
+    this.router.navigate([`obligation-groups/${this.obligationGroupId}/join-group-proposal`, {'obligationGroupId': this.obligationGroupId}]);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-join-group-proposal-view',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JoinGroupProposalViewComponent implements OnInit {
 
-  constructor() { }
+  private loginUser: User;
+
+  constructor(private route: ActivatedRoute,
+              private userService: UserService) { }
 
   ngOnInit() {
+    const obligationGroupId: number = +this.route.snapshot.paramMap.get('obligationGroupId');
+
+    // poll for login user, I need his all registered services here, so that he can pick at least one
+    this.userService.getLoggedInUser().subscribe(loginUser => {
+      this.loginUser = loginUser;
+    });
   }
 
 }

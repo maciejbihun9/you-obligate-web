@@ -45,6 +45,7 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
+  { path: 'obligation-groups/:obligationGroupId/join-group-proposal', component: JoinGroupProposalViewComponent },
 ];
 
 @NgModule({
