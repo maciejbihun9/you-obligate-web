@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserRegisteredServiceCategory} from '../../models/user-registered-service-category.model';
-import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
+import {UserRegisteredServiceService} from '../../services/user-registered.service.ts';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
 import {Observable} from 'rxjs/internal/Observable';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';

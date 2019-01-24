@@ -19,6 +19,9 @@ export class JoinGroupProposalViewComponent implements OnInit {
     // poll for login user, I need his all registered services here, so that he can pick at least one
     this.userService.getLoggedInUser().subscribe(loginUser => {
       this.loginUser = loginUser;
+
+      // poll for user registered services
+
     });
   }
 

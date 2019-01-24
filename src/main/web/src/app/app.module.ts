@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {UserRegisteredServiceService} from './services/user-registered-service.service';
+import {UserRegisteredServiceService} from './services/user-registered.service.ts';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {UserRegisteredServicesComponent} from './components/user-registered-services/user-registered-services.component';

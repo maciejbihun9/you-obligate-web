@@ -1,6 +1,6 @@
 import {AfterViewChecked, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {UserRegisteredServiceCategory} from '../../models/user-registered-service-category.model';
-import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
+import {UserRegisteredServiceService} from '../../services/user-registered.service.ts';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
 import {UserRegisteredServicesComponent} from '../user-registered-services/user-registered-services.component';
 

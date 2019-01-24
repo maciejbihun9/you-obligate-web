@@ -8,7 +8,7 @@ import {catchError, tap} from 'rxjs/operators';
 @Injectable()
 export class UserRegisteredServiceService {
 
-    private readonly USER_REGISTERED_SERVICES_URL: string = '/user-registered-services';
+    private USER_REGISTERED_SERVICES_URL: string = '/user-registered-services';
 
     constructor(private http: HttpClient) {}
 
