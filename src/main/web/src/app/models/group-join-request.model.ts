@@ -1,6 +1,3 @@
-import {User} from './user.model';
-import {UserRegisteredService} from './user-registered-service.model';
-
 
 export class GroupJoinRequest {
 
@@ -8,6 +5,6 @@ export class GroupJoinRequest {
   obligationGroupId: number;
   userRegisteredServiceId: number;
   proposedUnitOfWorkCost: number;
-  pickedUnitOfWorkType: string;
+  proposedUnitOfWorkType: string;
 
 }

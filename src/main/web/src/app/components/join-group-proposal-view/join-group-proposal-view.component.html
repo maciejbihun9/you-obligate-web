@@ -5,7 +5,7 @@
       <mat-select placeholder="User registered service" [(value)]="selectedUserRegisteredService">
         <mat-option *ngFor="let userRegisteredService of userRegisteredServices" value="{{userRegisteredService.serviceName}}">{{userRegisteredService.serviceName}}</mat-option>
       </mat-select>
-      <mat-select placeholder="Unit of work type" [(value)]="pickedUnitOfWorkType">
+      <mat-select placeholder="Unit of work type" [(value)]="proposedUnitOfWorkType">
         <mat-option *ngFor="let unitOfWorkType of unitOfWorkTypes" value="{{unitOfWorkType}}">{{unitOfWorkType}}</mat-option>
       </mat-select>
       <input [(ngModel)]="proposedUnitOfWorkCost"  matInput placeholder="Unit of work cost" name="unitOfWorkCost">

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../../models/user.model';
 import {UserService} from '../../services/user.service';
 import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
@@ -24,11 +24,12 @@ export class JoinGroupProposalViewComponent implements OnInit {
 
   unitOfWorkTypes = ['HOUR', 'SERVICE', 'KM', 'MILE'];
 
-  pickedUnitOfWorkType;
+  proposedUnitOfWorkType;
 
   obligationGroupId: number;
 
   constructor(private route: ActivatedRoute,
+              private router: Router,
               private userService: UserService,
               private userRegisteredService: UserRegisteredServiceService,
               private groupJoinRequestService: GroupJoinRequestService) { }
@@ -53,11 +54,13 @@ export class JoinGroupProposalViewComponent implements OnInit {
     const groupJoinRequest: GroupJoinRequest = {
       obligationGroupId: this.obligationGroupId,
       userRegisteredServiceId: this.selectedUserRegisteredService.id,
-      pickedUnitOfWorkType: this.pickedUnitOfWorkType,
+      proposedUnitOfWorkType: this.proposedUnitOfWorkType,
       proposedUnitOfWorkCost: this.proposedUnitOfWorkCost,
     };
-    this.groupJoinRequestService.sendGroupJoinRequest(groupJoinRequest).subscribe(value => {
+    this.groupJoinRequestService.sendGroupJoinRequest(groupJoinRequest).subscribe(httpResponsWithCreatedGroupJoinRequest => {
       console.log('Join group request created.');
+      // navigate to a join group request details view and inform that a request has been made in the right way
+      this.router.navigate([`obligation-groups/${this.obligationGroupId}/group-join-request-details`, {'obligationGroupId': this.obligationGroupId}]);
     });
   }
 

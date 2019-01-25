@@ -34,6 +34,8 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
 import {PurchaseCouponService} from './services/purchase-coupon.service';
 import {JoinGroupProposalViewComponent} from './components/join-group-proposal-view/join-group-proposal-view.component';
+import { GroupJoinRequestDetailsViewComponent } from './components/group-join-request-details-view/group-join-request-details-view.component';
+import {GroupJoinRequestService} from './services/group-join-request.service';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
+  { path: 'obligation-groups/:obligationGroupId/group-join-request-details', component: GroupJoinRequestDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/join-group-proposal', component: JoinGroupProposalViewComponent },
 ];
 
@@ -66,6 +69,7 @@ const appRoutes: Routes = [
     PurchaseCouponsViewComponent,
     CouponsPurchaseDetailsViewComponent,
     JoinGroupProposalViewComponent,
+    GroupJoinRequestDetailsViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +90,8 @@ const appRoutes: Routes = [
       InMemoryDataService, { dataEncapsulation: false })
   ],
   providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService,
-    ObligationGroupsService, TestService, BondService, UserService, MarketTransactionsService, PurchaseCouponService],
+    ObligationGroupsService, TestService, BondService, UserService, MarketTransactionsService, PurchaseCouponService,
+    GroupJoinRequestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
