@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UserRegisteredServiceCategory} from '../../models/user-registered-service-category.model';
-import {UserRegisteredService} from '../../services/user-registered.service.ts';
+import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
 import {Observable} from 'rxjs/internal/Observable';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
@@ -19,7 +19,7 @@ export class UserRegisteredServicesComponent implements OnInit{
 
   userRegisteredServices: Array<UserRegisteredService> = [];
 
-  constructor(private userRegisteredServiceService: UserRegisteredService){}
+  constructor(private userRegisteredServiceService: UserRegisteredServiceService){}
 
   ngOnInit(): void {
     /*this.userRegisteredServiceService.getUserRegisteredServices().subscribe((registeredServices) => {

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {UserRegisteredService} from "../../services/user-registered.service";
+import {User} from '../../models/user.model';
+import {UserService} from '../../services/user.service';
+import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
+import {UserRegisteredService} from '../../models/user-registered-service.model';
 
 @Component({
   selector: 'app-join-group-proposal-view',
@@ -15,7 +18,7 @@ export class JoinGroupProposalViewComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private userService: UserService,
-              private userRegisteredService: UserRegisteredService) { }
+              private userRegisteredService: UserRegisteredServiceService) { }
 
   ngOnInit() {
     const obligationGroupId: number = +this.route.snapshot.paramMap.get('obligationGroupId');

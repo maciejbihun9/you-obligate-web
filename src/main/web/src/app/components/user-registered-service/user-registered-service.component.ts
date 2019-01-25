@@ -1,6 +1,6 @@
 import {AfterViewChecked, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {UserRegisteredServiceCategory} from '../../models/user-registered-service-category.model';
-import {UserRegisteredService} from '../../services/user-registered.service.ts';
+import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
 import {UserRegisteredServicesComponent} from '../user-registered-services/user-registered-services.component';
 
@@ -19,7 +19,7 @@ export class UserRegisteredServiceComponent implements AfterViewChecked {
   pickedServiceDescription: string;
   pickedServiceExperience: string;
 
-  constructor(private userRegisteredServiceService: UserRegisteredService, private cdRef: ChangeDetectorRef) {
+  constructor(private userRegisteredServiceService: UserRegisteredServiceService, private cdRef: ChangeDetectorRef) {
     this.userRegisteredServiceCategories =
       Object.keys(UserRegisteredServiceCategory).filter(key => !isNaN(Number(UserRegisteredServiceCategory[key])));
   }
@@ -36,9 +36,9 @@ export class UserRegisteredServiceComponent implements AfterViewChecked {
     userRegisteredService.serviceName = this.pickedServiceName;
     userRegisteredService.userRegisteredServiceCategory = UserRegisteredServiceCategory[this.pickedServiceCategory];
     UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);
-    this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe((userRegisteredServiceResponse: UserRegisteredService) => {
+    this.userRegisteredServiceService.saveUserRegisteredService(userRegisteredService).subscribe((userRegisteredServiceResponse) => {
       console.log(this.USER_REGISTERED_SERVICE_SAVED_SUCCESFULLY);
-      userRegisteredService.id = userRegisteredServiceResponse.id;
+      userRegisteredService.id = userRegisteredServiceResponse['id'];
       UserRegisteredServicesComponent.stateChangedSource.next(userRegisteredService);
     }, (error) => {console.log(error); });
   }

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {UserRegisteredService} from './services/user-registered.service.ts';
+import {UserRegisteredServiceService} from './services/user-registered-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import {UserRegisteredServicesComponent} from './components/user-registered-services/user-registered-services.component';
@@ -34,7 +34,7 @@ import { CouponsPurchaseDetailsViewComponent } from './components/coupons-purcha
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
 import {PurchaseCouponService} from './services/purchase-coupon.service';
-import { JoinGroupProposalViewComponent } from './components/join-group-proposal-view/join-group-proposal-view.component';
+import {JoinGroupProposalViewComponent} from './components/join-group-proposal-view/join-group-proposal-view.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -86,7 +86,7 @@ const appRoutes: Routes = [
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false })
   ],
-  providers: [UserRegisteredService, UserUnitsRequestServiceService, UserObligationGroupAccountService,
+  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService,
     ObligationGroupsService, TestService, BondService, UserService, MarketTransactionsService, PurchaseCouponService],
   bootstrap: [AppComponent]
 })
