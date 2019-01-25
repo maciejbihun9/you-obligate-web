@@ -12,9 +12,15 @@ import {UserRegisteredService} from '../../models/user-registered-service.model'
 })
 export class JoinGroupProposalViewComponent implements OnInit {
 
-  private loginUser: User;
+  loginUser: User;
 
-  private userRegisteredServices: Array<UserRegisteredService>;
+  userRegisteredServices: Array<UserRegisteredService>;
+
+  unitOfWorkCost: number;
+
+  unitOfWorkTypes = ['HOUR', 'SERVICE', 'KM', 'MILE'];
+
+  pickedUnitOfWorkType;
 
   constructor(private route: ActivatedRoute,
               private userService: UserService,
@@ -29,9 +35,13 @@ export class JoinGroupProposalViewComponent implements OnInit {
 
       // poll for user registered services to show them as an options to pick
       this.userRegisteredService.getUserRegisteredServices(this.loginUser.id).subscribe(userRegisteredServices => {
-        this.userRegisteredServices = userRegisteredServices;
+        this.userRegisteredServices = userRegisteredServices.splice(0, 6);
       });
     });
+  }
+
+  sendJoinGroupProposition(){
+    console.log('Send join group proposal view');
   }
 
 }

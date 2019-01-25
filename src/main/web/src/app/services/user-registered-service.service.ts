@@ -8,7 +8,7 @@ import {catchError, tap} from 'rxjs/operators';
 @Injectable()
 export class UserRegisteredServiceService {
 
-    private USER_REGISTERED_SERVICES_URL: string = '/user-registered-services';
+    private USER_REGISTERED_SERVICES_URL = '/user-registered-services';
 
     constructor(private http: HttpClient) {}
 
@@ -18,8 +18,9 @@ export class UserRegisteredServiceService {
 
     public getUserRegisteredServices(userId: number): Observable<Array<UserRegisteredService>> {
         userId = +userId;
-        const url = this.USER_REGISTERED_SERVICES_URL + '/' + userId;
-        return this.http.get<Array<UserRegisteredService>>(url);
+        // const url = this.USER_REGISTERED_SERVICES_URL + '/' + userId;
+      const url = '/api/userRegisteredServices';
+      return this.http.get<Array<UserRegisteredService>>(url);
     }
 
     public getAllRegisteredServices(): Observable<Array<UserRegisteredServiceService>> {

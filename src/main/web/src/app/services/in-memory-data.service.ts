@@ -19,7 +19,6 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const users = this.generateUsers(this.amountOfObjectsToCreate);
 
-
     const userRegisteredServices = this.generateUserRegisteredServices(this.amountOfObjectsToCreate);
 
     const obligationGroups = this.generateObligationGroups(this.amountOfObjectsToCreate);
