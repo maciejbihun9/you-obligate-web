@@ -1,17 +1,15 @@
 <div>
-  <h2>User registered services:</h2>
-  <div>
-    <ul>
-      <li *ngFor="let userRegisteredService of userRegisteredServices">{{userRegisteredService.serviceName}}</li>
-    </ul>
-  </div>
   <div>
     <form action="#">
+      <h2>User registered services:</h2>
+      <mat-select placeholder="User registered service" [(value)]="selectedUserRegisteredService">
+        <mat-option *ngFor="let userRegisteredService of userRegisteredServices" value="{{userRegisteredService.serviceName}}">{{userRegisteredService.serviceName}}</mat-option>
+      </mat-select>
       <mat-select placeholder="Unit of work type" [(value)]="pickedUnitOfWorkType">
         <mat-option *ngFor="let unitOfWorkType of unitOfWorkTypes" value="{{unitOfWorkType}}">{{unitOfWorkType}}</mat-option>
       </mat-select>
-      <input [(ngModel)]="unitOfWorkCost"  matInput placeholder="Unit of work cost" name="unitOfWorkCost">
-      <button (click)="sendJoinGroupProposition()" mat-raised-button color="primary">Join group proposition</button>
+      <input [(ngModel)]="proposedUnitOfWorkCost"  matInput placeholder="Unit of work cost" name="unitOfWorkCost">
+      <button (click)="sendGroupJoinProposition()" mat-raised-button color="primary">Join group proposition</button>
     </form>
   </div>
 </div>

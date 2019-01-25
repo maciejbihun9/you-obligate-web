@@ -13,8 +13,7 @@ import {UserRegisteredServiceComponent} from './components/user-registered-servi
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
-import { UserObligationStrategyForRegisteredServiceComponent }
-from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
+import { UserObligationStrategyForRegisteredServiceComponent } from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
 import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
 import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
@@ -66,7 +65,7 @@ const appRoutes: Routes = [
     BondViewComponent,
     PurchaseCouponsViewComponent,
     CouponsPurchaseDetailsViewComponent,
-    JoinGroupProposalViewComponent
+    JoinGroupProposalViewComponent,
   ],
   imports: [
     BrowserModule,
