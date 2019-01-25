@@ -42,6 +42,7 @@ export class JoinGroupProposalViewComponent implements OnInit {
 
   sendJoinGroupProposition(){
     console.log('Send join group proposal view');
+    // send
   }
 
 }

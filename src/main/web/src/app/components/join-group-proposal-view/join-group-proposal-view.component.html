@@ -6,7 +6,7 @@
     </ul>
   </div>
   <div>
-    <form>
+    <form action="#">
       <mat-select placeholder="Unit of work type" [(value)]="pickedUnitOfWorkType">
         <mat-option *ngFor="let unitOfWorkType of unitOfWorkTypes" value="{{unitOfWorkType}}">{{unitOfWorkType}}</mat-option>
       </mat-select>
