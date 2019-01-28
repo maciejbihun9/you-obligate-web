@@ -36,6 +36,7 @@ import {PurchaseCouponService} from './services/purchase-coupon.service';
 import {JoinGroupProposalViewComponent} from './components/join-group-proposal-view/join-group-proposal-view.component';
 import { GroupJoinRequestDetailsViewComponent } from './components/group-join-request-details-view/group-join-request-details-view.component';
 import {GroupJoinRequestService} from './services/group-join-request.service';
+import { GroupJoinRequestsPanelViewComponent } from './components/group-join-requests-panel-view/group-join-requests-panel-view.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -70,6 +71,7 @@ const appRoutes: Routes = [
     CouponsPurchaseDetailsViewComponent,
     JoinGroupProposalViewComponent,
     GroupJoinRequestDetailsViewComponent,
+    GroupJoinRequestsPanelViewComponent,
   ],
   imports: [
     BrowserModule,
