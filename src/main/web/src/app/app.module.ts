@@ -13,7 +13,8 @@ import {UserRegisteredServiceComponent} from './components/user-registered-servi
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
-import { UserObligationStrategyForRegisteredServiceComponent } from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
+import { UserObligationStrategyForRegisteredServiceComponent }
+from './components/user-obligation-strategy-for-registered-service/user-obligation-strategy-for-registered-service.component';
 import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
 import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
@@ -37,7 +38,7 @@ import {JoinGroupProposalViewComponent} from './components/join-group-proposal-v
 import { GroupJoinRequestDetailsViewComponent } from './components/group-join-request-details-view/group-join-request-details-view.component';
 import {GroupJoinRequestService} from './services/group-join-request.service';
 import { GroupJoinRequestsPanelViewComponent } from './components/group-join-requests-panel-view/group-join-requests-panel-view.component';
-import {SuperTableModule} from "./components/super-table/super-table.module";
+import {SuperTableModule} from './components/super-table/super-table.module';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -46,6 +47,7 @@ const appRoutes: Routes = [
   { path: 'obligation-groups', component: ObligationGroupsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId', component: BondViewComponent },
   { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
+  { path: 'obligation-groups/:obligationGroupId/group-join-requests', component: GroupJoinRequestsPanelViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/group-join-request-details', component: GroupJoinRequestDetailsViewComponent },
