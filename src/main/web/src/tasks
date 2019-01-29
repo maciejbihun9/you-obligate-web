@@ -4,3 +4,11 @@
  - copy super table from the other project,
  - poll test data, poll test group requests from test database,
  - create columns array, columns list
+
+ * what could I do with <ng-content></ng-content> components?:
+ - reusable components
+ - like alert error component, alert success component
+
+ * setup columns
+
+ * why ngOnInit is called two times at the beginning?

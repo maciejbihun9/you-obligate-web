@@ -1,2 +1,6 @@
-<div super-table [dataIsLoading]='dataIsLoading' [rows]='groupJoinRequests' [columns]="groupJoinRequestsGridColumns">
+<div *ngIf="!dataIsLoading" super-table [dataIsLoading]='dataIsLoading'
+     [rows]='groupJoinRequests'
+     [columns]="columns"
+     [options]='options'
+     [tableClasses]='tableClasses'>
 </div>

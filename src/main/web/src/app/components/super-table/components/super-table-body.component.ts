@@ -10,6 +10,7 @@ import {
 
 import { SuperTableState } from '../services/super-table-state.service';
 import {ColumnState, SuperTableOptions} from '../models/interfaces';
+import {GroupJoinRequest} from "../../../models/group-join-request.model";
 
 const DEFAULT_ROW_HEIGHT = 48;
 
@@ -66,7 +67,7 @@ const DEFAULT_ROW_HEIGHT = 48;
 export class SuperTableBodyComponent {
 
 
-  @Input() rows: Array<Opportunity>;
+  @Input() rows: Array<GroupJoinRequest>;
   @Input() tableClasses: any;
   @Input() bodyHeight: number;
   @Input() options: SuperTableOptions;

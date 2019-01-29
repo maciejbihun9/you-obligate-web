@@ -86,7 +86,7 @@ export class ResizerComponent {
       </span>
     </div>
     <div *ngIf="!noHeight && !column.def.lockWidth" super-table-resizer [column]="column"></div>
-    <input [class.direction]="this.column.isHidden" (click)="closeColumn()" type="image" src="../../../assets/right_arrow.png" id="hide-column-btn" />
+    <input [class.direction]="this.column.isHidden" (click)="closeColumn()" type="image" src="./assets/right_arrow.png" id="hide-column-btn" />
   `,
   styles: [`
     :host {

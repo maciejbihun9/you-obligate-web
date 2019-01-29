@@ -49,15 +49,11 @@ import {DomSanitizer} from "@angular/platform-browser";
 export class SuperTableComponent implements OnInit, AfterContentInit, OnChanges, OnDestroy {
 
   // inputs
-  @Input() rows: Array<any>;
+  @Input() rows: Array<any> = [];
   @Input() columns: Array<SuperTableColumn>;
   @Input() options: SuperTableOptions;
   @Input() tableClasses: any;
   @Input() dataIsLoading: boolean;
-
-  @Output() oppsDownloadUrlEmitter = new EventEmitter();
-
-  private downloadOppsUrl: string = "";
 
   // properties
   backgroundColor = "white";
@@ -75,27 +71,27 @@ export class SuperTableComponent implements OnInit, AfterContentInit, OnChanges,
     // register sub for table state
     // after each change filter rows again
     this.subscription = this.state.stateChanged$.subscribe(() => this.sortAndFilterRows());
-    this.changeDownloadOppsUrl();
-  }
-
-  changeDownloadOppsUrl(){
-      let blob = new Blob(['\ufeff' + JSON.stringify(this.filteredSortedRows)], { type: 'text/json;charset=utf-8;' });
-      this.downloadOppsUrl = URL.createObjectURL(blob);
-      this.oppsDownloadUrlEmitter.emit(this.sanitizer.bypassSecurityTrustUrl(this.downloadOppsUrl));
   }
 
   ngAfterContentInit() {
     if (this.options.autoHeight) {
       const parentHeight: number = this.el.nativeElement.parentElement.clientHeight;
-      this.setTableHeight(parentHeight);
+      // this.setTableHeight(parentHeight);
     }
     this.isReady = true;
   }
 
   ngOnChanges(changes: SimpleChanges) {
     // Inform state of columns changes
-    this.state.setColumns(changes['columns'].currentValue);
-    this.sortAndFilterRows();
+    console.log("ngOnChanges is called");
+    // there is a possibility that list of columns will change
+    if ('columns' in changes){
+      const columns = changes['columns'];
+      this.state.setColumns(columns.currentValue);
+    }
+    if (this.rows){
+      this.sortAndFilterRows();
+    }
   }
 
   ngOnDestroy() {
@@ -129,9 +125,8 @@ export class SuperTableComponent implements OnInit, AfterContentInit, OnChanges,
         return true;
       });
     } else {
-      this.filteredSortedRows = this.rows.slice();
+        this.filteredSortedRows = this.rows.slice();
     }
-
     // Sorting
     this.filteredSortedRows.sort( (a, b) => {
       for (let i = 0; i < this.state.sortStack.length; i++) {
@@ -150,6 +145,5 @@ export class SuperTableComponent implements OnInit, AfterContentInit, OnChanges,
       }
       return 0;
     });
-    this.changeDownloadOppsUrl();
   }
 }
