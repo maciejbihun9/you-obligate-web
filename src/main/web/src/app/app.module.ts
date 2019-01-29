@@ -37,6 +37,7 @@ import {JoinGroupProposalViewComponent} from './components/join-group-proposal-v
 import { GroupJoinRequestDetailsViewComponent } from './components/group-join-request-details-view/group-join-request-details-view.component';
 import {GroupJoinRequestService} from './services/group-join-request.service';
 import { GroupJoinRequestsPanelViewComponent } from './components/group-join-requests-panel-view/group-join-requests-panel-view.component';
+import {SuperTableModule} from "./components/super-table/super-table.module";
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -78,6 +79,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    SuperTableModule,
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
