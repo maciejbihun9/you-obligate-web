@@ -5,9 +5,17 @@ export class GroupJoinRequestsGridColumns {
 
   public static readonly superTableColumns = [
     {
-      id: 'userRegisteredServiceName',
-      key: 'userRegisteredServiceName',
-      label: 'User Registered Service Name',
+      id: 'obligationGroupId',
+      key: 'obligationGroupId',
+      label: 'Obligation group Id',
+      sort: superTableSorters.STRING,
+      filter: superTableFilters.STRING,
+      isEnabled: true
+    },
+    {
+      id: 'userRegisteredServiceId',
+      key: 'userRegisteredServiceId',
+      label: 'User Registered Service Id',
       sort: superTableSorters.STRING,
       filter: superTableFilters.STRING,
       isEnabled: true

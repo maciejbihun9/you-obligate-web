@@ -8,12 +8,8 @@ import {
   SimpleChanges, ViewChild, ViewChildren, ViewContainerRef
 } from '@angular/core';
 
-import debounce from 'lodash-es/debounce';
-
 import { SuperTableState } from '../services/super-table-state.service';
 import {ColumnState, SuperTableOptions} from '../models/interfaces';
-import {DxcFooterComponent} from '../../dxcfooter/dxcfooter.component';
-import {Opportunity} from "../../models/opportunity.model";
 
 const DEFAULT_ROW_HEIGHT = 48;
 

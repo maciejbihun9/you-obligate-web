@@ -12,7 +12,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
 
   groupJoinRequests: Array<GroupJoinRequest>;
 
-  columns = GroupJoinRequestsGridColumns.superTableColumns;
+  groupJoinRequestsGridColumns = GroupJoinRequestsGridColumns.superTableColumns;
 
   dataIsLoading = true;
 
