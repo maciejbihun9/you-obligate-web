@@ -22,10 +22,10 @@ export class GroupJoinRequestService {
         new HttpResponse<GroupJoinRequest>({body: createdGroupJoinRequest, status: 200, headers: new HttpHeaders(), statusText: '', url: ''})));
   }
 
-  public getAllGroupJoinRequests(): Observable<GroupJoinRequest>{
+  public getAllGroupJoinRequests(): Observable<Array<GroupJoinRequest>> {
      // return this.httpClient.get<GroupJoinRequest>(GROUP_JOIN_REQUESTS_URL);*/
     const testUrl = '/api/groupJoinRequests';
-    return this.httpClient.get<GroupJoinRequest>(testUrl);
+    return this.httpClient.get<Array<GroupJoinRequest>>(testUrl);
   }
 
 }
