@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GroupJoinRequest } from '../../models/group-join-request.model';
 import { GroupJoinRequestService } from '../../services/group-join-request.service';
+import {GroupJoinRequestsGridColumns} from '../../models/group-join-requests-grid-columns';
 
 @Component({
   selector: 'app-group-join-requests-panel-view',
@@ -10,6 +11,8 @@ import { GroupJoinRequestService } from '../../services/group-join-request.servi
 export class GroupJoinRequestsPanelViewComponent implements OnInit {
 
   groupJoinRequests: Array<GroupJoinRequest>;
+
+  columns = GroupJoinRequestsGridColumns.superTableColumns;
 
   dataIsLoading = true;
 

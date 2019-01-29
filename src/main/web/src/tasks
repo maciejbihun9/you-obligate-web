@@ -2,4 +2,5 @@
  * create grid in the middle of the page
  strategy #1: (Copy all grid from previous project):
  - copy super table from the other project,
- - display test data in the grid
+ - poll test data, poll test group requests from test database,
+ - create columns array, columns list
