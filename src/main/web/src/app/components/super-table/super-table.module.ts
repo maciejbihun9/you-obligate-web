@@ -12,7 +12,7 @@ import { EnumFilterComponent, EnumFilterDropdownComponent } from './components/e
 import {NgxPaginationModule} from 'ngx-pagination';
 import {SortSwitchComponent} from './components/sort-switch/sort-switch.component';
 import {SuperTableCellComponent} from './components/super-table-cell.component';
-import {MatProgressSpinnerModule} from "@angular/material";
+import {MatExpansionModule, MatProgressSpinnerModule} from "@angular/material";
 
 @NgModule({
   // Components declared in this library
@@ -32,6 +32,7 @@ import {MatProgressSpinnerModule} from "@angular/material";
   imports: [
     CommonModule,
     FormsModule,
+    MatExpansionModule,
     NgxPaginationModule,
     MatProgressSpinnerModule
   ],
