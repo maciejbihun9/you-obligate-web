@@ -25,4 +25,6 @@
  - mat-expansion-panel-header - this has to be the same content as in table
  - everything has to be in table row
 
+ * update angular version to 7
 
+ *
