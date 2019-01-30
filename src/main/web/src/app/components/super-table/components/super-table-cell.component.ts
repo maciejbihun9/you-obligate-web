@@ -17,7 +17,6 @@ import { ColumnState } from '../models/interfaces';
   selector: '[super-table-cell]',
   template: `
     <span *ngIf="!column.def.component" [attr.title]="getFormattedValue()">{{ getFormattedValue() }}</span>
-    <span *ngIf="column.def.component" #cmpContainer></span>
   `,
   styles: [`
     :host {
@@ -28,20 +27,15 @@ import { ColumnState } from '../models/interfaces';
     }
   `]
 })
-export class SuperTableCellComponent implements AfterViewInit, OnDestroy {
+export class SuperTableCellComponent {
 
   @Input() row: any;
   @Input() column: ColumnState;
-  @ViewChild('cmpContainer', { read: ViewContainerRef }) cmpContainer: ViewContainerRef;
 
   @HostBinding('style.color')
   get color(): string {
     return this.column.isHidden ? 'white' : 'black';
   }
-
-  private componentRef: ComponentRef<any>;
-
-  constructor(private viewContainer: ViewContainerRef, private resolver: ComponentFactoryResolver) {}
 
   getValue(): any {
     return this.row[this.column.def.key];
@@ -55,27 +49,4 @@ export class SuperTableCellComponent implements AfterViewInit, OnDestroy {
     return this.getValue();
   }
 
-  ngAfterViewInit() {
-    if (this.column.def.component) {
-      if (this.componentRef) {
-        this.componentRef.destroy();
-      }
-      console.log(this.column.def.component);
-      const cmpFactory = this.resolver.resolveComponentFactory(this.column.def.component);
-      const ctxInjector: Injector = this.cmpContainer.injector;
-      this.componentRef = this.cmpContainer.createComponent(cmpFactory, 0, ctxInjector);
-      const instance: any = this.componentRef.instance;
-      instance['row'] = this.row;
-      instance['column'] = this.column;
-      instance['key'] = this.column.def.key;
-      instance['value'] = this.getValue();
-      this.componentRef.changeDetectorRef.detectChanges();
-    }
-  }
-
-  ngOnDestroy() {
-    if (this.componentRef) {
-      this.componentRef.destroy();
-    }
-  }
 }

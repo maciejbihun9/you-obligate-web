@@ -9,6 +9,20 @@
  - reusable components
  - like alert error component, alert success component
 
- * setup columns
+ * create grid for showing requests:
 
- * why ngOnInit is called two times at the beginning?
+ questions:
+ + should I make a design of entire page before I started developing any views?:
+ - I won't go through all this planning, because I do not think it is really neccesery,
+ - I do not want to create any design,
+ - I will receive all views from my managers,
+ - I am not a UI guy,
+ - if you can make this kind of a plan then probably
+ then you would be able to create reusable views,
+
+ * after clicking group join request item, open an area under that item:
+ - click <tr> and expand panel under this area,
+ - mat-expansion-panel-header - this has to be the same content as in table
+ - everything has to be in table row
+
+
