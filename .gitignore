@@ -1,3 +1,7 @@
+# Normal files
+src/main/web/src/tasks
+
+# Angular normal files 
 target/
 .idea/**
 .idea
