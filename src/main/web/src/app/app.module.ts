@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule} from '@angular/material';
+import {MatInputModule, MatOptionModule, MatSelectModule, MatButtonModule, MatTableModule} from '@angular/material';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {UserRegisteredServiceService} from './services/user-registered-service.service';
@@ -39,6 +39,7 @@ import { GroupJoinRequestDetailsViewComponent } from './components/group-join-re
 import {GroupJoinRequestService} from './services/group-join-request.service';
 import { GroupJoinRequestsPanelViewComponent } from './components/group-join-requests-panel-view/group-join-requests-panel-view.component';
 import {SuperTableModule} from './components/super-table/super-table.module';
+import { TableExpandableRowsWithFilterComponent } from './components/table-expandable-rows-with-filter/table-expandable-rows-with-filter.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -52,6 +53,8 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/group-join-request-details', component: GroupJoinRequestDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/join-group-proposal', component: JoinGroupProposalViewComponent },
+  { path: 'grid-test', component: TableExpandableRowsWithFilterComponent },
+
 ];
 
 @NgModule({
@@ -75,6 +78,7 @@ const appRoutes: Routes = [
     JoinGroupProposalViewComponent,
     GroupJoinRequestDetailsViewComponent,
     GroupJoinRequestsPanelViewComponent,
+    TableExpandableRowsWithFilterComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +90,8 @@ const appRoutes: Routes = [
       appRoutes,
       { enableTracing: false } // <-- debugging purposes only
     ),
-    // Angular material
+    // Angular material,
+    MatTableModule,
     MatExpansionModule,
     MatInputModule,
     MatOptionModule,
