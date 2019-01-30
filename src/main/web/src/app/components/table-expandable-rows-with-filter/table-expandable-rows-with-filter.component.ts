@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
+import {MatTableDataSource} from "@angular/material";
 
 @Component({
   selector: 'app-table-expandable-rows-with-filter',
@@ -15,7 +16,7 @@ import {animate, state, style, transition, trigger} from '@angular/animations';
 })
 export class TableExpandableRowsWithFilterComponent implements OnInit {
 
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
 
   // there maybe only one expanded element
@@ -24,6 +25,10 @@ export class TableExpandableRowsWithFilterComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }
