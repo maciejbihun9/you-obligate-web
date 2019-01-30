@@ -17,6 +17,8 @@ export class TableExpandableRowsWithFilterComponent implements OnInit {
 
   dataSource = ELEMENT_DATA;
   columnsToDisplay = ['name', 'weight', 'symbol', 'position'];
+
+  // there maybe only one expanded element
   expandedElement: PeriodicElement | null;
 
   constructor() { }
