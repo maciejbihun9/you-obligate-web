@@ -3,6 +3,7 @@ import { GroupJoinRequest } from '../../models/group-join-request.model';
 import { GroupJoinRequestService } from '../../services/group-join-request.service';
 import {GroupJoinRequestsGridColumns} from '../../models/group-join-requests-grid-columns';
 import {SuperTableOptions} from "../super-table/models/interfaces";
+import {Column} from "../../models/column.model";
 
 @Component({
   selector: 'app-group-join-requests-panel-view',
@@ -14,7 +15,23 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
   groupJoinRequests: Array<GroupJoinRequest>;
 
   // columns = GroupJoinRequestsGridColumns.superTableColumns;
-  columns = ['obligationGroupId', 'userRegisteredServiceId', 'proposedUnitOfWorkType', 'proposedUnitOfWorkCost'];
+
+  columns: Array<Column> = [{
+      columnId: 'obligationGroupId',
+      columnName: 'Obligation group name'
+    },
+    {
+      columnId: 'userRegisteredServiceId',
+      columnName: 'User registered service name'
+    },
+    {
+      columnId: 'proposedUnitOfWorkType',
+      columnName: 'Proposed UnitOfWorkType'
+    },
+    {
+      columnId: 'proposedUnitOfWorkCost',
+      columnName: 'Proposed UnitOfWorkCost'
+    }];
 
   dataIsLoading = true;
 

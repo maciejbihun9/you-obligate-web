@@ -1,0 +1,11 @@
+
+ * display in the grid column names instead of column ids:
+ strategy #1 - (column ids from data array objects):
+ - send columns names as strings,
+ - in expanded table get ids from array objects,
+ - use those ids to get values from objects
+
+ * Display group-join-request data in expanded row:
+ - for now display that in random order
+
+

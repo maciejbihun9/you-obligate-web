@@ -1,6 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatTableDataSource} from "@angular/material";
+import {Column} from "../../models/column.model";
 
 @Component({
   selector: '[app-table-expandable-rows-with-filter]',
@@ -17,7 +18,9 @@ import {MatTableDataSource} from "@angular/material";
 export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
   @Input() data: Array<Object>;
-  @Input() columns: string[];
+  @Input() columns: Array<Column>;
+
+  columnsIds = [];
 
   dataSource = undefined;
 
@@ -29,6 +32,9 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
       this.dataSource = new MatTableDataSource(this.data);
+      this.columns.forEach(column => {
+          this.columnsIds.push(column.columnId);
+      });
   }
 
 }
