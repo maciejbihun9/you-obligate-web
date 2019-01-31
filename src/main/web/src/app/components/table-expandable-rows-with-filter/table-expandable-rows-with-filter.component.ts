@@ -2,6 +2,10 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatTableDataSource} from "@angular/material";
 import {Column} from "../../models/column.model";
+import {GroupJoinRequest} from "../../models/group-join-request.model";
+import {HttpClient} from "@angular/common/http";
+import {UserRegisteredServiceService} from "../../services/user-registered-service.service";
+import {UserRegisteredService} from "../../models/user-registered-service.model";
 
 @Component({
   selector: '[app-table-expandable-rows-with-filter]',
@@ -17,14 +21,18 @@ import {Column} from "../../models/column.model";
 })
 export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
-  @Input() data: Array<Object>;
+  @Input() data: Array<GroupJoinRequest>;
   @Input() columns: Array<Column>;
 
   columnsIds = [];
 
+  userRegisteredService: UserRegisteredService;
+
   dataSource = undefined;
 
   expandedElement: Object | null;
+
+  constructor(private userRegisteredServiceService: UserRegisteredServiceService){}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -35,6 +43,12 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
       this.columns.forEach(column => {
           this.columnsIds.push(column.columnId);
       });
+  }
+
+  public onDataItemClick(element: GroupJoinRequest) {
+    this.userRegisteredServiceService.getUserRegisteredService(element.userRegisteredServiceId).subscribe(userRegisteredService => {
+      this.userRegisteredService = userRegisteredService;
+    });
   }
 
 }

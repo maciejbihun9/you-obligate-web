@@ -12,8 +12,10 @@ export class UserRegisteredServiceService {
 
     constructor(private http: HttpClient) {}
 
-    public getUserRegisteredService(userRegisteredServiceId: number): Observable<UserRegisteredServiceService> {
-      return this.http.get<UserRegisteredServiceService>(this.USER_REGISTERED_SERVICES_URL + '/${userRegisteredServiceId}');
+    public getUserRegisteredService(userRegisteredServiceId: number): Observable<UserRegisteredService> {
+      // return this.http.get<UserRegisteredService>(this.USER_REGISTERED_SERVICES_URL + '/${userRegisteredServiceId}');
+      const testurl = `/api/user-registered-services/${userRegisteredServiceId}`;
+      return this.http.get<UserRegisteredService>(testurl);
     }
 
     public getUserRegisteredServices(userId: number): Observable<Array<UserRegisteredService>> {
@@ -23,8 +25,8 @@ export class UserRegisteredServiceService {
       return this.http.get<Array<UserRegisteredService>>(url);
     }
 
-    public getAllRegisteredServices(): Observable<Array<UserRegisteredServiceService>> {
-      return this.http.get<Array<UserRegisteredServiceService>>(this.USER_REGISTERED_SERVICES_URL).pipe(
+    public getAllRegisteredServices(): Observable<Array<UserRegisteredService>> {
+      return this.http.get<Array<UserRegisteredService>>(this.USER_REGISTERED_SERVICES_URL).pipe(
         tap(x => x) // just for simple modification of the data before returning it
       );
     }

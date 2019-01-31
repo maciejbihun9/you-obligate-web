@@ -15,13 +15,13 @@
       <div class="example-element-detail"
            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
         <div class="example-element-diagram">
-          <div class="example-element-position"> {{element.position}} </div>
-          <div class="example-element-symbol"> {{element.symbol}} </div>
-          <div class="example-element-name"> {{element.name}} </div>
-          <div class="example-element-weight"> {{element.weight}} </div>
+          <div class="example-element-position"> {{element.obligationGroupId}} </div>
+          <div class="example-element-symbol"> {{element.userRegisteredServiceId}} </div>
+          <div class="example-element-name"> {{element.proposedUnitOfWorkCost}} </div>
+          <div class="example-element-weight"> {{element.proposedUnitOfWorkType}} </div>
         </div>
         <div class="example-element-description">
-          {{element.description}}
+          {{element.proposedUnitOfWorkType}}
           <span class="example-element-description-attribution"> &#45;&#45; Wikipedia </span>
         </div>
       </div>
@@ -35,7 +35,7 @@
   <tr mat-row *matRowDef="let element; columns: columnsIds;"
       class="example-element-row"
       [class.example-expanded-row]="expandedElement === element"
-      (click)="expandedElement = expandedElement === element ? null : element">
+      (click)="expandedElement = expandedElement === element ? null : element; onDataItemClick(element)">
   </tr>
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 </table>
