@@ -16,9 +16,10 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
 
   // columns = GroupJoinRequestsGridColumns.superTableColumns;
 
-  columns: Array<Column> = [{
-      columnId: 'obligationGroupId',
-      columnName: 'Obligation group name'
+  columns: Array<Column> = [
+    {
+      columnId: 'username',
+      columnName: 'Username'
     },
     {
       columnId: 'userRegisteredServiceId',

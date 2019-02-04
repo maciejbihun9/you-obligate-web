@@ -52,6 +52,8 @@ export class JoinGroupProposalViewComponent implements OnInit {
     console.log('Send join group proposal view');
     // create group join request
     const groupJoinRequest: GroupJoinRequest = {
+      user: {id: 1, name: 'Maciej', surname: 'Bihun', password: 'pass', username: 'username'},
+      username: 'username',
       obligationGroupId: this.obligationGroupId,
       userRegisteredServiceId: this.selectedUserRegisteredService.id,
       proposedUnitOfWorkType: this.proposedUnitOfWorkType,
