@@ -1,12 +1,12 @@
 import {User} from "./user.model";
+import {UserRegisteredService} from "./user-registered-service.model";
 
 export class GroupJoinRequest {
 
   id?;
   user: User;
-  username: string;
   obligationGroupId: number;
-  userRegisteredServiceId: number;
+  userRegisteredService: UserRegisteredService;
   proposedUnitOfWorkCost: number;
   proposedUnitOfWorkType: string;
 

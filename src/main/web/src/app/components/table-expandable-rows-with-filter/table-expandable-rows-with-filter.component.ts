@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 import {UserRegisteredServiceService} from "../../services/user-registered-service.service";
 import {UserRegisteredService} from "../../models/user-registered-service.model";
 
+
 @Component({
   selector: '[app-table-expandable-rows-with-filter]',
   templateUrl: './table-expandable-rows-with-filter.component.html',

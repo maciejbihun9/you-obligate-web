@@ -22,7 +22,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
       columnName: 'Username'
     },
     {
-      columnId: 'userRegisteredServiceId',
+      columnId: 'userRegisteredServiceName',
       columnName: 'User registered service name'
     },
     {
