@@ -10,7 +10,7 @@ import {
 
 import { SuperTableState } from '../services/super-table-state.service';
 import {ColumnState, SuperTableOptions} from '../models/interfaces';
-import {GroupJoinRequest} from "../../../models/group-join-request.model";
+import {GroupJoinRequest} from "../../../models/group join request/group-join-request.model";
 
 const DEFAULT_ROW_HEIGHT = 48;
 

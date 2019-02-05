@@ -1,5 +1,5 @@
-import {superTableFilters} from '../components/super-table/util/super-table-filters';
-import {superTableSorters} from '../components/super-table/util/super-table-sorters';
+import {superTableFilters} from '../../components/super-table/util/super-table-filters';
+import {superTableSorters} from '../../components/super-table/util/super-table-sorters';
 
 export class GroupJoinRequestsGridColumns {
 

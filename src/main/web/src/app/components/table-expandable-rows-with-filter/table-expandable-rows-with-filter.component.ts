@@ -2,11 +2,11 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatTableDataSource} from "@angular/material";
 import {Column} from "../../models/column.model";
-import {GroupJoinRequest} from "../../models/group-join-request.model";
+import {GroupJoinRequest} from "../../models/group join request/group-join-request.model";
 import {HttpClient} from "@angular/common/http";
 import {UserRegisteredServiceService} from "../../services/user-registered-service.service";
 import {UserRegisteredService} from "../../models/user-registered-service.model";
-import {GroupRequestRowDataItem} from "../../models/group-request-row-data-item.model";
+import {GroupRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
 
 
 @Component({

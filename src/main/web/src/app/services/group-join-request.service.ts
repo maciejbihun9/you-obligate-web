@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
-import {GroupJoinRequest} from '../models/group-join-request.model';
+import {GroupJoinRequest} from '../models/group join request/group-join-request.model';
 import {Observable} from 'rxjs/internal/Observable';
 import {PurchaseCoupon} from '../models/purchase-coupon.model';
 import {map} from 'rxjs/operators';

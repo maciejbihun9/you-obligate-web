@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { GroupJoinRequest } from '../../models/group-join-request.model';
+import { GroupJoinRequest } from '../../models/group join request/group-join-request.model';
 import { GroupJoinRequestService } from '../../services/group-join-request.service';
-import {GroupJoinRequestsGridColumns} from '../../models/group-join-requests-grid-columns';
+import {GroupJoinRequestsGridColumns} from '../../models/group join request/group-join-requests-grid-columns';
 import {SuperTableOptions} from "../super-table/models/interfaces";
 import {Column} from "../../models/column.model";
-import {GroupRequestRowDataItem} from "../../models/group-request-row-data-item.model";
+import {GroupRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
 
 @Component({
   selector: 'app-group-join-requests-panel-view',

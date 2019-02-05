@@ -7,6 +7,7 @@ import {UserRegisteredService} from '../models/user-registered-service.model';
 import {UserAccountInObligationGroup} from '../models/user-account-in-obligation-group.model';
 import {User} from '../models/user.model';
 import {ObligationGroup} from '../models/obligation-group.model';
+import {GroupJoinRequestStatus} from "../models/group join request/group-join-request-status.model";
 
 @Injectable({
   providedIn: 'root',
@@ -42,7 +43,7 @@ export class InMemoryDataService implements InMemoryDbService {
     let i = 0;
     while (true) {
       const groupJoinRequest = { id: i, user: users[i], obligationGroup: obligationGroups[i],
-        userRegisteredService: userRegisteredServices[i], proposedUnitOfWorkCost: 100.00, proposedUnitOfWorkType: 'SERVICE', status: };
+        userRegisteredService: userRegisteredServices[i], proposedUnitOfWorkCost: 100.00, proposedUnitOfWorkType: 'SERVICE', status: GroupJoinRequestStatus[GroupJoinRequestStatus.NEW]};
       groupJoinRequests.push(groupJoinRequest);
       if (i === amountOfObjectsToCreate - 1) { break; }
       i++;

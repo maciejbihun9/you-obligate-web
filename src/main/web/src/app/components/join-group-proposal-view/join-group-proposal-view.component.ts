@@ -4,7 +4,7 @@ import {User} from '../../models/user.model';
 import {UserService} from '../../services/user.service';
 import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
-import {GroupJoinRequest} from '../../models/group-join-request.model';
+import {GroupJoinRequest} from '../../models/group join request/group-join-request.model';
 import {GroupJoinRequestService} from '../../services/group-join-request.service';
 
 @Component({
