@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 import {UserRegisteredServiceService} from "../../services/user-registered-service.service";
 import {UserRegisteredService} from "../../models/user-registered-service.model";
 import {GroupRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
+import {GroupJoinRequestStatus} from "../../models/group join request/group-join-request-status.model";
 
 
 @Component({
@@ -25,6 +26,8 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
   @Input() data: Array<GroupJoinRequest>;
   @Input() columns: Array<Column>;
+
+  groupJoinRequestStatuses: Array<string> = Object.keys(GroupJoinRequestStatus).filter(value => !isNaN(GroupJoinRequestStatus[value]));
 
   columnsIds = [];
 
