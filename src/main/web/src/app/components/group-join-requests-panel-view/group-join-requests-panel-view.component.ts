@@ -61,10 +61,21 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
 
         // fill grid rows data
         this.groupJoinRequests.forEach(groupJoinRequest => {
-          this.gridRowsData.push({username: groupJoinRequest.user.username,
+          this.gridRowsData.push({
+            // user registered service data
+            userRegisteredServiceCategory: groupJoinRequest.userRegisteredService.userRegisteredServiceCategory,
+            serviceDescription: groupJoinRequest.userRegisteredService.serviceDescription,
+            experienceDescription: groupJoinRequest.userRegisteredService.experienceDescription,
             userRegisteredServiceName: groupJoinRequest.userRegisteredService.serviceName,
+            // user data
+            username: groupJoinRequest.user.username,
+            name: groupJoinRequest.user.name,
+            surname: groupJoinRequest.user.surname,
+            contactNumber: groupJoinRequest.user.contactNumber,
+            // group join request data
             proposedUnitOfWorkType: groupJoinRequest.proposedUnitOfWorkType,
-            proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost})
+            proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost,
+          })
         });
       }
     );

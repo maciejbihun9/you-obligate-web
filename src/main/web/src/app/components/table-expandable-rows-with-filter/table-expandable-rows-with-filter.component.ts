@@ -23,7 +23,6 @@ import {GroupRequestRowDataItem} from "../../models/group join request/group-req
 })
 export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
-  @Input() gridRowData: Array<GroupRequestRowDataItem>;
   @Input() data: Array<GroupJoinRequest>;
   @Input() columns: Array<Column>;
 
@@ -43,7 +42,7 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
       this.dataSource = new MatTableDataSource(this.data);
-      console.log(this.gridRowData);
+      console.log(this.data);
       this.columns.forEach(column => {
           this.columnsIds.push(column.columnId);
       });
