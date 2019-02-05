@@ -6,6 +6,7 @@ import {GroupJoinRequest} from "../../models/group-join-request.model";
 import {HttpClient} from "@angular/common/http";
 import {UserRegisteredServiceService} from "../../services/user-registered-service.service";
 import {UserRegisteredService} from "../../models/user-registered-service.model";
+import {GroupRequestRowDataItem} from "../../models/group-request-row-data-item.model";
 
 
 @Component({
@@ -22,6 +23,7 @@ import {UserRegisteredService} from "../../models/user-registered-service.model"
 })
 export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
+  @Input() gridRowData: Array<GroupRequestRowDataItem>;
   @Input() data: Array<GroupJoinRequest>;
   @Input() columns: Array<Column>;
 
@@ -41,6 +43,7 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
       this.dataSource = new MatTableDataSource(this.data);
+      console.log(this.gridRowData);
       this.columns.forEach(column => {
           this.columnsIds.push(column.columnId);
       });

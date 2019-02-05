@@ -4,10 +4,15 @@
 <table mat-table
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
+  <!-- For each column define an ng container that will be rendered in material header row def-->
   <ng-container matColumnDef="{{column.columnId}}" *ngFor="let column of columns">
+    <!-- Gives column a name. It is responsible for content of a cell -->
     <th mat-header-cell *matHeaderCellDef> {{column.columnName}} </th>
+
+    <!-- Gives column an id that will be rendered in an html template. This is important to distignish cell element in a set of those
+      does not have any visual effect. It is placed in class attribute. It helps to add a visual effect to specific cell. -->
     <td mat-cell *matCellDef="let element"> {{element[column.columnId]}} </td>
-    <td mat-footer-cell *cdkFooterCellDef> Footer </td>
+    <!--<td mat-footer-cell *matFooterCellDef> Footer </td>-->
   </ng-container>
 
   <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
@@ -29,7 +34,7 @@
     </td>
   </ng-container>
 
-  <!-- this is responsible for header -->
+  <!-- this is responsible for header. Here you are passing containers with columns names. So it will be created as many header cells as you defined in <ng-container> -->
   <tr mat-header-row *matHeaderRowDef="columnsIds"></tr>
 
   <!-- this is responsible for data for the grid, element is one object from an array -->
@@ -38,5 +43,17 @@
       [class.example-expanded-row]="expandedElement === element"
       (click)="expandedElement = expandedElement === element ? null : element; onDataItemClick(element)">
   </tr>
+
+  <!--<tr mat-row *ngFor="let gridRowDataItem of gridRowData"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element; onDataItemClick(element)">
+    <td mat-cell> {{gridRowDataItem.username}} </td>
+    <td mat-cell> {{gridRowDataItem.userRegisteredServiceName}} </td>
+    <td mat-cell> {{gridRowDataItem.proposedUnitOfWorkType}} </td>
+    <td mat-cell> {{gridRowDataItem.proposedUnitOfWorkCost}} </td>
+  </tr>-->
+
+  <!-- I creates a line between grid items and adds expanded data-->
   <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
 </table>
