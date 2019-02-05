@@ -4,6 +4,7 @@ import { GroupJoinRequestService } from '../../services/group-join-request.servi
 import {GroupJoinRequestsGridColumns} from '../../models/group-join-requests-grid-columns';
 import {SuperTableOptions} from "../super-table/models/interfaces";
 import {Column} from "../../models/column.model";
+import {GroupRequestRowDataItem} from "../../models/group-request-row-data-item.model";
 
 @Component({
   selector: 'app-group-join-requests-panel-view',
@@ -15,6 +16,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
   groupJoinRequests: Array<GroupJoinRequest>;
 
   // columns = GroupJoinRequestsGridColumns.superTableColumns;
+  gridRowsData: Array<GroupRequestRowDataItem>;
 
   columns: Array<Column> = [
     {
@@ -47,6 +49,15 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
   constructor(private groupJoinRequestService: GroupJoinRequestService) { }
 
   ngOnInit() {
+
+    // fill grid rows data
+    this.groupJoinRequests.forEach(groupJoinRequest => {
+      this.gridRowsData.push({username: groupJoinRequest.user.username,
+                              userRegisteredServiceName: groupJoinRequest.userRegisteredService.serviceName,
+                              proposedUnitOfWorkType: groupJoinRequest.proposedUnitOfWorkType,
+                              proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost})
+    });
+
     this.groupJoinRequestService.getAllGroupJoinRequests().subscribe(
       polledGroupJoinRequests => {
         this.groupJoinRequests = polledGroupJoinRequests;
