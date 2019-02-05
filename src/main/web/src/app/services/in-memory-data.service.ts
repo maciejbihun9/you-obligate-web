@@ -31,18 +31,19 @@ export class InMemoryDataService implements InMemoryDbService {
 
     const purchaseCoupons = this.generatePurchaseCoupons(bonds);
 
-    const groupJoinRequests = this.generateGroupJoinRequests(this.amountOfObjectsToCreate, users);
+    const groupJoinRequests = this.generateGroupJoinRequests(this.amountOfObjectsToCreate, users, obligationGroups, userRegisteredServices);
 
     return {users, bonds, userRegisteredServices, obligationGroups,
       userAccountsInObligationGroup, registeredServiceObligationStrategies, purchaseCoupons, groupJoinRequests};
   }
 
-  generateGroupJoinRequests(amountOfObjectsToCreate, users: Array<User>){
+  generateGroupJoinRequests(amountOfObjectsToCreate, users: Array<User>, obligationGroups: Array<ObligationGroup>, userRegisteredServices: Array<UserRegisteredService>){
     const groupJoinRequests = [];
     let i = 0;
     while (true) {
       debugger;
-      const groupJoinRequest = { id: i, user: users[i], username: users[i].username, obligationGroupId: i, userRegisteredServiceId: i, proposedUnitOfWorkCost: 100.00, proposedUnitOfWorkType: 'SERVICE'};
+      const groupJoinRequest = { id: i, user: users[i], obligationGroup: obligationGroups[i],
+        userRegisteredService: userRegisteredServices[i], proposedUnitOfWorkCost: 100.00, proposedUnitOfWorkType: 'SERVICE'};
       groupJoinRequests.push(groupJoinRequest);
       if (i === amountOfObjectsToCreate - 1) { break; }
       i++;

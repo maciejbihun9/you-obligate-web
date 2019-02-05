@@ -10,22 +10,25 @@ export class GroupJoinRequestService {
 
   private GROUP_JOIN_REQUESTS_BASE_URL = '/group-join-requests';
 
+  private TEST_URL = '/api/groupJoinRequests';
+
   constructor(private httpClient: HttpClient) { }
 
   public sendGroupJoinRequest(groupJoinRequest: GroupJoinRequest): Observable<HttpResponse<GroupJoinRequest>> {
     /*const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.httpClient.post<GroupJoinRequest>(GROUP_JOIN_REQUESTS_URL, JSON.stringify(groupJoinRequest), {headers: headers});*/
-
-    const testUrl = '/api/groupJoinRequests/0';
-    return this.httpClient.get<GroupJoinRequest>(testUrl).pipe(
+    return this.httpClient.get<GroupJoinRequest>(this.TEST_URL).pipe(
       map(createdGroupJoinRequest =>
         new HttpResponse<GroupJoinRequest>({body: createdGroupJoinRequest, status: 200, headers: new HttpHeaders(), statusText: '', url: ''})));
   }
 
+  public getGroupJoinRequest(groupJoinRequestId){
+    return this.httpClient.get<GroupJoinRequest>(this.TEST_URL + '/' + groupJoinRequestId);
+  }
+
   public getAllGroupJoinRequests(): Observable<Array<GroupJoinRequest>> {
      // return this.httpClient.get<GroupJoinRequest>(GROUP_JOIN_REQUESTS_URL);*/
-    const testUrl = '/api/groupJoinRequests';
-    return this.httpClient.get<Array<GroupJoinRequest>>(testUrl);
+    return this.httpClient.get<Array<GroupJoinRequest>>(this.TEST_URL);
   }
 
 }

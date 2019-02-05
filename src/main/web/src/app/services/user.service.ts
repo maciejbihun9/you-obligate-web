@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/internal/Observable';
 import {User} from '../models/user.model';
-import {ObligationGroup} from '../models/obligation-group.model';
 
 @Injectable()
 export class UserService {
@@ -17,7 +16,8 @@ export class UserService {
       name: 'Maciej',
       surname: 'Bihun',
       username: 'maciek1',
-      password: 'maciek1'
+      password: 'maciek1',
+      contactNumber: '518-752-323'
     };
 
     return new Observable<User>((observer) => {

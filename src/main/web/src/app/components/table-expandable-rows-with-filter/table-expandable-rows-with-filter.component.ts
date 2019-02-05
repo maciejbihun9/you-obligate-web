@@ -47,9 +47,9 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
   }
 
   public onDataItemClick(element: GroupJoinRequest) {
-    this.userRegisteredServiceService.getUserRegisteredService(element.userRegisteredServiceId).subscribe(userRegisteredService => {
+    /*this.userRegisteredServiceService.getUserRegisteredService(element.userRegisteredServiceId).subscribe(userRegisteredService => {
       this.userRegisteredService = userRegisteredService;
-    });
+    });*/
   }
 
 }

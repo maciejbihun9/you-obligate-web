@@ -20,6 +20,8 @@ export class JoinGroupProposalViewComponent implements OnInit {
 
   selectedUserRegisteredService: UserRegisteredService;
 
+  testGroupJoinRequest: GroupJoinRequest;
+
   proposedUnitOfWorkCost: number;
 
   unitOfWorkTypes = ['HOUR', 'SERVICE', 'KM', 'MILE'];
@@ -37,6 +39,11 @@ export class JoinGroupProposalViewComponent implements OnInit {
   ngOnInit() {
     this.obligationGroupId = +this.route.snapshot.paramMap.get('obligationGroupId');
 
+    // poll for test group join request object
+    this.groupJoinRequestService.getGroupJoinRequest(0).subscribe(groupJoinRequest => {
+      this.testGroupJoinRequest = groupJoinRequest;
+    });
+
     // poll for login user, I need his all registered services here, so that he can pick at least one
     this.userService.getLoggedInUser().subscribe(loginUser => {
       this.loginUser = loginUser;
@@ -51,15 +58,7 @@ export class JoinGroupProposalViewComponent implements OnInit {
   sendGroupJoinProposition() {
     console.log('Send join group proposal view');
     // create group join request
-    const groupJoinRequest: GroupJoinRequest = {
-      user: {id: 1, name: 'Maciej', surname: 'Bihun', password: 'pass', username: 'username'},
-      username: 'username',
-      obligationGroupId: this.obligationGroupId,
-      userRegisteredServiceId: this.selectedUserRegisteredService.id,
-      proposedUnitOfWorkType: this.proposedUnitOfWorkType,
-      proposedUnitOfWorkCost: this.proposedUnitOfWorkCost,
-    };
-    this.groupJoinRequestService.sendGroupJoinRequest(groupJoinRequest).subscribe(httpResponsWithCreatedGroupJoinRequest => {
+    this.groupJoinRequestService.sendGroupJoinRequest(this.testGroupJoinRequest).subscribe(httpResponsWithCreatedGroupJoinRequest => {
       console.log('Join group request created.');
       // navigate to a join group request details view and inform that a request has been made in the right way
       this.router.navigate([`obligation-groups/${this.obligationGroupId}/group-join-request-details`, {'obligationGroupId': this.obligationGroupId}]);
