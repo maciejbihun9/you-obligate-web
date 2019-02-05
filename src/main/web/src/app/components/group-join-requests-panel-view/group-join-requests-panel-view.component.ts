@@ -75,6 +75,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
             // group join request data
             proposedUnitOfWorkType: groupJoinRequest.proposedUnitOfWorkType,
             proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost,
+            status: groupJoinRequest.status
           })
         });
       }
