@@ -34,7 +34,12 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
     {
       columnId: 'proposedUnitOfWorkCost',
       columnName: 'Proposed UnitOfWorkCost'
-    }];
+    },
+    {
+      columnId: 'status',
+      columnName: 'Status'
+    }
+    ];
 
   dataIsLoading = true;
 
