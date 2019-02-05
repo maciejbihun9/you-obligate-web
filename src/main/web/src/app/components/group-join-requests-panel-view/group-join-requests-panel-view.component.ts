@@ -49,19 +49,18 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
   constructor(private groupJoinRequestService: GroupJoinRequestService) { }
 
   ngOnInit() {
-
-    // fill grid rows data
-    this.groupJoinRequests.forEach(groupJoinRequest => {
-      this.gridRowsData.push({username: groupJoinRequest.user.username,
-                              userRegisteredServiceName: groupJoinRequest.userRegisteredService.serviceName,
-                              proposedUnitOfWorkType: groupJoinRequest.proposedUnitOfWorkType,
-                              proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost})
-    });
-
     this.groupJoinRequestService.getAllGroupJoinRequests().subscribe(
       polledGroupJoinRequests => {
         this.groupJoinRequests = polledGroupJoinRequests;
         this.dataIsLoading = false;
+
+        // fill grid rows data
+        this.groupJoinRequests.forEach(groupJoinRequest => {
+          this.gridRowsData.push({username: groupJoinRequest.user.username,
+            userRegisteredServiceName: groupJoinRequest.userRegisteredService.serviceName,
+            proposedUnitOfWorkType: groupJoinRequest.proposedUnitOfWorkType,
+            proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost})
+        });
       }
     );
   }

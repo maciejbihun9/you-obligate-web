@@ -41,7 +41,6 @@ export class InMemoryDataService implements InMemoryDbService {
     const groupJoinRequests = [];
     let i = 0;
     while (true) {
-      debugger;
       const groupJoinRequest = { id: i, user: users[i], obligationGroup: obligationGroups[i],
         userRegisteredService: userRegisteredServices[i], proposedUnitOfWorkCost: 100.00, proposedUnitOfWorkType: 'SERVICE'};
       groupJoinRequests.push(groupJoinRequest);
