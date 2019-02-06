@@ -33,7 +33,7 @@
           <div>
             <form action="#">
               <mat-form-field>
-                <mat-select placeholder="Group join request status" [(value)]="element.status">
+                <mat-select placeholder="Group join request status" [(value)]="element.status" (selectionChange)="onGroupJoinRequestStatusChange(element)">
                   <mat-option *ngFor="let groupJoinRequestStatus of groupJoinRequestStatuses" value="{{groupJoinRequestStatus}}">{{groupJoinRequestStatus}}</mat-option>
                 </mat-select>
               </mat-form-field>

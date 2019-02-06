@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {MatTableDataSource} from "@angular/material";
 import {Column} from "../../models/column.model";
@@ -8,6 +8,7 @@ import {UserRegisteredServiceService} from "../../services/user-registered-servi
 import {UserRegisteredService} from "../../models/user-registered-service.model";
 import {GroupRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
 import {GroupJoinRequestStatus} from "../../models/group join request/group-join-request-status.model";
+import {GroupJoinRequestService} from "../../services/group-join-request.service";
 
 
 @Component({
@@ -27,6 +28,8 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
   @Input() data: Array<GroupRequestRowDataItem>;
   @Input() columns: Array<Column>;
 
+  @Output() onGroupRequestStatusChanged = new EventEmitter<any>();
+
   groupJoinRequestStatuses: Array<string> = Object.keys(GroupJoinRequestStatus).filter(value => !isNaN(GroupJoinRequestStatus[value]));
 
   columnsIds = [];
@@ -37,7 +40,7 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
   expandedElement: Object | null;
 
-  constructor(private userRegisteredServiceService: UserRegisteredServiceService){}
+  constructor(private groupJoinRequestService: GroupJoinRequestService){}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -49,6 +52,10 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
       this.columns.forEach(column => {
           this.columnsIds.push(column.columnId);
       });
+  }
+
+  public onGroupJoinRequestStatusChange(element: GroupRequestRowDataItem) {
+    this.onGroupRequestStatusChanged.next(element)
   }
 
   public onDataItemClick(element: GroupJoinRequest) {

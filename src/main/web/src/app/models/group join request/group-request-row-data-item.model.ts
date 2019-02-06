@@ -13,6 +13,7 @@ export class GroupRequestRowDataItem {
   serviceDescription: string;
   experienceDescription: string;
   // group join request data
+  groupJoinRequestId: number;
   proposedUnitOfWorkType: string;
   proposedUnitOfWorkCost: number;
   status: GroupJoinRequestStatus;

@@ -73,6 +73,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
             surname: groupJoinRequest.user.surname,
             contactNumber: groupJoinRequest.user.contactNumber,
             // group join request data
+            groupJoinRequestId: groupJoinRequest.id,
             proposedUnitOfWorkType: groupJoinRequest.proposedUnitOfWorkType,
             proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost,
             status: groupJoinRequest.status
@@ -82,4 +83,12 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
     );
   }
 
+  onGroupRequestStatusChanged(groupRequestRowDataItem: GroupRequestRowDataItem){
+    let changedGroupJoinRequests: Array<GroupJoinRequest> = this.groupJoinRequests.filter(groupJoinRequest => {
+      return groupRequestRowDataItem.groupJoinRequestId == groupJoinRequest.id;
+    });
+    // there will be only one item changed, so change this item status
+    changedGroupJoinRequests[0].status = groupRequestRowDataItem.status;
+    this.groupJoinRequestService.updateGroupJoinRequest(changedGroupJoinRequests[0]).subscribe();
+  }
 }

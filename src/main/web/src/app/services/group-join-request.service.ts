@@ -4,6 +4,8 @@ import {GroupJoinRequest} from '../models/group join request/group-join-request.
 import {Observable} from 'rxjs/internal/Observable';
 import {PurchaseCoupon} from '../models/purchase-coupon.model';
 import {map} from 'rxjs/operators';
+import {GroupJoinRequestStatus} from "../models/group join request/group-join-request-status.model";
+import {GroupJoinRequestStatusTransaction} from "../models/group join request/group-join-request-status-transaction.model";
 
 @Injectable()
 export class GroupJoinRequestService {
@@ -29,6 +31,11 @@ export class GroupJoinRequestService {
   public getAllGroupJoinRequests(): Observable<Array<GroupJoinRequest>> {
      // return this.httpClient.get<GroupJoinRequest>(GROUP_JOIN_REQUESTS_URL);*/
     return this.httpClient.get<Array<GroupJoinRequest>>(this.TEST_URL);
+  }
+
+  public updateGroupJoinRequest(groupJoinRequest: GroupJoinRequest){
+    const updateGroupJoinRequestUrl = this.GROUP_JOIN_REQUESTS_BASE_URL + '/' + groupJoinRequest.id;
+    return this.httpClient.put<GroupJoinRequest>(updateGroupJoinRequestUrl, JSON.stringify(groupJoinRequest));
   }
 
 }
