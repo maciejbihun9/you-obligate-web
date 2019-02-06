@@ -4,8 +4,8 @@ import {of} from 'rxjs/internal/observable/of';
 import {from} from 'rxjs/internal/observable/from';
 import {UserObligationGroupAccount} from '../models/user-obligation-group-account.model';
 import {Observable} from 'rxjs/internal/Observable';
-import {UserObligationStrategyForRegisteredService} from '../models/user-obligation-strategy-for-registered-service.model';
 import {UnitOfWork} from '../models/unit-of-work.model';
+import {RegisteredServiceObligationStrategy} from "../models/registered-service-obligation-strategy.model";
 
 @Injectable()
 export class UserObligationGroupAccountService {
@@ -28,7 +28,7 @@ export class UserObligationGroupAccountService {
       moneyShortcutName: 'BHN'
     };
     for (let i = 0; i < 4; i++) {
-      const userObligationStrategyForRegisteredService: UserObligationStrategyForRegisteredService = {
+      const userObligationStrategyForRegisteredService: RegisteredServiceObligationStrategy = {
         unitOfWork: UnitOfWork.HOUR,
         unitOfWorkCost: 100,
         interestRate: 5,

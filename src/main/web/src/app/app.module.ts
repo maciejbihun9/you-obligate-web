@@ -40,6 +40,7 @@ import {GroupJoinRequestService} from './services/group-join-request.service';
 import { GroupJoinRequestsPanelViewComponent } from './components/group-join-requests-panel-view/group-join-requests-panel-view.component';
 import {SuperTableModule} from './components/super-table/super-table.module';
 import { TableExpandableRowsWithFilterComponent } from './components/table-expandable-rows-with-filter/table-expandable-rows-with-filter.component';
+import { CreateObligationStrategyViewComponent } from './components/create-obligation-strategy-view/create-obligation-strategy-view.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId', component: BondViewComponent },
   { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
   { path: 'obligation-groups/:obligationGroupId/group-join-requests', component: GroupJoinRequestsPanelViewComponent },
+  { path: 'obligation-groups/:obligationGroupId/create-obligation-strategy', component: CreateObligationStrategyViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/group-join-request-details', component: GroupJoinRequestDetailsViewComponent },
@@ -79,6 +81,7 @@ const appRoutes: Routes = [
     GroupJoinRequestDetailsViewComponent,
     GroupJoinRequestsPanelViewComponent,
     TableExpandableRowsWithFilterComponent,
+    CreateObligationStrategyViewComponent,
   ],
   imports: [
     BrowserModule,

@@ -58,6 +58,10 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
     this.onGroupRequestStatusChanged.next(element)
   }
 
+  public createObligationStrategy(){
+    console.log('createObligationStrategy')
+  }
+
   public onDataItemClick(element: GroupJoinRequest) {
     /*this.userRegisteredServiceService.getUserRegisteredService(element.userRegisteredServiceId).subscribe(userRegisteredService => {
       this.userRegisteredService = userRegisteredService;

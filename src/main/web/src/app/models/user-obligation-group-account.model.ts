@@ -1,8 +1,8 @@
 import {ObligationGroup} from './obligation-group.model';
-import {UserObligationStrategyForRegisteredService} from './user-obligation-strategy-for-registered-service.model';
+import {RegisteredServiceObligationStrategy} from "./registered-service-obligation-strategy.model";
 
 export interface UserObligationGroupAccount {
   accountBalance: number;
   obligationGroup: ObligationGroup;
-  userObligationStrategies: Array<UserObligationStrategyForRegisteredService>;
+  userObligationStrategies: Array<RegisteredServiceObligationStrategy>;
 }
