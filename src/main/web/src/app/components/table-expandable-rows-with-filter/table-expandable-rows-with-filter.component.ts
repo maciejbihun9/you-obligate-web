@@ -24,7 +24,7 @@ import {GroupJoinRequestStatus} from "../../models/group join request/group-join
 })
 export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
-  @Input() data: Array<GroupJoinRequest>;
+  @Input() data: Array<GroupRequestRowDataItem>;
   @Input() columns: Array<Column>;
 
   groupJoinRequestStatuses: Array<string> = Object.keys(GroupJoinRequestStatus).filter(value => !isNaN(GroupJoinRequestStatus[value]));
