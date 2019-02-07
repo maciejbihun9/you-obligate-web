@@ -10,5 +10,14 @@
  - after clicking an item we can poll
  - after clicking specific item poll for the data associated with given item
 
+ * how to create RegisteredServiceObligationStrategy:
+ - user sends a group join request,
+ - if it is ok, group admin contacts with him, sends him intention letter,
+ - if they are ok with it, a group admin creates an account for him in this group,
+ this is actually automatic,
+ - an account is created
+ - if account does not exist yet, then it will be created during creation of a service strategy
+
  questions:
- +
+ + is seems that it is a lot of work to start using it:
+ - there has to be at least one person that will
