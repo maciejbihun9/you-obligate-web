@@ -17,7 +17,7 @@
       <mat-expansion-panel *ngFor="let userObligationGroupAccount of userObligationGroupAccounts">
         <mat-expansion-panel-header>
           <span>{{userObligationGroupAccount.obligationGroup.name}}
-            {{userObligationGroupAccount.accountBalance}} {{userObligationGroupAccount.obligationGroup.moneyShortcutName}}</span>
+            {{userObligationGroupAccount.accountBalance}} {{userObligationGroupAccount.obligationGroup.groupCurrencyShortcutName}}</span>
         </mat-expansion-panel-header>
         <!--<app-registered-service-obligation-strategy *ngFor="let userObligationStrategy of userObligationGroupAccount.userObligationStrategies" [userObligationStrategyForRegisteredService]="userObligationStrategy">
 
