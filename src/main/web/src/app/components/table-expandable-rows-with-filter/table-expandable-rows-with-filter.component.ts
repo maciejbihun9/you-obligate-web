@@ -1,14 +1,11 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
-import {MatTableDataSource} from "@angular/material";
-import {Column} from "../../models/column.model";
-import {GroupJoinRequest} from "../../models/group join request/group-join-request.model";
-import {HttpClient} from "@angular/common/http";
-import {UserRegisteredServiceService} from "../../services/user-registered-service.service";
-import {UserRegisteredService} from "../../models/user-registered-service.model";
-import {GroupRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
-import {GroupJoinRequestStatus} from "../../models/group join request/group-join-request-status.model";
-import {GroupJoinRequestService} from "../../services/group-join-request.service";
+import {MatTableDataSource} from '@angular/material';
+import {Column} from '../../models/column.model';
+import {GroupJoinRequest} from '../../models/group join request/group-join-request.model';
+import {UserRegisteredService} from '../../models/user-registered-service.model';
+import {GroupRequestRowDataItem} from '../../models/group join request/group-request-row-data-item.model';
+import {GroupJoinRequestStatus} from '../../models/group join request/group-join-request-status.model';
 
 
 @Component({
@@ -28,7 +25,7 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
   @Input() data: Array<GroupRequestRowDataItem>;
   @Input() columns: Array<Column>;
 
-  @Output() onGroupRequestStatusChanged = new EventEmitter<any>();
+  @Output() groupRequestStatusChanged = new EventEmitter<any>();
 
   groupJoinRequestStatuses: Array<string> = Object.keys(GroupJoinRequestStatus).filter(value => !isNaN(GroupJoinRequestStatus[value]));
 
@@ -39,8 +36,6 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
   dataSource = undefined;
 
   expandedElement: Object | null;
-
-  constructor(private groupJoinRequestService: GroupJoinRequestService){}
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -55,11 +50,11 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
   }
 
   public onGroupJoinRequestStatusChange(element: GroupRequestRowDataItem) {
-    this.onGroupRequestStatusChanged.next(element)
+    this.groupRequestStatusChanged.next(element);
   }
 
-  public createObligationStrategy(){
-    console.log('createObligationStrategy')
+  public createObligationStrategy() {
+    console.log('createObligationStrategy');
   }
 
   public onDataItemClick(element: GroupJoinRequest) {

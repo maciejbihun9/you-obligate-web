@@ -4,4 +4,5 @@
      [options]='options'
      [tableClasses]='tableClasses'>
 </div>-->
-<div *ngIf="!dataIsLoading" (onGroupRequestStatusChanged)="onGroupRequestStatusChanged($event)" app-table-expandable-rows-with-filter [columns]="columns" [data]="gridRowsData"></div>
+<div *ngIf="!dataIsLoading" (groupRequestStatusChanged)="onGroupRequestStatusChanged($event)"
+     app-table-expandable-rows-with-filter [columns]="columns" [data]="gridRowsData"></div>
