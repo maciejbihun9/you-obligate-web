@@ -1,5 +1,6 @@
 # Normal files
 src/main/web/src/assets/tasks
+src/main/resources/tasks
 
 # Angular normal files 
 target/
