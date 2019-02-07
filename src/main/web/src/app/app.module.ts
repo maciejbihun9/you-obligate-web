@@ -40,6 +40,7 @@ import {RegisteredServiceObligationStrategyService} from './services/registered-
 import { RegisteredServiceObligationStrategyComponent } from './components/registered-service-obligation-strategy/registered-service-obligation-strategy.component';
 import {UserObligationGroupsComponent} from './components/user-obligation-groups/user-obligation-groups.component';
 import {GroupJoinRequestSummaryViewComponent} from './components/group-join-request-summary-view/group-join-request-summary-view.component';
+import { GroupJoinRequestRowDataItemComponent } from './components/group-join-request-row-data-item/group-join-request-row-data-item.component';
 
 const appRoutes: Routes = [
   { path: 'users/:userId/user-registered-services', component: UserRegisteredServiceComponent },
@@ -79,6 +80,7 @@ const appRoutes: Routes = [
     TableExpandableRowsWithFilterComponent,
     CreateObligationStrategyViewComponent,
     RegisteredServiceObligationStrategyComponent,
+    GroupJoinRequestRowDataItemComponent,
   ],
   imports: [
     BrowserModule,
