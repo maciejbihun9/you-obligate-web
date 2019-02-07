@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserObligationGroupAccount} from '../../models/user-obligation-group-account.model';
-import {UserObligationGroupAccountService} from '../../services/user-obligation-group-account.service';
+import {UserAccountInObligationGroup} from '../../models/user-account-in-obligation-group.model';
+import {UserAccountInObligationGroupService} from '../../services/user-account-in-obligation-group.service';
 
 @Component({
   selector: 'app-obligation-groups-panel',
@@ -11,12 +11,12 @@ export class UserObligationGroupsPanelComponent implements OnInit {
 
   public panelTitle = 'Your obligation groups';
 
-  userObligationGroupAccounts: Array<UserObligationGroupAccount> = [];
+  userObligationGroupAccounts: Array<UserAccountInObligationGroup> = [];
 
-  constructor(private userObligationGroupAccountService: UserObligationGroupAccountService) { }
+  constructor(private userObligationGroupAccountService: UserAccountInObligationGroupService) { }
 
   ngOnInit() {
-    this.userObligationGroupAccountService.getUserObligationGroupAccounts().subscribe(
+    this.userObligationGroupAccountService.getUserAccountsInObligationGroup().subscribe(
       userObligationGroupAccounts => {
         this.userObligationGroupAccounts = userObligationGroupAccounts;
       }

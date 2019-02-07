@@ -12,7 +12,7 @@ import {UserRegisteredServicesComponent} from './components/user-registered-serv
 import {UserRegisteredServiceComponent} from './components/user-registered-service/user-registered-service.component';
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
-import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
+import {UserAccountInObligationGroupService} from './services/user-account-in-obligation-group.service';
 import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
 import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
@@ -39,6 +39,8 @@ import { GroupJoinRequestsPanelViewComponent } from './components/group-join-req
 import {SuperTableModule} from './components/super-table/super-table.module';
 import { TableExpandableRowsWithFilterComponent } from './components/table-expandable-rows-with-filter/table-expandable-rows-with-filter.component';
 import { CreateObligationStrategyViewComponent } from './components/create-obligation-strategy-view/create-obligation-strategy-view.component';
+import {RegisteredServiceObligationStrategyService} from "./services/registered-service-obligation-strategy.service";
+import { RegisteredServiceObligationStrategyComponent } from './components/registered-service-obligation-strategy/registered-service-obligation-strategy.component';
 
 const appRoutes: Routes = [
   { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
@@ -79,6 +81,7 @@ const appRoutes: Routes = [
     GroupJoinRequestsPanelViewComponent,
     TableExpandableRowsWithFilterComponent,
     CreateObligationStrategyViewComponent,
+    RegisteredServiceObligationStrategyComponent,
   ],
   imports: [
     BrowserModule,
@@ -100,9 +103,9 @@ const appRoutes: Routes = [
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false })
   ],
-  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserObligationGroupAccountService,
+  providers: [UserRegisteredServiceService, UserUnitsRequestServiceService, UserAccountInObligationGroupService,
     ObligationGroupsService, TestService, BondService, UserService, MarketTransactionsService, PurchaseCouponService,
-    GroupJoinRequestService],
+    GroupJoinRequestService, RegisteredServiceObligationStrategyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@ import {ObligationGroup} from '../../models/obligation-group.model';
 import {UserRegisteredServiceEntity} from '../../models/user-registered-service-entity.model';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user.model';
-import {UserObligationGroupAccountService} from '../../services/user-obligation-group-account.service';
+import {UserAccountInObligationGroupService} from '../../services/user-account-in-obligation-group.service';
 import {MarketTransactionsService} from '../../services/market-transactions.service';
 import {PurchaseDataObjectModel} from '../../models/purchase-data-object.model';
 import {PurchaseCoupon} from '../../models/purchase-coupon.model';
@@ -41,7 +41,7 @@ export class PurchaseCouponsViewComponent implements OnInit {
               private router: Router,
               private bondService: BondService,
               private userService: UserService,
-              private userObligationGroupAccountService: UserObligationGroupAccountService,
+              private userObligationGroupAccountService: UserAccountInObligationGroupService,
               private obligationGroupService: ObligationGroupsService,
               private marketTransactionsService: MarketTransactionsService) {
   }
