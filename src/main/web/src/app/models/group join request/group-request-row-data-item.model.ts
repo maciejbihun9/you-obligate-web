@@ -1,6 +1,6 @@
 import {GroupJoinRequestStatus} from "./group-join-request-status.model";
 
-export class GroupRequestRowDataItem {
+export class GroupJoinRequestRowDataItem {
 
   // user data
   name: string;

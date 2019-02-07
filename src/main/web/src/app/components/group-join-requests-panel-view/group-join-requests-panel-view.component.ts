@@ -4,7 +4,7 @@ import { GroupJoinRequestService } from '../../services/group-join-request.servi
 import {GroupJoinRequestsGridColumns} from '../../models/group join request/group-join-requests-grid-columns';
 import {SuperTableOptions} from "../super-table/models/interfaces";
 import {Column} from "../../models/column.model";
-import {GroupRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
+import {GroupJoinRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
 
 @Component({
   selector: 'app-group-join-requests-panel-view',
@@ -16,7 +16,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
   groupJoinRequests: Array<GroupJoinRequest>;
 
   // columns = GroupJoinRequestsGridColumns.superTableColumns;
-  gridRowsData: Array<GroupRequestRowDataItem> = [];
+  gridRowsData: Array<GroupJoinRequestRowDataItem> = [];
 
   columns: Array<Column> = [
     {
@@ -83,7 +83,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
     );
   }
 
-  onGroupRequestStatusChanged(groupRequestRowDataItem: GroupRequestRowDataItem){
+  onGroupRequestStatusChanged(groupRequestRowDataItem: GroupJoinRequestRowDataItem){
     let changedGroupJoinRequests: Array<GroupJoinRequest> = this.groupJoinRequests.filter(groupJoinRequest => {
       return groupRequestRowDataItem.groupJoinRequestId == groupJoinRequest.id;
     });

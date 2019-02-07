@@ -4,7 +4,7 @@ import {MatTableDataSource} from '@angular/material';
 import {Column} from '../../models/column.model';
 import {GroupJoinRequest} from '../../models/group join request/group-join-request.model';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
-import {GroupRequestRowDataItem} from '../../models/group join request/group-request-row-data-item.model';
+import {GroupJoinRequestRowDataItem} from '../../models/group join request/group-request-row-data-item.model';
 import {GroupJoinRequestStatus} from '../../models/group join request/group-join-request-status.model';
 
 
@@ -22,12 +22,10 @@ import {GroupJoinRequestStatus} from '../../models/group join request/group-join
 })
 export class TableExpandableRowsWithFilterComponent implements OnChanges {
 
-  @Input() data: Array<GroupRequestRowDataItem>;
+  @Input() data: Array<GroupJoinRequestRowDataItem>;
   @Input() columns: Array<Column>;
 
   @Output() groupRequestStatusChanged = new EventEmitter<any>();
-
-  groupJoinRequestStatuses: Array<string> = Object.keys(GroupJoinRequestStatus).filter(value => !isNaN(GroupJoinRequestStatus[value]));
 
   columnsIds = [];
 
@@ -49,7 +47,7 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
       });
   }
 
-  public onGroupJoinRequestStatusChange(element: GroupRequestRowDataItem) {
+  public onGroupJoinRequestStatusChange(element: GroupJoinRequestRowDataItem) {
     this.groupRequestStatusChanged.next(element);
   }
 

@@ -20,28 +20,7 @@
     <td mat-cell *matCellDef="let element" [attr.colspan]="columns.length">
       <div class="example-element-detail"
            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-        <div>
-          <div class="example-element-position"> {{element.username}} </div>
-          <div class="example-element-symbol"> {{element.userRegisteredServiceName}} </div>
-          <div class="example-element-weight"> {{element.proposedUnitOfWorkType}} </div>
-          <div class="example-element-name"> {{element.proposedUnitOfWorkCost}} </div>
-          <hr>
-          <div class="example-element-name"> {{element.userRegisteredServiceName}} </div>
-          <div class="example-element-name"> {{element.userRegisteredServiceCategory}} </div>
-          <div class="example-element-name"> {{element.serviceDescription}} </div>
-          <div class="example-element-name"> {{element.experienceDescription}} </div>
-          <div>
-            <form action="#">
-              <mat-form-field>
-                <mat-select placeholder="Group join request status" [(value)]="element.status" (selectionChange)="onGroupJoinRequestStatusChange(element)">
-                  <mat-option *ngFor="let groupJoinRequestStatus of groupJoinRequestStatuses" value="{{groupJoinRequestStatus}}">{{groupJoinRequestStatus}}</mat-option>
-                </mat-select>
-              </mat-form-field>
-              <button (click)="createObligationStrategy()" mat-raised-button color="primary">Create obligation strategy</button>
-              <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            </form>
-          </div>
-        </div>
+        <div app-group-join-request-row-data-item [groupJoinRequestRowDataItem]="element"></div>
       </div>
     </td>
   </ng-container>
