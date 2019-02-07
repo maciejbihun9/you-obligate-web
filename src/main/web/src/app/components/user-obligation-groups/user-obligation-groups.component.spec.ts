@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserObligationGroupsPanelComponent } from './user-obligation-groups-panel.component';
+import { UserObligationGroupsComponent } from './user-obligation-groups.component';
 
 describe('ObligationGroupsPanelComponent', () => {
-  let component: UserObligationGroupsPanelComponent;
-  let fixture: ComponentFixture<UserObligationGroupsPanelComponent>;
+  let component: UserObligationGroupsComponent;
+  let fixture: ComponentFixture<UserObligationGroupsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserObligationGroupsPanelComponent ]
+      declarations: [ UserObligationGroupsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserObligationGroupsPanelComponent);
+    fixture = TestBed.createComponent(UserObligationGroupsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

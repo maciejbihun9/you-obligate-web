@@ -13,8 +13,6 @@ import {UserRegisteredServiceComponent} from './components/user-registered-servi
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import {UserAccountInObligationGroupService} from './services/user-account-in-obligation-group.service';
-import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
-import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
 import {ObligationGroupsService} from './services/obligation-groups.service';
 import { ObligationGroupImageComponent } from './components/obligation-group-image/obligation-group-image.component';
@@ -23,7 +21,7 @@ import {ObligationGroupListItemComponent} from './components/obligation-group-li
 import { BondListItemComponent } from './components/bond-list-item/bond-list-item.component';
 import { BondViewComponent } from './components/bond-view/bond-view.component';
 import {TestService} from './services/test.service';
-import {CreateObligationGroupPanelComponent} from './components/create-obligation-group-panel/create-obligation-group-panel.component';
+import {CreateObligationGroupComponent} from './components/create-obligation-group-panel/create-obligation-group.component';
 import { PurchaseCouponsViewComponent } from './components/purchase-coupons-view/purchase-coupons-view.component';
 import {BondService} from './services/bond.service';
 import {UserService} from './services/user.service';
@@ -39,13 +37,14 @@ import { GroupJoinRequestsPanelViewComponent } from './components/group-join-req
 import {SuperTableModule} from './components/super-table/super-table.module';
 import { TableExpandableRowsWithFilterComponent } from './components/table-expandable-rows-with-filter/table-expandable-rows-with-filter.component';
 import { CreateObligationStrategyViewComponent } from './components/create-obligation-strategy-view/create-obligation-strategy-view.component';
-import {RegisteredServiceObligationStrategyService} from "./services/registered-service-obligation-strategy.service";
+import {RegisteredServiceObligationStrategyService} from './services/registered-service-obligation-strategy.service';
 import { RegisteredServiceObligationStrategyComponent } from './components/registered-service-obligation-strategy/registered-service-obligation-strategy.component';
+import {UserObligationGroupsComponent} from './components/user-obligation-groups/user-obligation-groups.component';
 
 const appRoutes: Routes = [
-  { path: 'user-account/registered-services-panel', component: UserRegisteredServiceComponent },
-  { path: 'user-account/user-obligation-groups-panel', component: UserObligationGroupsPanelComponent },
-  { path: 'create-obligation-group-panel', component: CreateObligationPanelComponent },
+  { path: 'users/:userId/user-registered-services', component: UserRegisteredServiceComponent },
+  { path: 'users/:userId/user-obligation-groups', component: UserObligationGroupsComponent },
+  { path: 'obligation-groups/create-obligation-group', component: CreateObligationGroupComponent },
   { path: 'obligation-groups', component: ObligationGroupsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId', component: BondViewComponent },
   { path: 'obligation-groups/:obligationGroupId', component: ObligationGroupViewComponent },
@@ -65,9 +64,8 @@ const appRoutes: Routes = [
     ManageUserRegisteredServiceComponent,
     UserRegisteredServiceComponent,
     UserRegisteredServicesComponent,
-    UserObligationGroupsPanelComponent,
-    CreateObligationPanelComponent,
-    CreateObligationGroupPanelComponent,
+    UserObligationGroupsComponent,
+    CreateObligationGroupComponent,
     ObligationGroupsViewComponent,
     ObligationGroupListItemComponent,
     ObligationGroupImageComponent,

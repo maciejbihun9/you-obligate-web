@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateObligationGroupPanelComponent } from './create-obligation-group-panel.component';
+import { CreateObligationGroupComponent } from './create-obligation-group.component';
 
 describe('CreateObligationPanelComponent', () => {
-  let component: CreateObligationGroupPanelComponent;
-  let fixture: ComponentFixture<CreateObligationGroupPanelComponent>;
+  let component: CreateObligationGroupComponent;
+  let fixture: ComponentFixture<CreateObligationGroupComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateObligationGroupPanelComponent ]
+      declarations: [ CreateObligationGroupComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateObligationGroupPanelComponent);
+    fixture = TestBed.createComponent(CreateObligationGroupComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -7,10 +7,10 @@ import {UserAccountInObligationGroupService} from '../../services/user-account-i
  */
 @Component({
   selector: 'app-obligation-groups-panel',
-  templateUrl: './user-obligation-groups-panel.component.html',
-  styleUrls: ['./user-obligation-groups-panel.component.css']
+  templateUrl: './user-obligation-groups.component.html',
+  styleUrls: ['./user-obligation-groups.component.css']
 })
-export class UserObligationGroupsPanelComponent implements OnInit {
+export class UserObligationGroupsComponent implements OnInit {
 
   public panelTitle = 'Your obligation groups';
 
