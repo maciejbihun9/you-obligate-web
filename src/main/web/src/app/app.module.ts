@@ -31,7 +31,6 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import {InMemoryDataService} from './services/in-memory-data.service';
 import {PurchaseCouponService} from './services/purchase-coupon.service';
 import {JoinGroupProposalViewComponent} from './components/join-group-proposal-view/join-group-proposal-view.component';
-import { GroupJoinRequestDetailsViewComponent } from './components/group-join-request-details-view/group-join-request-details-view.component';
 import {GroupJoinRequestService} from './services/group-join-request.service';
 import { GroupJoinRequestsPanelViewComponent } from './components/group-join-requests-panel-view/group-join-requests-panel-view.component';
 import {SuperTableModule} from './components/super-table/super-table.module';
@@ -40,6 +39,7 @@ import { CreateObligationStrategyViewComponent } from './components/create-oblig
 import {RegisteredServiceObligationStrategyService} from './services/registered-service-obligation-strategy.service';
 import { RegisteredServiceObligationStrategyComponent } from './components/registered-service-obligation-strategy/registered-service-obligation-strategy.component';
 import {UserObligationGroupsComponent} from './components/user-obligation-groups/user-obligation-groups.component';
+import {GroupJoinRequestSummaryViewComponent} from './components/group-join-request-summary-view/group-join-request-summary-view.component';
 
 const appRoutes: Routes = [
   { path: 'users/:userId/user-registered-services', component: UserRegisteredServiceComponent },
@@ -52,7 +52,6 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId/create-obligation-strategy', component: CreateObligationStrategyViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons', component: PurchaseCouponsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
-  { path: 'obligation-groups/:obligationGroupId/group-join-request-details', component: GroupJoinRequestDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/join-group-proposal', component: JoinGroupProposalViewComponent },
   { path: 'grid-test', component: TableExpandableRowsWithFilterComponent },
 
@@ -75,7 +74,7 @@ const appRoutes: Routes = [
     PurchaseCouponsViewComponent,
     CouponsPurchaseDetailsViewComponent,
     JoinGroupProposalViewComponent,
-    GroupJoinRequestDetailsViewComponent,
+    GroupJoinRequestSummaryViewComponent,
     GroupJoinRequestsPanelViewComponent,
     TableExpandableRowsWithFilterComponent,
     CreateObligationStrategyViewComponent,
