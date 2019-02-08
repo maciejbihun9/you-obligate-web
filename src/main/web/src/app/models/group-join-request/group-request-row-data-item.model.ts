@@ -1,4 +1,5 @@
 import {GroupJoinRequestStatus} from "./group-join-request-status.model";
+import {UnitOfWork} from "../unit-of-work.model";
 
 export class GroupRequestRowDataItem {
 
@@ -14,7 +15,7 @@ export class GroupRequestRowDataItem {
   experienceDescription: string;
   // group join request data
   groupJoinRequestId: number;
-  proposedUnitOfWorkType: string;
+  proposedUnitOfWorkType: UnitOfWork;
   proposedUnitOfWorkCost: number;
   status: GroupJoinRequestStatus;
 
