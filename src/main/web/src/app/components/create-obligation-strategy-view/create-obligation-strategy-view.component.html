@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="groupJoinRequest">
   <div>
     <span>
       <h2>{{groupJoinRequest.obligationGroup.name}}</h2>
@@ -13,7 +13,14 @@
     <p> Username: {{groupJoinRequest.user.username}} </p>
     <hr>
     <p> Service name: {{groupJoinRequest.userRegisteredService.serviceName}}</p>
-    <p> Unit of work type: {{groupJoinRequest.proposedUnitOfWorkType}}</p>
+    <form action="#">
+      <mat-form-field>
+        <mat-select placeholder="Unit of work type" [(value)]="unitOfWorkType">
+          <mat-option *ngFor="let unitOfWorkType of unitOfWorkTypes" value="{{unitOfWorkType}}">{{unitOfWorkType}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <input matInput placeholder="Unit of work cost" [(ngModel)]="unitOfWorkCost" name="unitOfWorkCost">
     <p> Unit of work cost: {{groupJoinRequest.proposedUnitOfWorkCost}}</p>
   </div>
   <div>
