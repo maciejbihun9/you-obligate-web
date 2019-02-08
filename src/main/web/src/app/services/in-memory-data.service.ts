@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 import {Bond} from '../models/bond.model';
 import {PurchaseCoupon} from '../models/purchase-coupon.model';
@@ -7,7 +7,8 @@ import {UserRegisteredService} from '../models/user-registered-service.model';
 import {UserAccountInObligationGroup} from '../models/user-account-in-obligation-group.model';
 import {User} from '../models/user.model';
 import {ObligationGroup} from '../models/obligation-group.model';
-import {GroupJoinRequestStatus} from "../models/group join request/group-join-request-status.model";
+import {GroupJoinRequestStatus} from "../models/group-join-request/group-join-request-status.model";
+import {UnitOfWork} from "../models/unit-of-work.model";
 
 @Injectable({
   providedIn: 'root',
@@ -139,7 +140,9 @@ export class InMemoryDataService implements InMemoryDbService {
       const registeredServiceObligationStrategy: RegisteredServiceObligationStrategy = {
         id: i,
         userRegisteredService: userRegisteredServices[i],
-        userAccountInObligationGroup: userAccountsInObligationGroup[i]
+        userAccountInObligationGroup: userAccountsInObligationGroup[i],
+        unitOfWork: UnitOfWork.SERVICE,
+        unitOfWorkCost: i * 100
       };
       registeredServiceObligationStrategies.push(registeredServiceObligationStrategy);
       if (i === amountOfObjectsToCreate) { break; }
