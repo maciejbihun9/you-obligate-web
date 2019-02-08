@@ -21,30 +21,8 @@ export class UserObligationGroupAccountService {
   }
 
   public getUserObligationGroupAccounts(): Observable<Array<UserObligationGroupAccount>> {
-    const userObligationGroupAccounts = [];
-    const obligationGroup = {
-      name: 'PLAYERS',
-      moneyName: 'BIHUN',
-      moneyShortcutName: 'BHN'
-    };
-    for (let i = 0; i < 4; i++) {
-      const userObligationStrategyForRegisteredService: RegisteredServiceObligationStrategy = {
-        unitOfWork: UnitOfWork.HOUR,
-        unitOfWorkCost: 100,
-        interestRate: 5,
-        tooBigDebtFine: 2
-      };
-      const userObligationGroupStrategies = [userObligationStrategyForRegisteredService];
-      const userObligationGroupAccount = {
-        accountBalance: 10000,
-        obligationGroup: obligationGroup,
-        userObligationStrategies: userObligationGroupStrategies
-      };
-      userObligationGroupAccounts.push(userObligationGroupAccount);
-    }
-    return new Observable((observer) => {
-      observer.next(userObligationGroupAccounts);
-    });
+    const url = '/api/userAccountsInObligationGroup';
+    return this.httpClient.get<Array<UserObligationGroupAccount>>(url);
   }
 
 }
