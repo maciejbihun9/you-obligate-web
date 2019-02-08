@@ -19,7 +19,7 @@ import { CreateObligationPanelComponent } from './components/create-obligation-p
 import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
 import {ObligationGroupsService} from './services/obligation-groups.service';
-import { ObligationGroupImageComponent } from './components/obligation-group-image/obligation-group-image.component';
+import { CircleImageComponent } from './components/circle-image/circle-image.component';
 import { ObligationGroupViewComponent } from './components/obligation-group-view/obligation-group-view.component';
 import {ObligationGroupListItemComponent} from './components/obligation-group-list-item/obligation-group-list-item.component';
 import { BondListItemComponent } from './components/bond-list-item/bond-list-item.component';
@@ -56,7 +56,6 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId/group-join-request-details', component: GroupJoinRequestDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/join-group-proposal', component: JoinGroupProposalViewComponent },
   { path: 'grid-test', component: TableExpandableRowsWithFilterComponent },
-
 ];
 
 @NgModule({
@@ -71,7 +70,7 @@ const appRoutes: Routes = [
     CreateObligationGroupPanelComponent,
     ObligationGroupsViewComponent,
     ObligationGroupListItemComponent,
-    ObligationGroupImageComponent,
+    CircleImageComponent,
     ObligationGroupViewComponent,
     BondListItemComponent,
     BondViewComponent,
