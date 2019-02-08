@@ -4,7 +4,7 @@ import {User} from '../../models/user.model';
 import {UserService} from '../../services/user.service';
 import {UserRegisteredServiceService} from '../../services/user-registered-service.service';
 import {UserRegisteredService} from '../../models/user-registered-service.model';
-import {GroupJoinRequest} from '../../models/group join request/group-join-request.model';
+import {GroupJoinRequest} from '../../models/group-join-request/group-join-request.model';
 import {GroupJoinRequestService} from '../../services/group-join-request.service';
 
 @Component({
@@ -39,7 +39,7 @@ export class JoinGroupProposalViewComponent implements OnInit {
   ngOnInit() {
     this.obligationGroupId = +this.route.snapshot.paramMap.get('obligationGroupId');
 
-    // poll for test group join request object
+    // poll for test group-join-request object
     this.groupJoinRequestService.getGroupJoinRequest(0).subscribe(groupJoinRequest => {
       this.testGroupJoinRequest = groupJoinRequest;
     });
@@ -57,7 +57,7 @@ export class JoinGroupProposalViewComponent implements OnInit {
 
   sendGroupJoinProposition() {
     console.log('Send join group proposal view');
-    // create group join request
+    // create group-join-request
     this.groupJoinRequestService.sendGroupJoinRequest(this.testGroupJoinRequest).subscribe(httpResponsWithCreatedGroupJoinRequest => {
       console.log('Join group request created.');
       // navigate to a join group request details view and inform that a request has been made in the right way
