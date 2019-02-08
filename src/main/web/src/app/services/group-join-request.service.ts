@@ -5,7 +5,6 @@ import {Observable} from 'rxjs/internal/Observable';
 import {PurchaseCoupon} from '../models/purchase-coupon.model';
 import {map} from 'rxjs/operators';
 import {GroupJoinRequestStatus} from "../models/group join request/group-join-request-status.model";
-import {GroupJoinRequestStatusTransaction} from "../models/group join request/group-join-request-status-transaction.model";
 
 @Injectable()
 export class GroupJoinRequestService {
