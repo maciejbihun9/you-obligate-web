@@ -3,9 +3,9 @@ import {RegisteredServiceObligationStrategy} from './registered-service-obligati
 import {User} from './user.model';
 
 export interface UserAccountInObligationGroup {
-  id: number;
-  user: User;
-  obligationGroup: ObligationGroup;
+  id?: number;
+  user?: User;
+  accountBalance?: number;
+  obligationGroup?: ObligationGroup;
   userObligationStrategies?: Array<RegisteredServiceObligationStrategy>;
-  accountBalance: number;
 }

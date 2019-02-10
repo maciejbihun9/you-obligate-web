@@ -13,9 +13,14 @@ import {UserRegisteredServiceComponent} from './components/user-registered-servi
 import {ManageUserRegisteredServiceComponent} from './components/manage-user-registered-service/manage-user-registered-service.component';
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import {UserAccountInObligationGroupService} from './services/user-account-in-obligation-group.service';
+import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
+import { RegisteredServiceObligationStrategyComponent }
+from './components/registered-service-obligation-strategy/registered-service-obligation-strategy.component';
+import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
+import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
 import {ObligationGroupsService} from './services/obligation-groups.service';
-import { ObligationGroupImageComponent } from './components/obligation-group-image/obligation-group-image.component';
+import { CircleImageComponent } from './components/circle-image/circle-image.component';
 import { ObligationGroupViewComponent } from './components/obligation-group-view/obligation-group-view.component';
 import {ObligationGroupListItemComponent} from './components/obligation-group-list-item/obligation-group-list-item.component';
 import { BondListItemComponent } from './components/bond-list-item/bond-list-item.component';
@@ -55,7 +60,6 @@ const appRoutes: Routes = [
   { path: 'obligation-groups/:obligationGroupId/bonds/:bondId/purchase-coupons/purchase-details', component: CouponsPurchaseDetailsViewComponent },
   { path: 'obligation-groups/:obligationGroupId/join-group-proposal', component: JoinGroupProposalViewComponent },
   { path: 'grid-test', component: TableExpandableRowsWithFilterComponent },
-
 ];
 
 @NgModule({
@@ -66,9 +70,12 @@ const appRoutes: Routes = [
     UserRegisteredServicesComponent,
     UserObligationGroupsComponent,
     CreateObligationGroupComponent,
+    UserObligationGroupsPanelComponent,
+    RegisteredServiceObligationStrategyComponent,
+    CreateObligationPanelComponent,
     ObligationGroupsViewComponent,
     ObligationGroupListItemComponent,
-    ObligationGroupImageComponent,
+    CircleImageComponent,
     ObligationGroupViewComponent,
     BondListItemComponent,
     BondViewComponent,

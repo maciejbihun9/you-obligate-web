@@ -3,9 +3,9 @@ import {UserAccountInObligationGroup} from './user-account-in-obligation-group.m
 import {UnitOfWork} from './unit-of-work.model';
 
 export interface RegisteredServiceObligationStrategy {
-  id: number;
+  id?: number;
+  userAccountInObligationGroup?: UserAccountInObligationGroup;
   userRegisteredService: UserRegisteredService;
-  userAccountInObligationGroup: UserAccountInObligationGroup;
   unitOfWork: UnitOfWork;
   unitOfWorkCost: number;
   interestRate: number;

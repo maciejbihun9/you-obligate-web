@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { GroupJoinRequest } from '../../models/group join request/group-join-request.model';
+import { GroupJoinRequest } from '../../models/group-join-request/group-join-request.model';
 import { GroupJoinRequestService } from '../../services/group-join-request.service';
-import {GroupJoinRequestsGridColumns} from '../../models/group join request/group-join-requests-grid-columns';
-import {SuperTableOptions} from "../super-table/models/interfaces";
-import {Column} from "../../models/column.model";
-import {GroupJoinRequestRowDataItem} from "../../models/group join request/group-request-row-data-item.model";
+import {GroupJoinRequestsGridColumns} from '../../models/group-join-request/group-join-requests-grid-columns';
+import {SuperTableOptions} from '../super-table/models/interfaces';
+import {Column} from '../../models/column.model';
+import {GroupJoinRequestRowDataItem} from '../../models/group-join-request/group-request-row-data-item.model';
 
 @Component({
   selector: 'app-group-join-requests-panel-view',
@@ -72,7 +72,7 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
             name: groupJoinRequest.user.name,
             surname: groupJoinRequest.user.surname,
             contactNumber: groupJoinRequest.user.contactNumber,
-            // group join request data
+            // group-join-request data
             groupJoinRequestId: groupJoinRequest.id,
             proposedUnitOfWorkType: groupJoinRequest.proposedUnitOfWorkType,
             proposedUnitOfWorkCost: groupJoinRequest.proposedUnitOfWorkCost,
@@ -84,8 +84,8 @@ export class GroupJoinRequestsPanelViewComponent implements OnInit {
   }
 
   onGroupRequestStatusChanged(groupRequestRowDataItem: GroupJoinRequestRowDataItem){
-    let changedGroupJoinRequests: Array<GroupJoinRequest> = this.groupJoinRequests.filter(groupJoinRequest => {
-      return groupRequestRowDataItem.groupJoinRequestId == groupJoinRequest.id;
+    const changedGroupJoinRequests: Array<GroupJoinRequest> = this.groupJoinRequests.filter(groupJoinRequest => {
+      return groupRequestRowDataItem.groupJoinRequestId === groupJoinRequest.id;
     });
     // there will be only one item changed, so change this item status
     changedGroupJoinRequests[0].status = groupRequestRowDataItem.status;

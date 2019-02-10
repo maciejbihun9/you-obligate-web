@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {InMemoryDbService} from 'angular-in-memory-web-api';
 import {Bond} from '../models/bond.model';
 import {PurchaseCoupon} from '../models/purchase-coupon.model';
@@ -7,8 +7,8 @@ import {UserRegisteredService} from '../models/user-registered-service.model';
 import {UserAccountInObligationGroup} from '../models/user-account-in-obligation-group.model';
 import {User} from '../models/user.model';
 import {ObligationGroup} from '../models/obligation-group.model';
-import {GroupJoinRequestStatus} from "../models/group join request/group-join-request-status.model";
-import {UnitOfWork} from "../models/unit-of-work.model";
+import {GroupJoinRequestStatus} from '../models/group-join-request/group-join-request-status.model';
+import {UnitOfWork} from '../models/unit-of-work.model';
 
 @Injectable({
   providedIn: 'root',
@@ -141,11 +141,11 @@ export class InMemoryDataService implements InMemoryDbService {
         id: i,
         userRegisteredService: userRegisteredServices[i],
         userAccountInObligationGroup: userAccountsInObligationGroup[i],
-        unitOfWork: UnitOfWork.HOUR,
-        unitOfWorkCost: 100.00,
         interestRate: 0.01 * i,
         minAmountOfUnitsPerBond: 2,
-        maxAmountOfUnitsForObligation: i * 5
+        maxAmountOfUnitsForObligation: i * 5,
+        unitOfWork: UnitOfWork.SERVICE,
+        unitOfWorkCost: i * 100
       };
       registeredServiceObligationStrategies.push(registeredServiceObligationStrategy);
       if (i === amountOfObjectsToCreate) { break; }

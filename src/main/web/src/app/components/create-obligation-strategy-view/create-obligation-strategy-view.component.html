@@ -1,3 +1,29 @@
-<p>
-  create-obligation-strategy-view works!
-</p>
+<div *ngIf="groupJoinRequest">
+  <div>
+    <span>
+      <h2>{{groupJoinRequest.obligationGroup.name}}</h2>
+      <app-circle-image imageSrc="../../../assets/spartan.png"></app-circle-image>
+    </span>
+    <hr>
+  </div>
+  <div>
+    <app-circle-image imageSrc="../../../assets/user-face.png"></app-circle-image>
+    <p> Name: {{groupJoinRequest.user.name}} </p>
+    <p> Surname: {{groupJoinRequest.user.surname}} </p>
+    <p> Username: {{groupJoinRequest.user.username}} </p>
+    <hr>
+    <p> Service name: {{groupJoinRequest.userRegisteredService.serviceName}}</p>
+    <form action="#">
+      <mat-form-field>
+        <mat-select placeholder="Unit of work type" [(value)]="unitOfWorkType">
+          <mat-option *ngFor="let unitOfWorkType of unitOfWorkTypes" value="{{unitOfWorkType}}">{{unitOfWorkType}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </form>
+    <input matInput placeholder="Unit of work cost" [(ngModel)]="unitOfWorkCost" name="unitOfWorkCost">
+    <p> Unit of work cost: {{groupJoinRequest.proposedUnitOfWorkCost}}</p>
+  </div>
+  <div>
+    <button (click)="createObligationStrategy()" mat-raised-button color="primary">Create obligation strategy</button>
+  </div>
+</div>
