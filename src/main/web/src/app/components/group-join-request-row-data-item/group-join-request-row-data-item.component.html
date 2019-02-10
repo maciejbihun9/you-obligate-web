@@ -14,6 +14,7 @@
         <mat-option *ngFor="let groupJoinRequestStatus of groupJoinRequestStatuses" value="{{groupJoinRequestStatus}}">{{groupJoinRequestStatus}}</mat-option>
       </mat-select>
     </mat-form-field>
+    <button (click)="createObligationStrategy()" mat-raised-button color="primary">Create obligation strategy</button>
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
   </form>
 </div>

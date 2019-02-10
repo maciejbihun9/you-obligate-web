@@ -25,8 +25,6 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
   @Input() data: Array<GroupJoinRequestRowDataItem>;
   @Input() columns: Array<Column>;
 
-  @Output() groupRequestStatusChanged = new EventEmitter<any>();
-
   columnsIds = [];
 
   userRegisteredService: UserRegisteredService;
@@ -47,13 +45,7 @@ export class TableExpandableRowsWithFilterComponent implements OnChanges {
       });
   }
 
-  public onGroupJoinRequestStatusChange(element: GroupJoinRequestRowDataItem) {
-    this.groupRequestStatusChanged.next(element);
-  }
 
-  public createObligationStrategy() {
-    console.log('createObligationStrategy');
-  }
 
   public onDataItemClick(element: GroupJoinRequest) {
     /*this.userRegisteredServiceService.getUserRegisteredService(element.userRegisteredServiceId).subscribe(userRegisteredService => {
