@@ -1,0 +1,24 @@
+
+ * creating application tips:
+ - create just simple ui,
+ - make sure that those views, those ui views will be used and necessery
+ - I have to know exactly what I will need, what kind of models,
+ - this is my project, so i will develop later what i will need,
+ - the same as they are creating buildings, first, they create fundaments
+ for what they need, we have walls - then we have light bulbs -
+ first we have walls,, noone,
+ - maybe later it iwll be worthless to create another repo, another service, controller for all those unused models,
+ creating tests,
+ - noone installs neons before car is ready to go on normal ways, normal roads,
+ - noone puts seats in not ready car, because you can make it dirty,
+ - ui is not a package, is a part of a product,
+ - UI and backend has to be like one monolitic posture,
+ - I need to to good on ui, so I will create entire ui first,
+ - we wont test until is done, until we know, and we sure we need it,
+ - cars do not have crash tests until we have,
+ - if a user does not like the all picture,
+ - like a car - I want to see the whole picture of it man, that i know I gonna love it!,
+ - like at the beginning - i show people a pic how my, maybe they gonna say that no at first,
+ - people love this package shit, they do not care this is hard to maintain,
+ - girls love this, they love package,
+ - money that is backed by people services, what they provide

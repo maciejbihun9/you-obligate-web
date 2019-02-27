@@ -51,7 +51,10 @@ export class CreateObligationStrategyViewComponent implements OnInit {
       userRegisteredService: this.groupJoinRequest.userRegisteredService,
       unitOfWork: this.unitOfWorkType,
       unitOfWorkCost: this.unitOfWorkCost,
-      userAccountInObligationGroup: this.userAccountInObligationGroup
+      userAccountInObligationGroup: this.userAccountInObligationGroup,
+      interestRate: 0.5,
+      minAmountOfUnitsPerBond: 100,
+      maxAmountOfUnitsForObligation: 1000
     };
     this.registeredServiceObligationStrategyService.createRegisteredServiceObligationStrategy(registeredServiceObligationStrategy);
   }

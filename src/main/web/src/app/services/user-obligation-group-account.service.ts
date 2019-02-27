@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {UserObligationGroupAccount} from '../models/user-obligation-group-account.model';
 import {Observable} from 'rxjs/internal/Observable';
+import {UserAccountInObligationGroup} from "../models/user-account-in-obligation-group.model";
 
 @Injectable()
 export class UserObligationGroupAccountService {
@@ -16,9 +16,9 @@ export class UserObligationGroupAccountService {
     });
   }
 
-  public getUserObligationGroupAccounts(): Observable<Array<UserObligationGroupAccount>> {
+  public getUserObligationGroupAccounts(): Observable<Array<UserAccountInObligationGroup>> {
     const url = '/api/userAccountsInObligationGroup';
-    return this.httpClient.get<Array<UserObligationGroupAccount>>(url);
+    return this.httpClient.get<Array<UserAccountInObligationGroup>>(url);
   }
 
 }

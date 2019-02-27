@@ -14,10 +14,6 @@ import {ManageUserRegisteredServiceComponent} from './components/manage-user-reg
 import {UserUnitsRequestServiceService} from './services/user-units-request-service.service';
 import {UserAccountInObligationGroupService} from './services/user-account-in-obligation-group.service';
 import {UserObligationGroupAccountService} from './services/user-obligation-group-account.service';
-import { RegisteredServiceObligationStrategyComponent }
-from './components/registered-service-obligation-strategy/registered-service-obligation-strategy.component';
-import { CreateObligationPanelComponent } from './components/create-obligation-panel/create-obligation-panel.component';
-import {UserObligationGroupsPanelComponent} from './components/user-obligation-groups-panel/user-obligation-groups-panel.component';
 import { ObligationGroupsViewComponent } from './components/obligation-groups-view/obligation-groups-view.component';
 import {ObligationGroupsService} from './services/obligation-groups.service';
 import { CircleImageComponent } from './components/circle-image/circle-image.component';
@@ -70,9 +66,7 @@ const appRoutes: Routes = [
     UserRegisteredServicesComponent,
     UserObligationGroupsComponent,
     CreateObligationGroupComponent,
-    UserObligationGroupsPanelComponent,
     RegisteredServiceObligationStrategyComponent,
-    CreateObligationPanelComponent,
     ObligationGroupsViewComponent,
     ObligationGroupListItemComponent,
     CircleImageComponent,
