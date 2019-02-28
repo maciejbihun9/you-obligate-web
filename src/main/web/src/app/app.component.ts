@@ -34,8 +34,10 @@ export class AppComponent implements OnInit {
           name: Faker.Name.findName()
         }
       });
-    console.log("people: ");
+    console.log("People: ");
     console.log(this.people);
+
+    var observable: Observable<number> = of (1,2,3,4);
 
     let items = of(1,2,3,4,5).pipe(
       tap(item => console.log('Before filter : ' + item)),
